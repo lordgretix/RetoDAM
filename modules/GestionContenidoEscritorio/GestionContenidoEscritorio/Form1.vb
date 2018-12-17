@@ -81,7 +81,7 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btn_inicial.Click
         validarUserPasswor()
         If iniciado Then
-            Form2.Show()
+            Adm_User.Show()
             Me.Hide()
         End If
 
