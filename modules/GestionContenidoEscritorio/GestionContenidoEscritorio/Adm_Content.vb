@@ -1,6 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-
-Public Class Form2
+Public Class Adm_Content
     Friend WithEvents Tabla As DataTable
 
     Private Sub Form2_Disposed(sender As Object, e As EventArgs) Handles Me.Disposed
@@ -11,13 +10,13 @@ Public Class Form2
     'Public Sub MisTablas()
     '    Me.Tabla = New DataTable
     'End Sub
-    
+
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conectar()
 
         Dim sql As String
         Dim das1 As New DataSet
-        sql = "select * from Alumnos"
+        sql = "SELECT * FROM alojamientos"
         Dim commando As New MySqlCommand
         Dim adapter As New MySqlDataAdapter
 

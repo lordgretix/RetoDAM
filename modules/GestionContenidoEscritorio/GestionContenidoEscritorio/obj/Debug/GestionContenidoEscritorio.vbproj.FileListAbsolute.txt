@@ -15,3 +15,7 @@ E:\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionConten
 E:\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.xml
 E:\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.pdb
 E:\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.Form2.resources
+E:\RetoDAM\modules\GestionContenidoEscritorio\GestionContenidoEscritorio\bin\Debug\GestionContenidoEscritorio.exe.config
+E:\RetoDAM\modules\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.exe
+E:\RetoDAM\modules\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.xml
+E:\RetoDAM\modules\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.pdb

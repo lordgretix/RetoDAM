@@ -28,23 +28,26 @@ Partial Class Form1
         Me.TextPassword = New System.Windows.Forms.TextBox()
         Me.Btn_inicial = New System.Windows.Forms.Button()
         Me.lab_fail = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(68, 58)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(43, 13)
+        Me.Label1.Size = New System.Drawing.Size(50, 15)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Usuario"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(68, 103)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 13)
+        Me.Label2.Size = New System.Drawing.Size(61, 15)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Password"
         '
@@ -65,12 +68,15 @@ Partial Class Form1
         '
         'Btn_inicial
         '
-        Me.Btn_inicial.Location = New System.Drawing.Point(258, 198)
+        Me.Btn_inicial.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Btn_inicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_inicial.ForeColor = System.Drawing.Color.Black
+        Me.Btn_inicial.Location = New System.Drawing.Point(71, 183)
         Me.Btn_inicial.Name = "Btn_inicial"
-        Me.Btn_inicial.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_inicial.Size = New System.Drawing.Size(200, 23)
         Me.Btn_inicial.TabIndex = 0
         Me.Btn_inicial.Text = "Aceptar"
-        Me.Btn_inicial.UseVisualStyleBackColor = True
+        Me.Btn_inicial.UseVisualStyleBackColor = False
         '
         'lab_fail
         '
@@ -84,11 +90,22 @@ Partial Class Form1
         Me.lab_fail.Text = "Usuario y/o password incorrecto"
         Me.lab_fail.Visible = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(96, 18)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(139, 25)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Inicial Sesión"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(394, 272)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lab_fail)
         Me.Controls.Add(Me.Btn_inicial)
         Me.Controls.Add(Me.TextPassword)
@@ -107,5 +124,6 @@ Partial Class Form1
     Friend WithEvents TextPassword As System.Windows.Forms.TextBox
     Friend WithEvents Btn_inicial As System.Windows.Forms.Button
     Friend WithEvents lab_fail As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 
 End Class
