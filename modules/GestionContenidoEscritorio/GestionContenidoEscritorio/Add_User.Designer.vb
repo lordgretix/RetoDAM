@@ -25,7 +25,7 @@ Partial Class Add_User
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Btn_acept = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -58,14 +58,14 @@ Partial Class Add_User
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Repetir el mismo password"
         '
-        'Button1
+        'Btn_acept
         '
-        Me.Button1.Location = New System.Drawing.Point(253, 183)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Aceptar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Btn_acept.Location = New System.Drawing.Point(253, 183)
+        Me.Btn_acept.Name = "Btn_acept"
+        Me.Btn_acept.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_acept.TabIndex = 3
+        Me.Btn_acept.Text = "Aceptar"
+        Me.Btn_acept.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -96,7 +96,7 @@ Partial Class Add_User
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Btn_acept)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -109,7 +109,7 @@ Partial Class Add_User
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Btn_acept As System.Windows.Forms.Button
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
