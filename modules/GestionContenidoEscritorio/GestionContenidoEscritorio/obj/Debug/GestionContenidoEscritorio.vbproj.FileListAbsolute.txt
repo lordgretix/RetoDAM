@@ -1,0 +1,17 @@
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\bin\Debug\GestionContenidoEscritorio.exe.config
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\bin\Debug\GestionContenidoEscritorio.exe
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\bin\Debug\GestionContenidoEscritorio.pdb
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\bin\Debug\GestionContenidoEscritorio.xml
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\bin\Debug\MySql.Data.dll
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\bin\Debug\MySql.Data.Entity.EF5.dll
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\bin\Debug\MySql.Data.Entity.EF6.dll
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\bin\Debug\MySql.Fabric.Plugin.dll
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\bin\Debug\MySql.Web.dll
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.vbprojResolveAssemblyReference.cache
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.Form1.resources
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.Resources.resources
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.vbproj.GenerateResource.Cache
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.exe
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.xml
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.pdb
+E:\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.Form2.resources
