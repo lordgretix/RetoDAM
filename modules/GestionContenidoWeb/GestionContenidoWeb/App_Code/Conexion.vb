@@ -13,8 +13,7 @@ Public Class Conexion
             If cnn1.State = ConnectionState.Closed Then
                 cnn1.Open()
             End If
-            ' MsgBox("connecting...")
-            MsgBox("hecho")
+            ' MsgBox("hecho")
         Catch ex As Exception
             'MsgBox(ex.Message) 'Este msgbox saler algo rao
 

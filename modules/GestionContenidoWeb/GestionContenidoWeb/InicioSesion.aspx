@@ -1,28 +1,24 @@
 ﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="InicioSesion.aspx.vb" Inherits="InicioSesion" %>
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  />
-    <link href="Recursos/css/InicioSesion.css" rel="stylesheet" />   
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="Recursos/css/InicioSesion.css" rel="stylesheet" />
     <title></title>
 </head>
+
 <body>
     <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-   
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Registrarse</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Iniciar Sesion</a></li>
-    </ul>
-  </div>
-</nav>
-  
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container well contenedor">
         <div class="row">
             <div class="col-xs-12">
@@ -37,18 +33,19 @@
                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
-               <div class="form-group">
+            <div class="form-group">
                 <asp:Label ID="lblPassword" runat="server" Text="Password" CssClass="control-label col-sm-2"></asp:Label>
                 <div class="col-sm-10">
-                     <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                 </div>
             </div>
-             <div class="form-group">
-                 <asp:Label  ID="lblMensaje" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="Red" ></asp:Label>
-            <asp:Button ID="btnInicio" runat="server" Text="Iniciar"  CssClass="form-control btn btn-primary" />
-        </div>
-       
+            <div class="form-group">
+                <asp:Label ID="lblMensaje" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="Red"></asp:Label>
+                <asp:Button ID="btnInicio" runat="server" Text="Iniciar" CssClass="form-control btn btn-primary" />
+            </div>
+
         </form>
     </div>
 </body>
+
 </html>

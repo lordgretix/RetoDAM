@@ -6,5 +6,8 @@ Partial Class PaginaInicio
         'Me.ifrm.Attributes["src"]="Default.aspx"
 
         'ifrm.Attributes["src"]="tu_pagina.aspx";
+
     End Sub
+
+
 End Class
