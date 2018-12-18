@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<rows num="415">
+<rows num="415" lang="es">
   <row num="1">
     <documentname>ABAIENEA</documentname>
     <turismdescription>Abaienea pone a tu disposición una casa de agroturismo y dos apartamentos rurales en Ariñez, a 3,...</turismdescription>
@@ -3596,43 +3596,7 @@
     <metadataxml>http://opendata.euskadi.eus/contenidos/a_alojamiento/0000000329_a1_rec_turismo/r01Index/0000000329_a1_rec_turismo-idxContent.xml</metadataxml>
     <zipfile>http://opendata.euskadi.eus/contenidos/a_alojamiento/0000000329_a1_rec_turismo/opendata/0000000329_a1_rec_turismo.zip</zipfile>
   </row>
-    <documentname>BERRIOLOPE</documentname>
-    <turismdescription>Caserío de estilo típico vasco, rodeado de verde y ubicado en el centro geográfico de la Comunida...</turismdescription>
-    <turismdescription>Caserío de estilo típico vasco, rodeado de verde y ubicado en el centro geográfico de la Comunidad Autónoma Vasca. Dispone de 6 habitaciones dobles con baño y televisión y cocina-comedor. Cuenta con 6 camas supletorias (capacidad total para 18 personas).</turismdescription>
-    <templatetype>Alojamientos</templatetype>
-    <locality>Elorrio</locality>
-    <phone>946 820 640</phone>
-    <address>Barrio Berrio, 10. (BI-2632, PK 41)</address>
-    <marks>Montes y Valles vascos</marks>
-    <physical>0</physical>
-    <visual>0</visual>
-    <auditive>0</auditive>
-    <intellectual>0</intellectual>
-    <organic>0</organic>
-    <qualityassurance>1</qualityassurance>
-    <tourismemail>berriolope@gmail.com</tourismemail>
-    <web>http://www.nekatur.net/berriolope</web>
-    <lodgingtype>Agroturismos</lodgingtype>
-    <category>S</category>
-    <restaurant>1</restaurant>
-    <capacity>12</capacity>
-    <postalcode>48230</postalcode>
-    <latitudelongitude>43.13758109,-2.52459977</latitudelongitude>
-    <latwgs84>43.13758109</latwgs84>
-    <lonwgs84>-2.52459977</lonwgs84>
-    <municipality>Elorrio</municipality>
-    <municipalitycode>032</municipalitycode>
-    <territory>Bizkaia</territory>
-    <territorycode>48</territorycode>
-    <country>España</country>
-    <countrycode>108</countrycode>
-    <friendlyurl>http://opendata.euskadi.eus/catalogo/-/es/alojamientos/agroturismo-berriolope/</friendlyurl>
-    <physicalurl>http://opendata.euskadi.eus/catalogo/contenidos/a_alojamiento/0000000595_a1_rec_turismo/es_595/595-ficha2.html</physicalurl>
-    <dataxml>http://opendata.euskadi.eus/contenidos/a_alojamiento/0000000595_a1_rec_turismo/es_595/data/595_openData.xml</dataxml>
-    <metadataxml>http://opendata.euskadi.eus/contenidos/a_alojamiento/0000000595_a1_rec_turismo/r01Index/0000000595_a1_rec_turismo-idxContent.xml</metadataxml>
-    <zipfile>http://opendata.euskadi.eus/contenidos/a_alojamiento/0000000595_a1_rec_turismo/opendata/0000000595_a1_rec_turismo.zip</zipfile>
-  </row>
-  <row num="101">
+  <row num="101-1">
     <documentname>BELAZARTE</documentname>
     <turismdescription>Belazarte es una casa rural construída de madera. Dispone de amplios jardines verdes con una gran...</turismdescription>
     <turismdescription>Belazarte es una casa rural construída de madera. Dispone de amplios jardines verdes con una gran piscina. Podemos disfrutar de la tranquilidad y de su precioso entorno, donde los niños podrán correr con tranquilidad sin ningún tipo de riesgo. Dispone de 4 habitaciones dobles con baño. Una de las habitaciones dispone de un pequeño saloncito. Dispone de un amplio salón con chimenea.</turismdescription>
@@ -4204,15 +4168,17 @@
     <signatura>KBI00096</signatura>
     <capacity>4</capacity>
     <postalcode>48200</postalcode>
-    <territory>Durango</territory>
-    <territorycode>027</territorycode>
-    <country>Bizkaia</country>
-    <countrycode>48</countrycode>
-    <friendlyurl>España</friendlyurl>
-    <physicalurl>108</physicalurl>
-    <dataxml>http://opendata.euskadi.eus/catalogo/-/es/alojamientos/dukebaso/</dataxml>
-    <metadataxml>http://opendata.euskadi.eus/catalogo/contenidos/a_alojamiento/0000085881_a1_rec_turismo/es_85881/85881-ficha2.html</metadataxml>
-    <zipfile>http://opendata.euskadi.eus/contenidos/a_alojamiento/0000085881_a1_rec_turismo/es_85881/data/85881_openData.xml</zipfile>
+    <municipality>Durango</municipality>
+    <municipalitycode>027</municipalitycode>
+    <territory>Bizkaia</territory>
+    <territorycode>48</territorycode>
+    <country>España</country>
+    <countrycode>108</countrycode>
+    <friendlyurl>http://opendata.euskadi.eus/catalogo/-/es/alojamientos/dukebaso/</friendlyurl>
+    <physicalurl>http://opendata.euskadi.eus/catalogo/contenidos/a_alojamiento/0000085881_a1_rec_turismo/es_85881/85881-ficha2.html</physicalurl>
+    <dataxml>http://opendata.euskadi.eus/contenidos/a_alojamiento/0000085881_a1_rec_turismo/es_85881/data/85881_openData.xml</dataxml>
+    <metadataxml></metadataxml>
+    <zipfile></zipfile>
   </row>
   <row num="117">
     <documentname>DONIBANE</documentname>
@@ -11913,15 +11879,17 @@
     <signatura>XBI00116</signatura>
     <capacity>14</capacity>
     <postalcode>48879</postalcode>
-    <territory>Artzentales</territory>
-    <territorycode>008</territorycode>
-    <country>Bizkaia</country>
-    <countrycode>48</countrycode>
-    <friendlyurl>España</friendlyurl>
-    <physicalurl>108</physicalurl>
-    <dataxml>http://opendata.euskadi.eus/catalogo/-/es/alojamientos/palacio-horkasitas/</dataxml>
-    <metadataxml>http://opendata.euskadi.eus/catalogo/contenidos/a_alojamiento/0000087642_a1_rec_turismo/es_87642/87642-ficha2.html</metadataxml>
-    <zipfile>http://opendata.euskadi.eus/contenidos/a_alojamiento/0000087642_a1_rec_turismo/es_87642/data/87642_openData.xml</zipfile>
+    <municipality>Artzentales</municipality>
+    <municipalitycode>008</municipalitycode>
+    <territory>Bizkaia</territory>
+    <territorycode>48</territorycode>
+    <country>España</country>
+    <countrycode>108</countrycode>
+    <friendlyurl>http://opendata.euskadi.eus/catalogo/-/es/alojamientos/palacio-horkasitas/</friendlyurl>
+    <physicalurl>http://opendata.euskadi.eus/catalogo/contenidos/a_alojamiento/0000087642_a1_rec_turismo/es_87642/87642-ficha2.html</physicalurl>
+    <dataxml>http://opendata.euskadi.eus/contenidos/a_alojamiento/0000087642_a1_rec_turismo/es_87642/data/87642_openData.xml</dataxml>
+    <metadataxml></metadataxml>
+    <zipfile></zipfile>
   </row>
   <row num="329">
     <documentname>SAN PEDRO</documentname>
@@ -13777,15 +13745,17 @@
     <signatura>XVI00135</signatura>
     <capacity>12</capacity>
     <postalcode>01423</postalcode>
-    <territory>Valdegovía/Gaubea</territory>
-    <territorycode>055</territorycode>
-    <country>Araba/Álava</country>
-    <countrycode>01</countrycode>
-    <friendlyurl>España</friendlyurl>
-    <physicalurl>108</physicalurl>
-    <dataxml>http://opendata.euskadi.eus/catalogo/-/es/alojamientos/tierra-y-madera/</dataxml>
-    <metadataxml>http://opendata.euskadi.eus/catalogo/contenidos/a_alojamiento/0000202593_a1_rec_turismo/es_202593/202593-ficha2.html</metadataxml>
-    <zipfile>http://opendata.euskadi.eus/contenidos/a_alojamiento/0000202593_a1_rec_turismo/es_202593/data/202593_openData.xml</zipfile>
+    <municipality>Valdegovía/Gaubea</municipality>
+    <municipalitycode>055</municipalitycode>
+    <territory>Araba/Álava</territory>
+    <territorycode>01</territorycode>
+    <country>España</country>
+    <countrycode>108</countrycode>
+    <friendlyurl>http://opendata.euskadi.eus/catalogo/-/es/alojamientos/tierra-y-madera/</friendlyurl>
+    <physicalurl>http://opendata.euskadi.eus/catalogo/contenidos/a_alojamiento/0000202593_a1_rec_turismo/es_202593/202593-ficha2.html</physicalurl>
+    <dataxml>http://opendata.euskadi.eus/contenidos/a_alojamiento/0000202593_a1_rec_turismo/es_202593/data/202593_openData.xml</dataxml>
+    <metadataxml></metadataxml>
+    <zipfile></zipfile>
   </row>
   <row num="380">
     <documentname>TOKI EDER</documentname>
