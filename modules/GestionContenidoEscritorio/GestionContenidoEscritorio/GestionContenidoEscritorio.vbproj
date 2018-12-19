@@ -85,12 +85,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add_User.Designer.vb">
-      <DependentUpon>Add_User.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Add_User.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Adm_Content.Designer.vb">
       <DependentUpon>Adm_Content.vb</DependentUpon>
     </Compile>
@@ -102,12 +96,6 @@
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adm_User.Designer.vb">
-      <DependentUpon>Adm_User.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Adm_User.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -126,25 +114,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Nuevo_Content.Designer.vb">
+      <DependentUpon>Nuevo_Content.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Nuevo_Content.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Add_User.resx">
-      <DependentUpon>Add_User.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Adm_Content.resx">
       <DependentUpon>Adm_Content.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Adm_User.resx">
-      <DependentUpon>Adm_User.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nuevo_Content.resx">
+      <DependentUpon>Nuevo_Content.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

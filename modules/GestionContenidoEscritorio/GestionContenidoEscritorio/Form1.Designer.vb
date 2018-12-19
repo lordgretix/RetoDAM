@@ -29,6 +29,7 @@ Partial Class Form1
         Me.Btn_inicial = New System.Windows.Forms.Button()
         Me.lab_fail = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label_acceso = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -56,7 +57,7 @@ Partial Class Form1
         Me.TextUser.Location = New System.Drawing.Point(148, 58)
         Me.TextUser.Name = "TextUser"
         Me.TextUser.Size = New System.Drawing.Size(100, 20)
-        Me.TextUser.TabIndex = 1
+        Me.TextUser.TabIndex = 0
         '
         'TextPassword
         '
@@ -64,7 +65,7 @@ Partial Class Form1
         Me.TextPassword.Name = "TextPassword"
         Me.TextPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextPassword.Size = New System.Drawing.Size(100, 20)
-        Me.TextPassword.TabIndex = 2
+        Me.TextPassword.TabIndex = 1
         '
         'Btn_inicial
         '
@@ -74,7 +75,7 @@ Partial Class Form1
         Me.Btn_inicial.Location = New System.Drawing.Point(71, 183)
         Me.Btn_inicial.Name = "Btn_inicial"
         Me.Btn_inicial.Size = New System.Drawing.Size(200, 23)
-        Me.Btn_inicial.TabIndex = 0
+        Me.Btn_inicial.TabIndex = 2
         Me.Btn_inicial.Text = "Aceptar"
         Me.Btn_inicial.UseVisualStyleBackColor = False
         '
@@ -100,11 +101,24 @@ Partial Class Form1
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Inicial Sesión"
         '
+        'Label_acceso
+        '
+        Me.Label_acceso.AutoSize = True
+        Me.Label_acceso.Font = New System.Drawing.Font("Stencil", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_acceso.ForeColor = System.Drawing.Color.Red
+        Me.Label_acceso.Location = New System.Drawing.Point(68, 155)
+        Me.Label_acceso.Name = "Label_acceso"
+        Me.Label_acceso.Size = New System.Drawing.Size(238, 13)
+        Me.Label_acceso.TabIndex = 7
+        Me.Label_acceso.Text = "Este usuario no tiene permiso de acceso"
+        Me.Label_acceso.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(394, 272)
+        Me.Controls.Add(Me.Label_acceso)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lab_fail)
         Me.Controls.Add(Me.Btn_inicial)
@@ -125,5 +139,6 @@ Partial Class Form1
     Friend WithEvents Btn_inicial As System.Windows.Forms.Button
     Friend WithEvents lab_fail As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label_acceso As System.Windows.Forms.Label
 
 End Class
