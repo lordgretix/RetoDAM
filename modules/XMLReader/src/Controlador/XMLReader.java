@@ -5,6 +5,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import javax.swing.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
@@ -15,7 +16,6 @@ public class XMLReader {
 
     private ArrayList<Alojamientos> alojamientos;
     private File file;
-    private int rows = -1;
 
     public XMLReader(String file) {
         this.file = new File(file);
@@ -31,7 +31,6 @@ public class XMLReader {
             this.alojamientos = new ArrayList<Alojamientos>();
 
             String lang = doc.getElementsByTagName("rows").item(0).getAttributes().getNamedItem("lang").getTextContent();
-            System.out.println(lang);
 
             NodeList nodes = doc.getElementsByTagName("row");
             for(int i=0; i<nodes.getLength(); i++){
@@ -43,9 +42,8 @@ public class XMLReader {
                     this.insertAlojamiento(aloj, childrens.item(x).getNodeName(), childrens.item(x).getTextContent());
                 }
                 alojamientos.add(aloj);
-                this.rows++;
             }
-
+/*
             System.out.println(alojamientos.size());
 
             String sql = "SELECT * FROM `alojamientos` WHERE ";
@@ -59,15 +57,18 @@ public class XMLReader {
             }
             sql += ";";
             System.out.println();
-            System.out.println(sql);
+            System.out.println(sql);*/
 
 
         } catch (SAXException e) {
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (IOException e) {
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -94,24 +95,6 @@ public class XMLReader {
             case "territory": aloj.setTerritorio(value); break;
         }
 
-    }
-
-    public int getRows() {
-        int rows = this.rows;
-        if(rows < 0){
-            try {
-                Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
-                doc.getDocumentElement().normalize();
-                rows = doc.getElementsByTagName("row").getLength();
-            } catch (SAXException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ParserConfigurationException e) {
-                e.printStackTrace();
-            }
-        }
-        return rows;
     }
 
     public ArrayList<Alojamientos> getAlojamientos() {

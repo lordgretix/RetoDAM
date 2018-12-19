@@ -30,6 +30,7 @@ public class VentanaImportar {
         frame.setBounds(100, 100, 450, 228);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
+        frame.setLocationRelativeTo(null);
 
         txtSeleccionar = new JLabel("Selecciona un *.xml para importar");
         txtSeleccionar.setFont(new Font("Tahoma", Font.PLAIN, 12));

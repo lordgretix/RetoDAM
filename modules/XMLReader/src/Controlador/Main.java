@@ -1,27 +1,35 @@
 package Controlador;
 
 import GUI.VentanaImportar;
+import Modelos.Conexion.Conexion;
+import Modelos.Tablas.Alojamientos;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.awt.EventQueue;
+import java.sql.SQLException;
 
 public class Main {
 
     private static VentanaImportar window;
+    private static Conexion conn;
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    window = new VentanaImportar();
-                    setListeners();
-                    window.getFrame().setVisible(true);
+        conn = new Conexion("gp3", "IFZWx5dEG12yt8QW", "reto_gp3", "kasserver.synology.me", "3307");
 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        EventQueue.invokeLater(() -> {
+            try {
+                conn.openConexion();
+                window = new VentanaImportar();
+                setListeners();
+                window.getFrame().setVisible(true);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog (null, e.getMessage(), "Error: " + e.getErrorCode(), JOptionPane.ERROR_MESSAGE);
+            } catch (Exception e){
+                e.printStackTrace();
             }
         });
 
@@ -42,8 +50,27 @@ public class Main {
         });
 
         window.getBtnImportarDatos().addActionListener(e->{
-            XMLReader reader = new XMLReader(window.getTxtInputDir().getText());
-            reader.readAll();
+            window.getProgressBar().setValue(0);
+            window.getProgressBar().setVisible(true);
+            window.getTxtProgreso().setText("Importando...");
+            window.getTxtProgreso().setVisible(true);
+            window.getBtnImportarDatos().setEnabled(false);
+
+            new Thread(() -> {
+                XMLReader reader = new XMLReader(window.getTxtInputDir().getText());
+                reader.readAll();
+
+                window.getProgressBar().setMaximum(reader.getAlojamientos().size());
+
+                int prog = 1;
+                for (Alojamientos aloj: reader.getAlojamientos()) {
+                    window.getTxtProgreso().setText("Importando: "+prog+" / "+reader.getAlojamientos().size());
+                    conn.insertAlojamiento(aloj);
+                    window.getProgressBar().setValue(prog++);
+                }
+                JOptionPane.showMessageDialog (null, "Se han importado " + reader.getAlojamientos().size()+" alojamientos", "Success", JOptionPane.INFORMATION_MESSAGE);
+                window.getBtnImportarDatos().setEnabled(true);
+            }).start();
         });
     }
 
