@@ -60,13 +60,7 @@ public class XMLReader {
             System.out.println(sql);*/
 
 
-        } catch (SAXException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        } catch (IOException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        } catch (ParserConfigurationException e) {
+        } catch (SAXException | ParserConfigurationException | IOException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -76,7 +70,7 @@ public class XMLReader {
 
         switch(nodeName){
             case "documentname": aloj.setNombre(value); break;
-            case "turismdescription": if(aloj.getResumen() == null){ aloj.setResumen(value); } else{ aloj.setDescripcion(value); } break;
+            case "turismdescription": if(aloj.getResumen().equals("")){ aloj.setResumen(value); } else{ aloj.setDescripcion(value); } break;
             case "locality": aloj.setLocalidad(value); break;
             case "phone": aloj.setTelefono(value.replaceAll("[\\s\\-]", "")); break;
             case "address": aloj.setDireccion(value); break;

@@ -5,12 +5,7 @@ import Modelos.Tablas.Alojamientos;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 
 import javax.swing.JOptionPane;
 
@@ -32,53 +27,6 @@ public class Conexion {
         this.database = database;
         this.host = host;
         this.port = port;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getDatabase() {
-        return database;
-    }
-
-    public void setDatabase(String database) {
-        this.database = database;
-    }
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public String getPort() {
-        return port;
-    }
-
-    public void setPort(String port) {
-        this.port = port;
-    }
-
-    /**
-     * @return the conexion
-     */
-    public Connection getConexion() {
-        return conexion;
     }
 
     public void openConexion() throws SQLException {
@@ -165,8 +113,36 @@ public class Conexion {
             st.setString(x++, alojamiento.getTerritorio());
 
             //Firma
-            st.setString(i++, alojamiento.getFirma());
-            st.setString(x++, alojamiento.getFirma());
+            st.setString(i, alojamiento.getFirma());
+            st.setString(x, alojamiento.getFirma());
+
+            st.execute();
+
+            // Traduccion
+            st = this.conexion.prepareStatement("INSERT INTO `traducciones` (alojamiento, idioma, tipo, resumen, descripcion) " +
+                    "VALUES ((SELECT id FROM `alojamientos` WHERE firma = ? ), ?, ?, ?, ?) ON DUPLICATE KEY UPDATE " +
+                    "tipo = ?, resumen = ?, descripcion = ?");
+
+            int y = 1;
+            int z = y+5;
+
+            //Firma
+            st.setString(y++, alojamiento.getFirma());
+
+            //Idioma
+            st.setString(y++, alojamiento.getIdioma());
+
+            //Tipo
+            st.setString(y++, alojamiento.getTipo());
+            st.setString(z++, alojamiento.getTipo());
+
+            //Resumen
+            st.setString(y++, alojamiento.getResumen());
+            st.setString(z++, alojamiento.getResumen());
+
+            //Descripcion
+            st.setString(y, alojamiento.getDescripcion());
+            st.setString(z, alojamiento.getDescripcion());
 
             st.execute();
 
@@ -174,126 +150,50 @@ public class Conexion {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error: " + e.getErrorCode(), JOptionPane.ERROR_MESSAGE);
         }
-
     }
 
-    public String[] getDepartamentos() {
-
-        ArrayList<String> departamentos = new ArrayList<String>();
-        try {
-            ResultSet rs = conexion.prepareStatement("SELECT `dept_no`,`dnombre` FROM `departamentos`").executeQuery();
-
-            while (rs.next()) {
-                departamentos.add(rs.getString("dept_no") + "/" + rs.getString("dnombre"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return departamentos.toArray(new String[departamentos.size()]);
+    public Connection getConexion() {
+        return conexion;
     }
 
-    public String[] getDirectores() {
-
-        ArrayList<String> directores = new ArrayList<String>();
-        try {
-            ResultSet rs = conexion.prepareStatement("SELECT `emp_no`, `apellido` FROM `empleados` WHERE `emp_no` IN (SELECT `dir` FROM `empleados`)").executeQuery();
-
-            while (rs.next()) {
-                directores.add(rs.getString("emp_no") + "/" + rs.getString("apellido"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return directores.toArray(new String[directores.size()]);
+    public String getUser() {
+        return user;
     }
 
-    public String[] getEmpleado(int emp_no) {
-
-        ArrayList<String> empleado = new ArrayList<String>();
-        try {
-            ResultSet rs = conexion.prepareStatement("SELECT * FROM `empleados` WHERE `emp_no`=" + emp_no).executeQuery();
-
-            rs.next();
-
-            empleado.add(String.valueOf(rs.getInt("emp_no")));
-            empleado.add(rs.getString("apellido"));
-            empleado.add(rs.getString("oficio"));
-            empleado.add(rs.getString("dir"));
-            empleado.add(String.valueOf(rs.getFloat("salario")));
-            empleado.add(String.valueOf(rs.getFloat("comision")));
-            empleado.add(String.valueOf(rs.getInt("dept_no")));
-        } catch (SQLException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "No existe ningun empleado con ese numero", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
-
-        return empleado.toArray(new String[empleado.size()]);
+    public void setUser(String user) {
+        this.user = user;
     }
 
-    public void insertEmpleado(int emp_no, String apellido, String oficio, int dir, int dept_no, double salario, double comision) {
-
-        try {
-            PreparedStatement st = conexion.prepareStatement("INSERT INTO `empleados` (`emp_no`, `apellido`, `oficio`, `dir`, `fecha_alt`, `salario`, `comision`, `dept_no`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            Date date = new Date();
-
-            st.setInt(1, emp_no);
-            st.setString(2, apellido.toUpperCase());
-            st.setString(3, oficio.toUpperCase());
-            st.setInt(4, dir);
-            st.setString(5, dateFormat.format(date));
-            st.setFloat(6, (float) salario);
-            st.setFloat(7, (float) comision);
-            st.setInt(8, dept_no);
-
-            st.execute();
-
-            JOptionPane.showMessageDialog(null, "Empleado insertado correctamente!", "Success", JOptionPane.INFORMATION_MESSAGE);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error: Ha ocurrido un fallo durante la insercion del empleado!", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+    public String getPassword() {
+        return password;
     }
 
-    public void borrarEmpleado(int emp_no) {
-
-        try {
-            PreparedStatement st = conexion.prepareStatement("DELETE FROM `empleados` WHERE `emp_no`=?");
-            st.setInt(1, emp_no);
-            st.execute();
-            JOptionPane.showMessageDialog(null, "Empleado borrado correctamente!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error: Ha ocurrido un fallo durante el borrado del empleado!", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void updateEmpleado(int emp_no, String apellido, String oficio, int dir, int dept_no, double salario, double comision) {
-
-        try {
-            PreparedStatement st = conexion.prepareStatement("UPDATE `empleados` SET `apellido` = ?, `oficio` = ?, `dir` = ?, `salario` = ?, `comision` = ?, `dept_no` = ? WHERE `empleados`.`emp_no` = ?");
-
-            st.setString(1, apellido.toUpperCase());
-            st.setString(2, oficio.toUpperCase());
-            st.setInt(3, dir);
-            st.setFloat(4, (float) salario);
-            st.setFloat(5, (float) comision);
-            st.setInt(6, dept_no);
-            st.setInt(7, emp_no);
-
-            if (st.executeUpdate() > 0) {
-                JOptionPane.showMessageDialog(null, "Empleado actualizado correctamente!", "Success", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(null, "No existe ningun empleado con ese numero", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            }
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error: Ha ocurrido un fallo durante la actualizacion del empleado!", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+    public String getDatabase() {
+        return database;
     }
+
+    public void setDatabase(String database) {
+        this.database = database;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public String getPort() {
+        return port;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
+    }
+
 }
