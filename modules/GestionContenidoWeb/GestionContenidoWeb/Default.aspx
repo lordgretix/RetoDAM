@@ -16,9 +16,9 @@
         </asp:GridView>
         <asp:Label ID="Label1" runat="server" Text="PruebaConexion"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NorthwindConnectionString %>" ProviderName="<%$ ConnectionStrings:NorthwindConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [Categories]"></asp:SqlDataSource>
         <br />
-&nbsp;</div>
+&nbsp;<asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
+        </div>
     </form>
 </body>
 </html>

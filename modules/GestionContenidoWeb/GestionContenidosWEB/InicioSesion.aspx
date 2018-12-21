@@ -6,18 +6,19 @@
     <head runat="server">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-        <link href="Recursos/css/InicioSesion.css" rel="stylesheet" />
+        <link href="Content/Login.css" rel="stylesheet" />
         <title></title>
+        <style>
+            body {
+                background-image: url("imagenes/fondo2.jpg");
+                background-size: 200%;
+                background-repeat: no-repeat;
+            }
+        </style>
     </head>
 
     <body>
-        <nav class="navbar navbar-inverse" >
-            <div class="container-fluid">
-                <div class="navbar-header"  >
-                    <a class="navbar-brand" href="#" >WebSiteName</a>
-                </div>
-            </div>
-        </nav>
+        
 
         <div class="container well contenedor">
             <div class="row">
@@ -30,13 +31,13 @@
                 <div class="form-group">
                     <asp:Label ID="lblNombre" runat="server" Text="Nombre" CssClass="control-label col-sm-2"></asp:Label>
                     <div class="col-sm-10">
-                        <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" placeholder="Nombre"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">
                     <asp:Label ID="lblPassword" runat="server" Text="Password" CssClass="control-label col-sm-2"></asp:Label>
                     <div class="col-sm-10">
-                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
                     </div>
                 </div>
                 <div class="form-group">

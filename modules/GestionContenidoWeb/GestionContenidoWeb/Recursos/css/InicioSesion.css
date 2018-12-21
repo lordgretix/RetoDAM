@@ -9,3 +9,20 @@ text-align:center;
     border:5px;
 
 }
+.label2{
+    text-align:center;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #4CAF50;
+    border-color: #8BC34A;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #ffffff;
+  background-color: #225424;
+  border-color: #285e8e;
+}

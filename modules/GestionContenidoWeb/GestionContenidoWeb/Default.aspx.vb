@@ -9,4 +9,6 @@ Partial Class _Default
         Me.Response.Redirect("Default2.aspx?id=" + GridView1.SelectedRow.Cells(1).Text + "&nombre=" + GridView1.SelectedRow.Cells(2).Text + "&descripcion=" + GridView1.SelectedRow.Cells(3).Text)
 
     End Sub
+
+
 End Class

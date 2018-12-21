@@ -12,15 +12,23 @@ Partial Class InicioSesion
         Dim adap1 As New MySqlDataAdapter
         Dim sql As String
 
-        sql = "Select nombre, password from usuario"
+        sql = "Select nombre, password from usuarios"
         Try 'NO ABRO LA CONEXION 
             cmd1 = New MySqlCommand(sql, Conexion.cnn1)
             adap1 = New MySqlDataAdapter(cmd1)
+
             das1.Clear() ' por si 
             adap1.Fill(das1, "aaa")
             Dim dv As New DataView
             dv.Table = Me.das1.Tables("aaa") ' estan TODOS los datos 
-            dv.RowFilter = "nombre = '" & Me.txtNombre.Text & "' AND password= '" & Me.txtPassword.Text & "'"
+
+            'ENCRIPTAMOS LA CONTRASEÑA PARA COTEJARLA CON LA BBDD
+            Dim contraseña As String
+            contraseña = encriptar(Me.txtPassword.Text)
+            'MsgBox(contraseña)
+            ' Me.lblMensaje.Text = contraseña
+            dv.RowFilter = "nombre = '" & Me.txtNombre.Text & "' AND password= '" & contraseña & "'"
+            'dv.RowFilter = "nombre = '" & Me.txtNombre.Text & "' AND password= '" & Me.txtPassword.Text & "'"
 
             If dv.Count = 0 Then
                 Me.lblMensaje.Visible = True
@@ -33,14 +41,6 @@ Partial Class InicioSesion
 
         End Try
 
-        'If Me.txtNombre.Text = "A" Then
-        '    Response.Redirect("Default.aspx")
-        'Else
-        '    Me.lblMensaje.Visible = True
-        '    Me.lblMensaje.Text = "Usuario no identificado"
-        '    Me.txtNombre.Text = ""
-        '    Me.txtPassword.Text = ""
-        'End If
     End Sub
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -112,15 +112,17 @@ Partial Class InicioSesion
         'End Try
 
     End Sub
-    Public Sub encriptar()
+    Function encriptar(pass As String) As String
         Dim SHA256 As SHA256 = SHA256Managed.Create()
-        Dim hash() As Byte = SHA256.ComputeHash(Encoding.UTF8.GetBytes("AAAAA"))
+        Dim hash() As Byte = SHA256.ComputeHash(Encoding.UTF8.GetBytes(pass))
 
         Dim res As String = ""
         For i = 0 To hash.Length - 1
             res &= hash(i).ToString("X2")
         Next
 
-        Console.WriteLine(res.ToLower)
-    End Sub
+        'Console.WriteLine(res.ToLower)
+        Return res.ToLower
+    End Function
 End Class
+
