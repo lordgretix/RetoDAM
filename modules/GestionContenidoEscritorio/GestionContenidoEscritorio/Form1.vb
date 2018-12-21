@@ -1,11 +1,25 @@
 ﻿Imports System.Data.OleDb
 'Imports System.Data.SqlClient
 Imports MySql.Data.MySqlClient
+Imports System.Security.Cryptography
+Imports System.Text
 
 Public Class Form1
 
     Public cnn1 As MySqlConnection
     Dim iniciado As Boolean = False
+    Private Function encriptarPassword() As String
+        Dim SHA256 As SHA256 = SHA256Managed.Create()
+        Dim hash() As Byte = SHA256.ComputeHash(Encoding.UTF8.GetBytes(Me.TextPassword.Text))
+
+        Dim res As String = ""
+        For i = 0 To hash.Length - 1
+            res &= hash(i).ToString("X2")
+        Next
+
+        ' Console.WriteLine(res.ToLower)
+        Return res.ToLower
+    End Function
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim connStr As String = "server=kasserver.synology.me;database=reto_gp3;port=3307;user id=gp3;password=IFZWx5dEG12yt8QW;"
@@ -45,7 +59,7 @@ Public Class Form1
             While data.Read
                 If data.HasRows = True Then
                     'tiene ese usuario registrado
-                    If data(2).ToString = Me.TextPassword.Text Then
+                    If data(2).ToString = encriptarPassword() Then
                         'contraseña conicide
                         If data(3).ToString = 2 Then
                             'acepta si eres el rolo de editor de contenido
@@ -64,7 +78,7 @@ Public Class Form1
                     End If
 
                 Else
-                Me.lab_fail.Visible = True
+                    Me.lab_fail.Visible = True
                     'no esta registrado ese usuario en la base de datos
                 End If
 

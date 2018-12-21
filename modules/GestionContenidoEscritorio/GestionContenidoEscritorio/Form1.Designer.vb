@@ -35,8 +35,9 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(68, 58)
+        Me.Label1.Location = New System.Drawing.Point(98, 81)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(50, 15)
         Me.Label1.TabIndex = 0
@@ -45,8 +46,9 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(68, 103)
+        Me.Label2.Location = New System.Drawing.Point(98, 126)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(61, 15)
         Me.Label2.TabIndex = 1
@@ -54,14 +56,14 @@ Partial Class Form1
         '
         'TextUser
         '
-        Me.TextUser.Location = New System.Drawing.Point(148, 58)
+        Me.TextUser.Location = New System.Drawing.Point(178, 81)
         Me.TextUser.Name = "TextUser"
         Me.TextUser.Size = New System.Drawing.Size(100, 20)
         Me.TextUser.TabIndex = 0
         '
         'TextPassword
         '
-        Me.TextPassword.Location = New System.Drawing.Point(148, 100)
+        Me.TextPassword.Location = New System.Drawing.Point(178, 123)
         Me.TextPassword.Name = "TextPassword"
         Me.TextPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextPassword.Size = New System.Drawing.Size(100, 20)
@@ -69,10 +71,10 @@ Partial Class Form1
         '
         'Btn_inicial
         '
-        Me.Btn_inicial.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.Btn_inicial.BackColor = System.Drawing.Color.LimeGreen
         Me.Btn_inicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_inicial.ForeColor = System.Drawing.Color.Black
-        Me.Btn_inicial.Location = New System.Drawing.Point(71, 183)
+        Me.Btn_inicial.ForeColor = System.Drawing.Color.White
+        Me.Btn_inicial.Location = New System.Drawing.Point(101, 206)
         Me.Btn_inicial.Name = "Btn_inicial"
         Me.Btn_inicial.Size = New System.Drawing.Size(200, 23)
         Me.Btn_inicial.TabIndex = 2
@@ -82,9 +84,10 @@ Partial Class Form1
         'lab_fail
         '
         Me.lab_fail.AutoSize = True
+        Me.lab_fail.BackColor = System.Drawing.Color.Transparent
         Me.lab_fail.Font = New System.Drawing.Font("Stencil", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lab_fail.ForeColor = System.Drawing.Color.Red
-        Me.lab_fail.Location = New System.Drawing.Point(68, 142)
+        Me.lab_fail.Location = New System.Drawing.Point(98, 165)
         Me.lab_fail.Name = "lab_fail"
         Me.lab_fail.Size = New System.Drawing.Size(203, 13)
         Me.lab_fail.TabIndex = 5
@@ -94,8 +97,9 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(96, 18)
+        Me.Label3.Location = New System.Drawing.Point(126, 41)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(139, 25)
         Me.Label3.TabIndex = 6
@@ -104,9 +108,10 @@ Partial Class Form1
         'Label_acceso
         '
         Me.Label_acceso.AutoSize = True
+        Me.Label_acceso.BackColor = System.Drawing.Color.Transparent
         Me.Label_acceso.Font = New System.Drawing.Font("Stencil", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_acceso.ForeColor = System.Drawing.Color.Red
-        Me.Label_acceso.Location = New System.Drawing.Point(68, 155)
+        Me.Label_acceso.Location = New System.Drawing.Point(98, 178)
         Me.Label_acceso.Name = "Label_acceso"
         Me.Label_acceso.Size = New System.Drawing.Size(238, 13)
         Me.Label_acceso.TabIndex = 7
@@ -117,7 +122,8 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(394, 272)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(433, 307)
         Me.Controls.Add(Me.Label_acceso)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lab_fail)
