@@ -69,3 +69,6 @@ fastlane/readme.md
 
 # scratches
 scratches/
+
+# Custom libraries
+!modules/*/libraries/*.zip
