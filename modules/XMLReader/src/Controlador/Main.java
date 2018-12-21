@@ -4,10 +4,11 @@ import GUI.VentanaImportar;
 import Modelos.Conexion.Conexion;
 import Modelos.Tablas.Alojamientos;
 
+import javax.sound.midi.Soundbank;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
 import java.io.*;
-import java.awt.EventQueue;
 import java.sql.SQLException;
 
 public class Main {
@@ -24,6 +25,8 @@ public class Main {
                 window = new VentanaImportar();
                 setListeners();
                 window.getFrame().setVisible(true);
+
+                Runtime.getRuntime().addShutdownHook(new Thread(Main::close));
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -103,5 +106,9 @@ public class Main {
         }catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public static void close(){
+        conn.closeConexion();
     }
 }

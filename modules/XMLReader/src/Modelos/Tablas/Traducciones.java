@@ -1,5 +1,8 @@
 package Modelos.Tablas;
 
+import org.apache.commons.text.StringEscapeUtils;
+import org.jsoup.Jsoup;
+
 public class Traducciones {
 
     private int idTraduccion;
@@ -18,8 +21,8 @@ public class Traducciones {
         this.idAlojamiento = idAlojamiento;
         this.idioma = idioma;
         this.tipo = tipo;
-        this.resumen = resumen;
-        this.descripcion = descripcion;
+        this.resumen = cleanString(resumen);
+        this.descripcion = cleanString(descripcion);
     }
 
     public int getIdTraduccion() {
@@ -43,7 +46,7 @@ public class Traducciones {
     }
 
     public void setIdioma(String idioma) {
-        this.idioma = idioma;
+        this.idioma = cleanString(idioma);
     }
 
     public String getTipo() {
@@ -51,7 +54,7 @@ public class Traducciones {
     }
 
     public void setTipo(String tipo) {
-        this.tipo = tipo;
+        this.tipo = cleanString(tipo);
     }
 
     public String getResumen() {
@@ -59,7 +62,7 @@ public class Traducciones {
     }
 
     public void setResumen(String resumen) {
-        this.resumen = resumen;
+        this.resumen = cleanString(resumen);
     }
 
     public String getDescripcion() {
@@ -67,6 +70,10 @@ public class Traducciones {
     }
 
     public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+        this.descripcion = cleanString(descripcion);
+    }
+
+    public static String cleanString(String text){
+        return Jsoup.parse(StringEscapeUtils.unescapeHtml4(text)).text();
     }
 }

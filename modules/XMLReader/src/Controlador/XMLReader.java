@@ -4,7 +4,6 @@ import Modelos.Tablas.Alojamientos;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
 import javax.swing.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -43,22 +42,6 @@ public class XMLReader {
                 }
                 alojamientos.add(aloj);
             }
-/*
-            System.out.println(alojamientos.size());
-
-            String sql = "SELECT * FROM `alojamientos` WHERE ";
-
-            for (Alojamientos aloj : this.alojamientos) {
-                sql += "firma = \""+ aloj.getFirma()+"\"";
-
-                if(this.alojamientos.get(this.alojamientos.size()-1) != aloj){
-                    sql += " OR ";
-                }
-            }
-            sql += ";";
-            System.out.println();
-            System.out.println(sql);*/
-
 
         } catch (SAXException | ParserConfigurationException | IOException e) {
             e.printStackTrace();

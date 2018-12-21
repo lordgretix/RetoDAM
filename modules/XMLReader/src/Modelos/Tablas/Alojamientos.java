@@ -33,7 +33,7 @@ public class Alojamientos extends Traducciones{
                         String latlong, String municipio, String territorio, String json) {
         super(idTraduccion, idAlojamiento, idioma, tipo, resumen, descripcion);
         this.id = id;
-        this.nombre = nombre;
+        this.nombre = cleanString(nombre);
         this.localidad = localidad;
         this.telefono = telefono;
         this.direccion = direccion;
@@ -66,7 +66,7 @@ public class Alojamientos extends Traducciones{
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombre = cleanString(nombre);
     }
 
     public String getLocalidad() {

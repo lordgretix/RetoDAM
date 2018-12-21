@@ -1,13 +1,12 @@
 package Modelos.Conexion;
 
 import Modelos.Tablas.Alojamientos;
-
+import com.mysql.cj.jdbc.exceptions.CommunicationsException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class Conexion {
 
@@ -27,10 +26,16 @@ public class Conexion {
         this.database = database;
         this.host = host;
         this.port = port;
+        this.nativeLookAndFeel();
     }
 
     public void openConexion() throws SQLException {
-        conexion = DriverManager.getConnection("jdbc:mysql://" + this.host + ":" + this.port + "/" + this.database + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", this.user, this.password);
+        try{
+            conexion = DriverManager.getConnection("jdbc:mysql://" + this.host + ":" + this.port + "/" + this.database + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", this.user, this.password);
+        }catch (CommunicationsException e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error: " + e.getErrorCode(), JOptionPane.ERROR_MESSAGE);
+            System.exit(-1);
+        }
     }
 
     public void closeConexion() {
@@ -149,6 +154,15 @@ public class Conexion {
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error: " + e.getErrorCode(), JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void nativeLookAndFeel(){
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
         }
     }
 
