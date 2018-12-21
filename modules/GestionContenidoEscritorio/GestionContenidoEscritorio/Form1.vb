@@ -6,6 +6,7 @@ Public Class Form1
 
     Public cnn1 As MySqlConnection
     Dim iniciado As Boolean = False
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim connStr As String = "server=kasserver.synology.me;database=reto_gp3;port=3307;user id=gp3;password=IFZWx5dEG12yt8QW;"
         cnn1 = New MySqlConnection(connStr)
@@ -24,9 +25,10 @@ Public Class Form1
     Private Sub validarUserPasswor()
         Dim sql As String
         sql = "select * from usuarios where nombre='" & Me.TextUser.Text & "'"
-
+        'sentencia que buscar el usuario introducido en la base de datos
+        Me.lab_fail.Visible = False
+        Me.Label_acceso.Visible = False
         Try
-            ' MsgBox(sql)
             cnn1.Open()
             Dim cmd As New MySqlCommand(sql, cnn1)
 
@@ -42,24 +44,28 @@ Public Class Form1
 
             While data.Read
                 If data.HasRows = True Then
-                    ' MsgBox(data(1).ToString)
-                    If data(1).ToString = Me.TextUser.Text Then
-                        If data(2).ToString = Me.TextPassword.Text Then
-                            'MsgBox("Sucsess")
+                    'tiene ese usuario registrado
+                    If data(2).ToString = Me.TextPassword.Text Then
+                        'contraseña conicide
+                        If data(3).ToString = 2 Then
+                            'acepta si eres el rolo de editor de contenido
                             iniciado = True
                             Me.lab_fail.Visible = False
+                            Me.Label_acceso.Visible = False
                         Else
-                            'la contraseña no corresponde al usuario
-                            Me.lab_fail.Visible = True
+                            'el role asignado a ese usuario no tiene acceso a gestional contenidos
+                            Me.Label_acceso.Visible = True
+                            iniciado = False
                         End If
 
                     Else
-                        'no existe el usuario
+                        'la contraseña no corresponde al usuario
                         Me.lab_fail.Visible = True
                     End If
 
                 Else
-                    '   MsgBox("Login Failed! Please try again or contact support")
+                Me.lab_fail.Visible = True
+                    'no esta registrado ese usuario en la base de datos
                 End If
 
             End While
@@ -81,7 +87,7 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btn_inicial.Click
         validarUserPasswor()
         If iniciado Then
-            Adm_User.Show()
+            Adm_Content.Show()
             Me.Hide()
         End If
 
