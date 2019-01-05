@@ -8,7 +8,7 @@
         </Console>
 
         <RollingFile name="file">
-            <FileName>logs/Controladores.Main.log</FileName>
+            <FileName>logs/GestionUsuarios.log</FileName>
             <FilePattern>logs/$${date:y-MM}/app-%d{MM-dd-yyyy}-%i.log.zip</FilePattern>
             <PatternLayout>
                 <Pattern>[%d{yyyy-MM-dd HH:mm:ss}] [%p] %m%n</Pattern>
