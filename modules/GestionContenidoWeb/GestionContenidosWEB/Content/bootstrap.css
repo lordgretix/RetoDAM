@@ -5633,7 +5633,8 @@ body.modal-open,
   z-index: 1040;
   display: none;
   overflow: auto;
-  overflow-y: scroll;
+  overflow-y: scroll; 
+  height:auto;
 }
 
 .modal.fade .modal-dialog {
@@ -5710,6 +5711,8 @@ body.modal-open,
 .modal-body {
   position: relative;
   padding: 20px;
+  height:600px;
+  /* .............. */
 }
 
 .modal-footer {

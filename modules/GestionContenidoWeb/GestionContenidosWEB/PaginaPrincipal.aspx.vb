@@ -53,10 +53,16 @@ Partial Class PaginaPrincipal
 
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
         'GridViewRow(fila = Me.GridView1.SelectedRow)
-        Me.TextBox2.Text = GridView1.SelectedRow.Cells(2).Text
-        Me.TextBox1.Text = GridView1.SelectedRow.Cells(2).Text
-        Me.TextBox3.Text = GridView1.SelectedRow.Cells(3).Text
-        Me.TextBox4.Text = GridView1.SelectedRow.Cells(4).Text
+        Me.TextBox1.Text = GridView1.SelectedRow.Cells(2).Text 'tipo
+
+        Me.tbNombre.Text = GridView1.SelectedRow.Cells(3).Text
+        Me.tbDireccion.Text = GridView1.SelectedRow.Cells(4).Text
+        Me.tbTelefono.Text = GridView1.SelectedRow.Cells(5).Text
+        Me.tbEmail.Text = GridView1.SelectedRow.Cells(6).Text
+        Me.tbWeb.Text = GridView1.SelectedRow.Cells(7).Text
+        Me.tbMunicipio.Text = GridView1.SelectedRow.Cells(8).Text
+        'Me.tbCP.Text=GridView1.SelectedRow.Cells(7).Text
+
     End Sub
 
 End Class
