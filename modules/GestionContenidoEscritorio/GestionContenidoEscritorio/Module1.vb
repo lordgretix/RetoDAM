@@ -13,7 +13,7 @@ Module Module1
             End If
             ' MsgBox("connecting...")
             cnn1.Open()
-            MsgBox("hecho")
+            'MsgBox("hecho")
         Catch ex As Exception
             ' MsgBox(ex.Message) Este msgbox saler algo rao
         
@@ -28,7 +28,7 @@ Module Module1
             End If
             ' MsgBox("connecting...")
             cnn1.Close()
-            MsgBox("cerrado")
+            ' MsgBox("cerrado")
         Catch ex As Exception
             ' MsgBox(ex.Message)
        

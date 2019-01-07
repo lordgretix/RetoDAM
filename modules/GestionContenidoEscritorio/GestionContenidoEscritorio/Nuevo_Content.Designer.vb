@@ -66,7 +66,7 @@ Partial Class Nuevo_Content
         'Text_tel
         '
         Me.Text_tel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_tel.Location = New System.Drawing.Point(164, 89)
+        Me.Text_tel.Location = New System.Drawing.Point(164, 79)
         Me.Text_tel.Name = "Text_tel"
         Me.Text_tel.Size = New System.Drawing.Size(202, 24)
         Me.Text_tel.TabIndex = 1
@@ -74,7 +74,7 @@ Partial Class Nuevo_Content
         'Text_direccion
         '
         Me.Text_direccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_direccion.Location = New System.Drawing.Point(164, 129)
+        Me.Text_direccion.Location = New System.Drawing.Point(164, 108)
         Me.Text_direccion.Name = "Text_direccion"
         Me.Text_direccion.Size = New System.Drawing.Size(202, 24)
         Me.Text_direccion.TabIndex = 2
@@ -82,7 +82,7 @@ Partial Class Nuevo_Content
         'Text_email
         '
         Me.Text_email.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_email.Location = New System.Drawing.Point(164, 171)
+        Me.Text_email.Location = New System.Drawing.Point(164, 137)
         Me.Text_email.Name = "Text_email"
         Me.Text_email.Size = New System.Drawing.Size(202, 24)
         Me.Text_email.TabIndex = 3
@@ -90,7 +90,7 @@ Partial Class Nuevo_Content
         'Text_web
         '
         Me.Text_web.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_web.Location = New System.Drawing.Point(164, 210)
+        Me.Text_web.Location = New System.Drawing.Point(164, 168)
         Me.Text_web.Name = "Text_web"
         Me.Text_web.Size = New System.Drawing.Size(202, 24)
         Me.Text_web.TabIndex = 4
@@ -109,7 +109,7 @@ Partial Class Nuevo_Content
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(55, 96)
+        Me.Label2.Location = New System.Drawing.Point(55, 86)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(70, 18)
         Me.Label2.TabIndex = 6
@@ -119,7 +119,7 @@ Partial Class Nuevo_Content
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(55, 136)
+        Me.Label3.Location = New System.Drawing.Point(55, 115)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(75, 18)
         Me.Label3.TabIndex = 7
@@ -129,7 +129,7 @@ Partial Class Nuevo_Content
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(55, 178)
+        Me.Label4.Location = New System.Drawing.Point(55, 144)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 18)
         Me.Label4.TabIndex = 8
@@ -139,7 +139,7 @@ Partial Class Nuevo_Content
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(55, 217)
+        Me.Label5.Location = New System.Drawing.Point(55, 175)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(43, 18)
         Me.Label5.TabIndex = 9
@@ -149,7 +149,7 @@ Partial Class Nuevo_Content
         '
         Me.Check_certificado.AutoSize = True
         Me.Check_certificado.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Check_certificado.Location = New System.Drawing.Point(64, 251)
+        Me.Check_certificado.Location = New System.Drawing.Point(58, 205)
         Me.Check_certificado.Name = "Check_certificado"
         Me.Check_certificado.Size = New System.Drawing.Size(98, 22)
         Me.Check_certificado.TabIndex = 10
@@ -160,7 +160,7 @@ Partial Class Nuevo_Content
         '
         Me.Check_club.AutoSize = True
         Me.Check_club.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Check_club.Location = New System.Drawing.Point(194, 251)
+        Me.Check_club.Location = New System.Drawing.Point(188, 205)
         Me.Check_club.Name = "Check_club"
         Me.Check_club.Size = New System.Drawing.Size(57, 22)
         Me.Check_club.TabIndex = 11
@@ -171,7 +171,7 @@ Partial Class Nuevo_Content
         '
         Me.Check_restaurante.AutoSize = True
         Me.Check_restaurante.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Check_restaurante.Location = New System.Drawing.Point(288, 251)
+        Me.Check_restaurante.Location = New System.Drawing.Point(282, 205)
         Me.Check_restaurante.Name = "Check_restaurante"
         Me.Check_restaurante.Size = New System.Drawing.Size(107, 22)
         Me.Check_restaurante.TabIndex = 12
@@ -182,7 +182,7 @@ Partial Class Nuevo_Content
         '
         Me.Check_tienda.AutoSize = True
         Me.Check_tienda.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Check_tienda.Location = New System.Drawing.Point(64, 284)
+        Me.Check_tienda.Location = New System.Drawing.Point(58, 238)
         Me.Check_tienda.Name = "Check_tienda"
         Me.Check_tienda.Size = New System.Drawing.Size(71, 22)
         Me.Check_tienda.TabIndex = 13
@@ -193,7 +193,7 @@ Partial Class Nuevo_Content
         '
         Me.Check_caravana.AutoSize = True
         Me.Check_caravana.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Check_caravana.Location = New System.Drawing.Point(194, 284)
+        Me.Check_caravana.Location = New System.Drawing.Point(188, 238)
         Me.Check_caravana.Name = "Check_caravana"
         Me.Check_caravana.Size = New System.Drawing.Size(117, 22)
         Me.Check_caravana.TabIndex = 14
@@ -204,7 +204,7 @@ Partial Class Nuevo_Content
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(55, 322)
+        Me.Label6.Location = New System.Drawing.Point(55, 274)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(82, 18)
         Me.Label6.TabIndex = 15
@@ -214,7 +214,7 @@ Partial Class Nuevo_Content
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(55, 356)
+        Me.Label7.Location = New System.Drawing.Point(55, 308)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(104, 18)
         Me.Label7.TabIndex = 16
@@ -224,7 +224,7 @@ Partial Class Nuevo_Content
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(55, 389)
+        Me.Label8.Location = New System.Drawing.Point(55, 341)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(65, 18)
         Me.Label8.TabIndex = 17
@@ -234,7 +234,7 @@ Partial Class Nuevo_Content
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(55, 425)
+        Me.Label9.Location = New System.Drawing.Point(55, 372)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(75, 18)
         Me.Label9.TabIndex = 18
@@ -244,7 +244,7 @@ Partial Class Nuevo_Content
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(55, 454)
+        Me.Label10.Location = New System.Drawing.Point(55, 403)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(72, 18)
         Me.Label10.TabIndex = 19
@@ -254,7 +254,7 @@ Partial Class Nuevo_Content
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(55, 485)
+        Me.Label11.Location = New System.Drawing.Point(54, 434)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(50, 18)
         Me.Label11.TabIndex = 20
@@ -264,7 +264,7 @@ Partial Class Nuevo_Content
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(55, 511)
+        Me.Label12.Location = New System.Drawing.Point(53, 465)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(45, 18)
         Me.Label12.TabIndex = 21
@@ -273,7 +273,7 @@ Partial Class Nuevo_Content
         'Text_capacity
         '
         Me.Text_capacity.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_capacity.Location = New System.Drawing.Point(164, 314)
+        Me.Text_capacity.Location = New System.Drawing.Point(164, 266)
         Me.Text_capacity.Name = "Text_capacity"
         Me.Text_capacity.Size = New System.Drawing.Size(202, 24)
         Me.Text_capacity.TabIndex = 22
@@ -281,7 +281,7 @@ Partial Class Nuevo_Content
         'Text_CP
         '
         Me.Text_CP.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_CP.Location = New System.Drawing.Point(164, 348)
+        Me.Text_CP.Location = New System.Drawing.Point(164, 300)
         Me.Text_CP.Name = "Text_CP"
         Me.Text_CP.Size = New System.Drawing.Size(202, 24)
         Me.Text_CP.TabIndex = 23
@@ -289,7 +289,7 @@ Partial Class Nuevo_Content
         'Text_lat
         '
         Me.Text_lat.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_lat.Location = New System.Drawing.Point(164, 381)
+        Me.Text_lat.Location = New System.Drawing.Point(164, 333)
         Me.Text_lat.Name = "Text_lat"
         Me.Text_lat.Size = New System.Drawing.Size(202, 24)
         Me.Text_lat.TabIndex = 24
@@ -297,7 +297,7 @@ Partial Class Nuevo_Content
         'Text_muni
         '
         Me.Text_muni.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_muni.Location = New System.Drawing.Point(164, 417)
+        Me.Text_muni.Location = New System.Drawing.Point(164, 364)
         Me.Text_muni.Name = "Text_muni"
         Me.Text_muni.Size = New System.Drawing.Size(202, 24)
         Me.Text_muni.TabIndex = 25
@@ -305,7 +305,7 @@ Partial Class Nuevo_Content
         'Text_terri
         '
         Me.Text_terri.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_terri.Location = New System.Drawing.Point(164, 446)
+        Me.Text_terri.Location = New System.Drawing.Point(164, 395)
         Me.Text_terri.Name = "Text_terri"
         Me.Text_terri.Size = New System.Drawing.Size(202, 24)
         Me.Text_terri.TabIndex = 26
@@ -313,7 +313,7 @@ Partial Class Nuevo_Content
         'Text_firma
         '
         Me.Text_firma.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_firma.Location = New System.Drawing.Point(164, 477)
+        Me.Text_firma.Location = New System.Drawing.Point(163, 426)
         Me.Text_firma.Name = "Text_firma"
         Me.Text_firma.Size = New System.Drawing.Size(202, 24)
         Me.Text_firma.TabIndex = 27
@@ -321,7 +321,7 @@ Partial Class Nuevo_Content
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(164, 503)
+        Me.TextBox1.Location = New System.Drawing.Point(162, 457)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(202, 24)
         Me.TextBox1.TabIndex = 28
@@ -348,7 +348,7 @@ Partial Class Nuevo_Content
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(484, 633)
+        Me.ClientSize = New System.Drawing.Size(733, 633)
         Me.Controls.Add(Me.Btn_add)
         Me.Controls.Add(Me.Btn_limpiar)
         Me.Controls.Add(Me.TextBox1)
@@ -381,7 +381,7 @@ Partial Class Nuevo_Content
         Me.Controls.Add(Me.Text_tel)
         Me.Controls.Add(Me.Text_nombre)
         Me.Name = "Nuevo_Content"
-        Me.Text = "Nuevo_Content"
+        Me.Text = " "
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
