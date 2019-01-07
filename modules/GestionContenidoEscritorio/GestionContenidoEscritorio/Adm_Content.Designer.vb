@@ -40,7 +40,6 @@ Partial Class Adm_Content
         Me.FondoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuinesSomosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CopyRightToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Btn_buscar = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -52,7 +51,7 @@ Partial Class Adm_Content
         Me.DataGridView1.Location = New System.Drawing.Point(35, 133)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(582, 316)
+        Me.DataGridView1.Size = New System.Drawing.Size(822, 399)
         Me.DataGridView1.TabIndex = 0
         '
         'Label1
@@ -67,7 +66,7 @@ Partial Class Adm_Content
         '
         'Btn_add
         '
-        Me.Btn_add.Location = New System.Drawing.Point(513, 92)
+        Me.Btn_add.Location = New System.Drawing.Point(752, 100)
         Me.Btn_add.Name = "Btn_add"
         Me.Btn_add.Size = New System.Drawing.Size(104, 23)
         Me.Btn_add.TabIndex = 2
@@ -79,7 +78,7 @@ Partial Class Adm_Content
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem1, Me.InicioToolStripMenuItem, Me.SettingToolStripMenuItem, Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(692, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(883, 24)
         Me.MenuStrip1.TabIndex = 3
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -117,25 +116,25 @@ Partial Class Adm_Content
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.BuscarToolStripMenuItem.Text = "&Buscar"
         '
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.NuevoToolStripMenuItem.Text = "&Nuevo"
         '
         'ModificarToolStripMenuItem
         '
         Me.ModificarToolStripMenuItem.Name = "ModificarToolStripMenuItem"
-        Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.ModificarToolStripMenuItem.Text = "&Modificar"
         '
         'ActualizarToolStripMenuItem
         '
         Me.ActualizarToolStripMenuItem.Name = "ActualizarToolStripMenuItem"
-        Me.ActualizarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ActualizarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.ActualizarToolStripMenuItem.Text = "&Actualizar"
         '
         'SettingToolStripMenuItem
@@ -159,7 +158,7 @@ Partial Class Adm_Content
         '
         'AyudaToolStripMenuItem
         '
-        Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuinesSomosToolStripMenuItem, Me.CopyRightToolStripMenuItem})
+        Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuinesSomosToolStripMenuItem})
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
         Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
         Me.AyudaToolStripMenuItem.Text = "&Ayuda"
@@ -167,18 +166,12 @@ Partial Class Adm_Content
         'QuinesSomosToolStripMenuItem
         '
         Me.QuinesSomosToolStripMenuItem.Name = "QuinesSomosToolStripMenuItem"
-        Me.QuinesSomosToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.QuinesSomosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.QuinesSomosToolStripMenuItem.Text = "&Quines somos"
-        '
-        'CopyRightToolStripMenuItem
-        '
-        Me.CopyRightToolStripMenuItem.Name = "CopyRightToolStripMenuItem"
-        Me.CopyRightToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
-        Me.CopyRightToolStripMenuItem.Text = "&Copy Right"
         '
         'Btn_buscar
         '
-        Me.Btn_buscar.Location = New System.Drawing.Point(513, 63)
+        Me.Btn_buscar.Location = New System.Drawing.Point(752, 71)
         Me.Btn_buscar.Name = "Btn_buscar"
         Me.Btn_buscar.Size = New System.Drawing.Size(75, 23)
         Me.Btn_buscar.TabIndex = 4
@@ -189,7 +182,7 @@ Partial Class Adm_Content
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(692, 522)
+        Me.ClientSize = New System.Drawing.Size(883, 544)
         Me.Controls.Add(Me.Btn_buscar)
         Me.Controls.Add(Me.Btn_add)
         Me.Controls.Add(Me.Label1)
@@ -223,6 +216,5 @@ Partial Class Adm_Content
     Friend WithEvents FondoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AyudaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents QuinesSomosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CopyRightToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Btn_buscar As System.Windows.Forms.Button
 End Class
