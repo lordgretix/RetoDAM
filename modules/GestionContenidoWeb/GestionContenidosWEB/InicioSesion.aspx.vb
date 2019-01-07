@@ -34,7 +34,7 @@ Partial Class InicioSesion
                 Me.lblMensaje.Visible = True
                 Me.lblMensaje.Text = "Usuario no identificado"
             Else
-                Response.Redirect("PaginaPrincipal.aspx")
+                Response.Redirect("Default.aspx")
                 Me.lblMensaje.Visible = False
             End If
         Catch ex As Exception
@@ -55,63 +55,7 @@ Partial Class InicioSesion
         End Try
     End Sub
 
-    Private Sub validarUserPasswor()
-        'Dim iniciado As Boolean = False
-        'Dim sql As String
-        'sql = "select * from usuarios where nombre='" & Me.TextUser.Text & "'"
 
-        'Try
-        '    ' MsgBox(sql)
-        '    cnn1.Open()
-        '    Dim cmd As New MySqlCommand(sql, cnn1)
-
-        '    Dim str As String = ""
-        '    Dim data As MySqlDataReader
-        '    Dim adapter As New MySqlDataAdapter
-        '    Dim command As New MySqlCommand
-
-        '    command.CommandText = sql
-        '    command.Connection = cnn1
-        '    adapter.SelectCommand = command
-        '    data = command.ExecuteReader()
-
-        '    While data.Read
-        '        If data.HasRows = True Then
-        '            ' MsgBox(data(1).ToString)
-        '            If data(1).ToString = Me.TextUser.Text Then
-        '                If data(2).ToString = Me.TextPassword.Text Then
-        '                    'MsgBox("Sucsess")
-        '                    iniciado = True
-        '                    Me.lab_fail.Visible = False
-        '                Else
-        '                    'la contraseña no corresponde al usuario
-        '                    Me.lab_fail.Visible = True
-        '                End If
-
-        '            Else
-        '                'no existe el usuario
-        '                Me.lab_fail.Visible = True
-        '            End If
-
-        '        Else
-        '            '   MsgBox("Login Failed! Please try again or contact support")
-        '        End If
-
-        '    End While
-        'Catch ex As Exception
-
-        'Finally
-        '    Try
-        '        If cnn1.State = ConnectionState.Open Then
-        '            cnn1.Close()
-        '        End If
-        '    Catch ex As Exception
-
-        '    End Try
-
-        'End Try
-
-    End Sub
     Function encriptar(pass As String) As String
         Dim SHA256 As SHA256 = SHA256Managed.Create()
         Dim hash() As Byte = SHA256.ComputeHash(Encoding.UTF8.GetBytes(pass))

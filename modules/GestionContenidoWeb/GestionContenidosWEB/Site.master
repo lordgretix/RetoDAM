@@ -52,7 +52,8 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" runat="server" href="~/">Nombre de la aplicación</a>
+                        <a class="navbar-brand" runat="server" href="~/">
+                            <img style="height:20px;" src="imagenes/enkasa.png" /></a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
@@ -63,7 +64,7 @@
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="Editar.aspx"><span class="glyphicon glyphicon-pencil"></span> Editar</a></li>
+                                    <li><a href="Editar.aspx"><span class="glyphicon glyphicon-pencil"></span> Añadir</a></li>
                                     <li><a href="InicioSesion.aspx" role="button" onclick="Cerrar"><span class="glyphicon glyphicon-log-in"></span> Cerrar sesion</a></li>
                                 </ul>
                             </AnonymousTemplate>
