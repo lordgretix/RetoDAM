@@ -17,7 +17,7 @@ public class NuevoUsuario{
     private JFrame owner;
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - o6863265urykmpdv
+    // Generated using JFormDesigner Evaluation license - taxpkhqr
     private JLabel lblUsuario;
     private JTextField txtUsuario;
     private JLabel lblPassword;
@@ -37,7 +37,7 @@ public class NuevoUsuario{
     private void initComponents() {
         dialog = new JDialog();
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - o6863265urykmpdv
+        // Generated using JFormDesigner Evaluation license - taxpkhqr
         lblUsuario = new JLabel();
         txtUsuario = new JTextField();
         lblPassword = new JLabel();
@@ -51,6 +51,7 @@ public class NuevoUsuario{
         //======== this ========
         dialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
         dialog.setTitle("Nuevo Usuario");
+        dialog.setResizable(false);
         Container contentPane = dialog.getContentPane();
 
         //---- lblUsuario ----
@@ -94,20 +95,20 @@ public class NuevoUsuario{
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(50, 50, 50)
+                    .addGap(30, 30, 30)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                        .addComponent(comboRol, GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                        .addComponent(comboRol)
                         .addComponent(lblRol)
                         .addComponent(lblPasswordRepeat)
-                        .addComponent(txtPasswordRepeat, GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                        .addComponent(txtPasswordRepeat)
                         .addComponent(lblPassword)
                         .addComponent(lblUsuario)
                         .addComponent(txtUsuario, GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                        .addComponent(txtPassword, GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                        .addComponent(txtPassword)
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addGap(25, 25, 25)
                             .addComponent(btnCrear, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(49, Short.MAX_VALUE))
+                    .addGap(30, 30, 30))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
@@ -130,10 +131,10 @@ public class NuevoUsuario{
                     .addComponent(comboRol, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
                     .addComponent(btnCrear, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(20, Short.MAX_VALUE))
+                    .addContainerGap(25, Short.MAX_VALUE))
         );
         dialog.pack();
-        dialog.setLocationRelativeTo(getOwner());
+        dialog.setLocationRelativeTo(null);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 

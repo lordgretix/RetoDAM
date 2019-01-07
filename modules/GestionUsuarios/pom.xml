@@ -84,6 +84,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.clojars.nakkaya/darcula -->
+        <dependency>
+            <groupId>org.clojars.nakkaya</groupId>
+            <artifactId>darcula</artifactId>
+            <version>1.0.0</version>
+        </dependency>
 
     </dependencies>
 
