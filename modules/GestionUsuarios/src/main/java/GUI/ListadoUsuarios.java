@@ -4,6 +4,7 @@
 
 package GUI;
 
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -14,9 +15,10 @@ import java.awt.*;
 public class ListadoUsuarios{
 
     private JFrame frame;
+    private JLabel lblLoading;
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - o6863265urykmpdv
+    // Generated using JFormDesigner Evaluation license - taxpkhqr
     private JScrollPane scrollPane1;
     private JTable tableUsuarios;
     private JTextField txtBuscar;
@@ -35,8 +37,9 @@ public class ListadoUsuarios{
         this.nativeLookAndFeel();
         frame = new JFrame();
         frame.setMinimumSize(new Dimension(550, 300));
+
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - o6863265urykmpdv
+        // Generated using JFormDesigner Evaluation license - taxpkhqr
         scrollPane1 = new JScrollPane();
         tableUsuarios = new JTable();
         txtBuscar = new JTextField();
@@ -55,8 +58,6 @@ public class ListadoUsuarios{
             //---- tableUsuarios ----
             tableUsuarios.setModel(new DefaultTableModel(
                 new Object[][] {
-                    {"aaa", "bbb", "ccc"},
-                    {"ddd", "eee", "fff"},
                 },
                 new String[] {
                     "ID", "Usuario", "Rol"
@@ -84,7 +85,7 @@ public class ListadoUsuarios{
         btnModificar.setFont(new Font("Tahoma", Font.BOLD, 12));
 
         //---- btnAdd ----
-        btnAdd.setText("Añadir");
+        btnAdd.setText("A\u00f1adir");
         btnAdd.setFont(new Font("Tahoma", Font.BOLD, 12));
         btnAdd.setForeground(new Color(0, 199, 24));
 
@@ -132,24 +133,14 @@ public class ListadoUsuarios{
                     .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
                     .addGap(20, 20, 20))
         );
+
         frame.pack();
         frame.setLocationRelativeTo(null);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
+
     }
 
     private void nativeLookAndFeel(){
-
-        /*for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-            System.out.println(info.getName());
-            if ("Darcula".equals(info.getName())) {
-                try {
-                    UIManager.setLookAndFeel(info.getClassName());
-                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-                    e.printStackTrace();
-                }
-                break;
-            }
-        }*/
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -164,6 +155,14 @@ public class ListadoUsuarios{
 
     public void setFrame(JFrame frame) {
         this.frame = frame;
+    }
+
+    public JLabel getLblLoading() {
+        return lblLoading;
+    }
+
+    public void setLblLoading(JLabel lblLoading) {
+        this.lblLoading = lblLoading;
     }
 
     public JScrollPane getScrollPane1() {

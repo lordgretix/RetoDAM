@@ -8,15 +8,19 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+
+import java.util.ArrayList;
 import java.util.List;
+
+import static Controladores.Main.LOGGER;
 
 public class UsuariosMannager {
 
     private static SessionFactory factory = null;
     private static UsuariosMannager manager;
-    private static Usuarios loggedUser;
+    private static Usuarios loggedUser = null;
 
-    public static UsuariosMannager createMannager(){
+    public static UsuariosMannager getInstance(){
 
         if(factory == null){
             manager = new UsuariosMannager();
@@ -36,6 +40,7 @@ public class UsuariosMannager {
 
     public boolean logIn(String username, String password){
         Session session = factory.openSession();
+
         Transaction trans = null;
 
         boolean logged = false;
@@ -51,6 +56,9 @@ public class UsuariosMannager {
             if (users.size()>0){
                 loggedUser = (Usuarios) users.get(0);
                 logged = true;
+                LOGGER.info("Session Iniciada (Username: "+username+")");
+            }else {
+                LOGGER.info("Fallo de inicio de session. Usuario ("+username+") o contraseña invalidos");
             }
 
             trans.commit();
@@ -65,17 +73,25 @@ public class UsuariosMannager {
         return logged;
     }
 
-    public void listUsers(){
+    public boolean isLogged(){
+        return loggedUser != null;
+    }
+
+    public ArrayList<Usuarios> getUsers(){
+
+        ArrayList<Usuarios> usuarios = new ArrayList<Usuarios>();
+
         Session session = factory.openSession();
         Transaction trans = null;
 
         try{
             trans = session.beginTransaction();
-            List users = session.createQuery("FROM Usuarios WHERE nombre = 'prueba' AND password = 'papapa'").list();
+            List ul = session.createQuery("FROM Usuarios WHERE role>1").list();
 
-            for(Object obj : users){
+            for(Object obj : ul){
                 Usuarios user = (Usuarios) obj;
-                Main.LOGGER.log(Level.INFO, user.getNombre()+" - "+user.getPassword());
+                LOGGER.log(Level.INFO, user.getNombre()+" - "+user.getPassword());
+                usuarios.add(user);
             }
 
             trans.commit();
@@ -87,5 +103,37 @@ public class UsuariosMannager {
             session.close();
         }
 
+        return usuarios;
+    }
+
+    public Usuarios getUser(int id){
+        Session session = factory.openSession();
+        Transaction trans = null;
+
+        Usuarios user=null;
+
+        try{
+            trans = session.beginTransaction();
+            user = (Usuarios) session.createQuery("FROM Usuarios WHERE id="+id).list().get(0);
+
+            trans.commit();
+
+        }catch (HibernateException e) {
+            if (trans!=null) trans.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return user;
+    }
+
+    public String getRoleAsString(int role){
+        switch (role){
+            case 1: return "Admin";
+            case 2: return "Moderador";
+            case 3: return "Usuario";
+        }
+        return null;
     }
 }
