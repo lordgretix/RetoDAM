@@ -4,6 +4,9 @@
 
 package GUI;
 
+import Modelos.Tablas.Usuarios.Usuarios;
+import org.apache.commons.codec.digest.DigestUtils;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -15,6 +18,7 @@ public class NuevoUsuario{
 
     private JDialog dialog;
     private JFrame owner;
+    private Usuarios user;
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - taxpkhqr
@@ -31,6 +35,7 @@ public class NuevoUsuario{
 
     public NuevoUsuario(JFrame owner) {
         this.owner = owner;
+        this.user = new Usuarios();
         initComponents();
     }
 
@@ -138,6 +143,12 @@ public class NuevoUsuario{
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
+    private void refreshUser(){
+        this.user.setNombre(this.txtUsuario.getText());
+        this.user.setPassword(DigestUtils.sha256Hex(String.valueOf(this.getTxtPassword().getPassword())));
+        this.user.setRole(this.comboRol.getSelectedIndex()+2);
+    }
+
     public JDialog getDialog() {
         return dialog;
     }
@@ -225,4 +236,14 @@ public class NuevoUsuario{
     public void setBtnCrear(JButton btnCrear) {
         this.btnCrear = btnCrear;
     }
+
+    public Usuarios getUser() {
+        refreshUser();
+        return user;
+    }
+
+    public void setUser(Usuarios user) {
+        this.user = user;
+    }
+
 }

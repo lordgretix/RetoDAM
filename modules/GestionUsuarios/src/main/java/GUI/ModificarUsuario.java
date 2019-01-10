@@ -99,7 +99,7 @@ public class ModificarUsuario {
             lblRol.setFont(new Font("Tahoma", Font.BOLD, 14));
 
             //---- btnModificar ----
-            btnModificar.setText("Crear Usuario");
+            btnModificar.setText("Modificar Usuario");
             btnModificar.setFont(new Font("Tahoma", Font.BOLD, 14));
 
             //---- cbPassword ----

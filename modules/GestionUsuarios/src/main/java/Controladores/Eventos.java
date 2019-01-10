@@ -9,9 +9,10 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.util.Arrays;
 
 
@@ -19,6 +20,17 @@ public class Eventos {
 
     public static void setLogginListenners(@NotNull Loggin window){
 
+        KeyAdapter enter = new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode()==KeyEvent.VK_ENTER){
+                    window.getBtnLogIn().doClick();
+                }
+            }
+        };
+        window.getTxtUsuario().addKeyListener(enter);
+        window.getTxtPassword().addKeyListener(enter);
+        window.getBtnLogIn().addKeyListener(enter);
         // Boton Login
         window.getBtnLogIn().addActionListener(e -> {
 
@@ -40,6 +52,14 @@ public class Eventos {
 
     public static void setListadoUsuariosListenners(ListadoUsuarios window){
 
+        WindowAdapter wAdapter = new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                refreshUsersTable(window);
+                super.windowClosed(e);
+            }
+        } ;
+
 
         window.getBtnBuscar().addActionListener(e -> {
 
@@ -48,7 +68,11 @@ public class Eventos {
         window.getBtnAdd().addActionListener(e -> {
 
             NuevoUsuario nu = new NuevoUsuario(window.getFrame());
+            setNuevoUsuarioListenners(nu);
             nu.getDialog().setVisible(true);
+
+
+            nu.getDialog().addWindowListener(wAdapter);
 
         });
 
@@ -63,13 +87,7 @@ public class Eventos {
             mu.getComboRol().setSelectedIndex(user.getRole()-2);
             mu.getDialog().setVisible(true);
 
-            mu.getDialog().addWindowListener(new WindowAdapter() {
-                @Override
-                public void windowClosed(WindowEvent e) {
-                    refreshUsersTable(window);
-                    super.windowClosed(e);
-                }
-            });
+            mu.getDialog().addWindowListener(wAdapter);
         });
 
         window.getBtnBorrar().addActionListener(e -> {
@@ -107,14 +125,28 @@ public class Eventos {
 
 
         window.getBtnModificar().addActionListener(e -> {
-            if(!Arrays.equals(window.getTxtPassword().getPassword(), window.getTxtPasswordRepeat().getPassword())){
-                System.out.println("Las contraseñas no coinciden");
-                JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+            if(!isValidPassword(window.getTxtPassword().getPassword(), window.getTxtPasswordRepeat().getPassword())) return;
             UsuariosMannager.getInstance().updateUsuario(window.getUser());
             window.getDialog().dispose();
         });
+    }
+
+    public static void setNuevoUsuarioListenners(NuevoUsuario window){
+
+        window.getBtnCrear().addActionListener(e -> {
+            if(!isValidPassword(window.getTxtPassword().getPassword(), window.getTxtPasswordRepeat().getPassword())) return;
+            UsuariosMannager.getInstance().createUsuario(window.getUser());
+            window.getDialog().dispose();
+        });
+
+    }
+
+    private static boolean isValidPassword(char[] password , char[] repeat){
+        boolean valid;
+        if(!(valid=Arrays.equals(password, repeat))){
+            JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        return valid;
     }
 
 
