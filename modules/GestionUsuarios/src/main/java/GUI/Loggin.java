@@ -3,8 +3,6 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 
-import com.bulenkov.darcula.DarculaLaf;
-
 public class Loggin {
 
     private JFrame frame;

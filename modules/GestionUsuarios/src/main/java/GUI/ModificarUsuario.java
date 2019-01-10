@@ -4,6 +4,9 @@
 
 package GUI;
 
+import Modelos.Tablas.Usuarios.Usuarios;
+import org.apache.commons.codec.digest.DigestUtils;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -13,10 +16,12 @@ import javax.swing.GroupLayout;
  */
 public class ModificarUsuario {
 
-    private JDialog dialog;
     private JFrame owner;
+    private Usuarios user;
+    private String oldPassword;
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - taxpkhqr
+    private JDialog dialog;
     private JLabel lblUsuario;
     private JTextField txtUsuario;
     private JLabel lblPassword;
@@ -26,6 +31,7 @@ public class ModificarUsuario {
     private JComboBox<String> comboRol;
     private JLabel lblRol;
     private JButton btnModificar;
+    private JCheckBox cbPassword;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     public ModificarUsuario(JFrame owner) {
@@ -33,16 +39,11 @@ public class ModificarUsuario {
         initComponents();
     }
 
-
-    private void createUIComponents() {
-        // TODO: add custom component creation code here
-    }
-
     private void initComponents() {
 
-        dialog = new JDialog(owner);
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - taxpkhqr
+        dialog = new JDialog(owner);
         lblUsuario = new JLabel();
         txtUsuario = new JTextField();
         lblPassword = new JLabel();
@@ -52,14 +53,14 @@ public class ModificarUsuario {
         comboRol = new JComboBox<>();
         lblRol = new JLabel();
         btnModificar = new JButton();
-        JCheckBox cbPassword = new JCheckBox();
+        cbPassword = new JCheckBox();
 
-        //======== this2 ========
+        //======== dialog ========
         {
             dialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
             dialog.setTitle("Modificar Usuario");
             dialog.setResizable(false);
-            Container this2ContentPane = dialog.getContentPane();
+            Container dialogContentPane = dialog.getContentPane();
 
             //---- lblUsuario ----
             lblUsuario.setText("Nombre de Usuario");
@@ -105,31 +106,31 @@ public class ModificarUsuario {
             cbPassword.setText("Cambiar Contrase\u00f1a");
             cbPassword.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
-            GroupLayout this2ContentPaneLayout = new GroupLayout(this2ContentPane);
-            this2ContentPane.setLayout(this2ContentPaneLayout);
-            this2ContentPaneLayout.setHorizontalGroup(
-                this2ContentPaneLayout.createParallelGroup()
-                    .addGroup(this2ContentPaneLayout.createSequentialGroup()
+            GroupLayout dialogContentPaneLayout = new GroupLayout(dialogContentPane);
+            dialogContentPane.setLayout(dialogContentPaneLayout);
+            dialogContentPaneLayout.setHorizontalGroup(
+                dialogContentPaneLayout.createParallelGroup()
+                    .addGroup(dialogContentPaneLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addGroup(this2ContentPaneLayout.createParallelGroup()
+                        .addGroup(dialogContentPaneLayout.createParallelGroup()
                             .addComponent(cbPassword)
                             .addComponent(lblUsuario)
                             .addComponent(txtUsuario, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
-                            .addGroup(this2ContentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                            .addGroup(dialogContentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                 .addComponent(comboRol)
                                 .addComponent(lblRol)
                                 .addComponent(lblPasswordRepeat)
                                 .addComponent(txtPasswordRepeat)
                                 .addComponent(lblPassword)
                                 .addComponent(txtPassword, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
-                                .addGroup(this2ContentPaneLayout.createSequentialGroup()
+                                .addGroup(dialogContentPaneLayout.createSequentialGroup()
                                     .addGap(25, 25, 25)
                                     .addComponent(btnModificar, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(30, Short.MAX_VALUE))
             );
-            this2ContentPaneLayout.setVerticalGroup(
-                this2ContentPaneLayout.createParallelGroup()
-                    .addGroup(this2ContentPaneLayout.createSequentialGroup()
+            dialogContentPaneLayout.setVerticalGroup(
+                dialogContentPaneLayout.createParallelGroup()
+                    .addGroup(dialogContentPaneLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(lblUsuario)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -158,12 +159,15 @@ public class ModificarUsuario {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
-    public JDialog getDialog() {
-        return dialog;
-    }
+    private void refreshUser(){
+        this.user.setNombre(this.txtUsuario.getText());
+        if(this.getCbPassword().isSelected()){
+            this.user.setPassword(DigestUtils.sha256Hex(String.valueOf(this.getTxtPassword().getPassword())));
+        }else{
+            this.user.setPassword(this.oldPassword);
+        }
 
-    public void setDialog(JDialog dialog) {
-        this.dialog = dialog;
+        this.user.setRole(this.comboRol.getSelectedIndex()+2);
     }
 
     public JFrame getOwner() {
@@ -172,6 +176,32 @@ public class ModificarUsuario {
 
     public void setOwner(JFrame owner) {
         this.owner = owner;
+    }
+
+    public Usuarios getUser() {
+        refreshUser();
+        return user;
+    }
+
+    public void setUser(Usuarios user) {
+        this.user = user;
+        this.oldPassword = user.getPassword();
+    }
+
+    public String getOldPassword() {
+        return oldPassword;
+    }
+
+    public void setOldPassword(String oldPassword) {
+        this.oldPassword = oldPassword;
+    }
+
+    public JDialog getDialog() {
+        return dialog;
+    }
+
+    public void setDialog(JDialog dialog) {
+        this.dialog = dialog;
     }
 
     public JLabel getLblUsuario() {
@@ -244,5 +274,13 @@ public class ModificarUsuario {
 
     public void setBtnModificar(JButton btnModificar) {
         this.btnModificar = btnModificar;
+    }
+
+    public JCheckBox getCbPassword() {
+        return cbPassword;
+    }
+
+    public void setCbPassword(JCheckBox cbPassword) {
+        this.cbPassword = cbPassword;
     }
 }

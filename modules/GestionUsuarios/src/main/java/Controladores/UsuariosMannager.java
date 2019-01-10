@@ -48,6 +48,7 @@ public class UsuariosMannager {
         System.out.println("Password: "+password);
 
         System.out.println(DigestUtils.sha256Hex(password));
+        password = DigestUtils.sha256Hex(password);
 
         try{
             trans = session.beginTransaction();
@@ -135,5 +136,39 @@ public class UsuariosMannager {
             case 3: return "Usuario";
         }
         return null;
+    }
+
+    public void updateUsuario(Usuarios user){
+        Session session = factory.openSession();
+        Transaction trans = null;
+
+        try{
+            trans = session.beginTransaction();
+            session.update(user);
+            trans.commit();
+
+        }catch (HibernateException e) {
+            if (trans!=null) trans.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+
+    public void createUsuario(Usuarios user){
+        Session session = factory.openSession();
+        Transaction trans = null;
+
+        try{
+            trans = session.beginTransaction();
+            session.save(user);
+            trans.commit();
+
+        }catch (HibernateException e) {
+            if (trans!=null) trans.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
     }
 }

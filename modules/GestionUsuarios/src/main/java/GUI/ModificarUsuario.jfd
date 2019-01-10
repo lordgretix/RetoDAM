@@ -4,16 +4,19 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:30:p, par l {comp checkBox1:::p::p, comp label1:::p::p, comp textField1::l:p:200:p, par l:l::p {comp comboBox1:::::x, comp label4:::p::p, comp label3:::p::p, comp passwordField2:::::x, comp label2:::p::p, comp passwordField1::l:p:200:p, seq l {space :p:25:p, comp button1:::p:150:p}}}, space ::30:x}}"
-			"$verticalGroup": "par l {seq {space :p:20:p, comp label1:::p::p, space :::p, comp textField1:::p::p, space s:::p, comp checkBox1:::p::p, space s:::p, comp label2:::p::p, space :::p, comp passwordField1:::p::p, space s:::p, comp label3:::p::p, space :6:6:p, comp passwordField2:::p::p, space s:::p, comp label4:::p::p, space :::p, comp comboBox1:::p::p, space s:::p, comp button1:::p:30:p, space ::25:x}}"
+			"$horizontalGroup": "par l {seq l {space :p:30:p, par l {comp cbPassword:::p::p, comp lblUsuario:::p::p, comp txtUsuario::l:p:200:p, par l:l::p {comp comboRol:::::x, comp lblRol:::p::p, comp lblPasswordRepeat:::p::p, comp txtPasswordRepeat:::::x, comp lblPassword:::p::p, comp txtPassword::l:p:200:p, seq l {space :p:25:p, comp btnModificar:::p:150:p}}}, space ::30:x}}"
+			"$verticalGroup": "par l {seq {space :p:20:p, comp lblUsuario:::p::p, space :::p, comp txtUsuario:::p::p, space s:::p, comp cbPassword:::p::p, space s:::p, comp lblPassword:::p::p, space :::p, comp txtPassword:::p::p, space s:::p, comp lblPasswordRepeat:::p::p, space :6:6:p, comp txtPasswordRepeat:::p::p, space s:::p, comp lblRol:::p::p, space :::p, comp comboRol:::p::p, space s:::p, comp btnModificar:::p:30:p, space ::25:x}}"
 		} ) {
-			name: "this2"
+			name: "dialog"
 			"modalityType": enum java.awt.Dialog$ModalityType APPLICATION_MODAL
 			"title": "Modificar Usuario"
 			"$locationPolicy": 1
 			"resizable": false
+			auxiliary() {
+				"JavaCodeGenerator.customCreateCode": "new JDialog(owner);"
+			}
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label1"
+				name: "lblUsuario"
 				"text": "Nombre de Usuario"
 				"font": &Font0 new java.awt.Font( "Tahoma", 1, 14 )
 				auxiliary() {
@@ -21,14 +24,14 @@ new FormModel {
 				}
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField1"
+				name: "txtUsuario"
 				"font": new java.awt.Font( "Tahoma", 0, 14 )
 				auxiliary() {
 					"JavaCodeGenerator.variableName": "txtUsuario"
 				}
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label2"
+				name: "lblPassword"
 				"text": "Contraseña"
 				"font": #Font0
 				auxiliary() {
@@ -36,7 +39,7 @@ new FormModel {
 				}
 			} )
 			add( new FormComponent( "javax.swing.JPasswordField" ) {
-				name: "passwordField1"
+				name: "txtPassword"
 				"font": new java.awt.Font( "Tahoma", 0, 14 )
 				"enabled": false
 				"text": "password"
@@ -45,7 +48,7 @@ new FormModel {
 				}
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label3"
+				name: "lblPasswordRepeat"
 				"text": "Repetir Contraseña"
 				"font": #Font0
 				auxiliary() {
@@ -53,7 +56,7 @@ new FormModel {
 				}
 			} )
 			add( new FormComponent( "javax.swing.JPasswordField" ) {
-				name: "passwordField2"
+				name: "txtPasswordRepeat"
 				"font": new java.awt.Font( "Tahoma", 0, 14 )
 				"enabled": false
 				"text": "password"
@@ -62,7 +65,7 @@ new FormModel {
 				}
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
-				name: "comboBox1"
+				name: "comboRol"
 				"font": new java.awt.Font( "Tahoma", 0, 14 )
 				"model": new javax.swing.DefaultComboBoxModel {
 					selectedItem: "Moderador"
@@ -74,7 +77,7 @@ new FormModel {
 				}
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label4"
+				name: "lblRol"
 				"text": "Rol"
 				"font": #Font0
 				auxiliary() {
@@ -82,7 +85,7 @@ new FormModel {
 				}
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
+				name: "btnModificar"
 				"text": "Crear Usuario"
 				"font": new java.awt.Font( "Tahoma", 1, 14 )
 				auxiliary() {
@@ -90,12 +93,11 @@ new FormModel {
 				}
 			} )
 			add( new FormComponent( "javax.swing.JCheckBox" ) {
-				name: "checkBox1"
+				name: "cbPassword"
 				"text": "Cambiar Contraseña"
 				"font": new java.awt.Font( "Tahoma", 0, 14 )
 				auxiliary() {
 					"JavaCodeGenerator.variableName": "cbPassword"
-					"JavaCodeGenerator.variableLocal": true
 				}
 			} )
 		}, new FormLayoutConstraints( null ) {
