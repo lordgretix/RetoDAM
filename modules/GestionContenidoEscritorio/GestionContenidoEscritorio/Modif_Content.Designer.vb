@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Nuevo_Content
+Partial Class Modif_Content
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -51,8 +51,8 @@ Partial Class Nuevo_Content
         Me.Text_terri = New System.Windows.Forms.TextBox()
         Me.Text_firma = New System.Windows.Forms.TextBox()
         Me.Text_json = New System.Windows.Forms.TextBox()
-        Me.Btn_limpiar = New System.Windows.Forms.Button()
-        Me.Btn_add = New System.Windows.Forms.Button()
+        Me.Btn_Volver = New System.Windows.Forms.Button()
+        Me.Btn_save = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Text_Tipo = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -333,25 +333,25 @@ Partial Class Nuevo_Content
         Me.Text_json.Size = New System.Drawing.Size(202, 24)
         Me.Text_json.TabIndex = 28
         '
-        'Btn_limpiar
+        'Btn_Volver
         '
-        Me.Btn_limpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_limpiar.Location = New System.Drawing.Point(64, 568)
-        Me.Btn_limpiar.Name = "Btn_limpiar"
-        Me.Btn_limpiar.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_limpiar.TabIndex = 29
-        Me.Btn_limpiar.Text = "Limpiar"
-        Me.Btn_limpiar.UseVisualStyleBackColor = True
+        Me.Btn_Volver.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Volver.Location = New System.Drawing.Point(64, 568)
+        Me.Btn_Volver.Name = "Btn_Volver"
+        Me.Btn_Volver.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_Volver.TabIndex = 29
+        Me.Btn_Volver.Text = "Volver"
+        Me.Btn_Volver.UseVisualStyleBackColor = True
         '
-        'Btn_add
+        'Btn_save
         '
-        Me.Btn_add.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_add.Location = New System.Drawing.Point(676, 581)
-        Me.Btn_add.Name = "Btn_add"
-        Me.Btn_add.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_add.TabIndex = 30
-        Me.Btn_add.Text = "Añadir"
-        Me.Btn_add.UseVisualStyleBackColor = True
+        Me.Btn_save.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_save.Location = New System.Drawing.Point(676, 581)
+        Me.Btn_save.Name = "Btn_save"
+        Me.Btn_save.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_save.TabIndex = 30
+        Me.Btn_save.Text = "Guardar"
+        Me.Btn_save.UseVisualStyleBackColor = True
         '
         'Label13
         '
@@ -418,7 +418,7 @@ Partial Class Nuevo_Content
         Me.Label16.TabIndex = 35
         Me.Label16.Text = "Descripcion:"
         '
-        'Nuevo_Content
+        'Modif_Content
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -431,8 +431,8 @@ Partial Class Nuevo_Content
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Text_Tipo)
         Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Btn_add)
-        Me.Controls.Add(Me.Btn_limpiar)
+        Me.Controls.Add(Me.Btn_save)
+        Me.Controls.Add(Me.Btn_Volver)
         Me.Controls.Add(Me.Text_json)
         Me.Controls.Add(Me.Text_firma)
         Me.Controls.Add(Me.Text_terri)
@@ -462,7 +462,7 @@ Partial Class Nuevo_Content
         Me.Controls.Add(Me.Text_direccion)
         Me.Controls.Add(Me.Text_tel)
         Me.Controls.Add(Me.Text_nombre)
-        Me.Name = "Nuevo_Content"
+        Me.Name = "Modif_Content"
         Me.Text = " "
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -497,8 +497,8 @@ Partial Class Nuevo_Content
     Friend WithEvents Text_terri As System.Windows.Forms.TextBox
     Friend WithEvents Text_firma As System.Windows.Forms.TextBox
     Friend WithEvents Text_json As System.Windows.Forms.TextBox
-    Friend WithEvents Btn_limpiar As System.Windows.Forms.Button
-    Friend WithEvents Btn_add As System.Windows.Forms.Button
+    Friend WithEvents Btn_Volver As System.Windows.Forms.Button
+    Friend WithEvents Btn_save As System.Windows.Forms.Button
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Text_Tipo As System.Windows.Forms.TextBox
     Friend WithEvents Label14 As System.Windows.Forms.Label

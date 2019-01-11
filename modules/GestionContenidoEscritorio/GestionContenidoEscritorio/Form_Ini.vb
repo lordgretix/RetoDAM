@@ -4,7 +4,7 @@ Imports MySql.Data.MySqlClient
 Imports System.Security.Cryptography
 Imports System.Text
 
-Public Class Form1
+Public Class Form_Ini
 
     Public cnn1 As MySqlConnection
     Dim iniciado As Boolean = False
@@ -66,6 +66,7 @@ Public Class Form1
                             iniciado = True
                             Me.lab_fail.Visible = False
                             Me.Label_acceso.Visible = False
+                            usuario = Me.TextUser.Text
                         Else
                             'el role asignado a ese usuario no tiene acceso a gestional contenidos
                             Me.Label_acceso.Visible = True

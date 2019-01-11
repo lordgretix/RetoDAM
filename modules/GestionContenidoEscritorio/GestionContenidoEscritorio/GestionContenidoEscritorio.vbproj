@@ -91,14 +91,21 @@
     <Compile Include="Adm_Content.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="alojamiento.vb" />
+    <Compile Include="Form_Ini.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Form_Ini.Designer.vb">
+      <DependentUpon>Form_Ini.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module1.vb" />
+    <Compile Include="Modif_Content.Designer.vb">
+      <DependentUpon>Modif_Content.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modif_Content.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mod_coneccion.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -125,8 +132,11 @@
     <EmbeddedResource Include="Adm_Content.resx">
       <DependentUpon>Adm_Content.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Form_Ini.resx">
+      <DependentUpon>Form_Ini.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modif_Content.resx">
+      <DependentUpon>Modif_Content.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

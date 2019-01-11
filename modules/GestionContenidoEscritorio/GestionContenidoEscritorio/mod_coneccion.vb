@@ -1,8 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Module Module1
+Module mod_coneccion
     Public cnn1 As MySqlConnection
-
+    Public usuario As String = ""
     Dim connStr As String = "server=kasserver.synology.me;database=reto_gp3;port=3307;user id=gp3;password=IFZWx5dEG12yt8QW;"
     Public Sub conectar()
         cnn1 = New MySqlConnection(connStr)
@@ -16,7 +16,7 @@ Module Module1
             'MsgBox("hecho")
         Catch ex As Exception
             ' MsgBox(ex.Message) Este msgbox saler algo rao
-        
+
         End Try
     End Sub
     Public Sub desconectar()
@@ -31,7 +31,7 @@ Module Module1
             ' MsgBox("cerrado")
         Catch ex As Exception
             ' MsgBox(ex.Message)
-       
+
         End Try
     End Sub
 End Module
