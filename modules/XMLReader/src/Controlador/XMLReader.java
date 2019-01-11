@@ -66,10 +66,9 @@ public class XMLReader {
             case "signatura": aloj.setFirma(value); break;
             case "store": aloj.setTienda(Boolean.valueOf(value)); break;
             case "capacity": aloj.setCapacidad(Integer.valueOf(value)); break;
-            case "postalcode": aloj.setCodPostal(value); break;
+            case "postalcode": aloj.setCodPostal(Integer.valueOf(value)); break;
             case "latitudelongitude": aloj.setLatlong(value); break;
-            case "municipality": aloj.setMunicipio(value); break;
-            case "territory": aloj.setTerritorio(value); break;
+            case "municipalitycode": aloj.setCodPoblacion(Integer.valueOf(value)); break;
         }
 
     }

@@ -50,12 +50,12 @@ public class Conexion {
 
         try {
             PreparedStatement st = this.conexion.prepareStatement("INSERT INTO `alojamientos` " +
-                    "(nombre, telefono, direccion, email, web, certificado, club, restaurante, tienda, autocaravana, capacidad, cod_postal, latlong, municipio, territorio, firma) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE " +
-                    "nombre = ?, telefono = ?, direccion = ?, email = ?, web = ?, certificado = ?, club = ?, restaurante = ?, tienda = ?, autocaravana = ?, capacidad = ?, cod_postal = ?, latlong = ?, municipio = ?, territorio = ?, firma = ?");
+                    "(nombre, telefono, direccion, email, web, certificado, club, restaurante, tienda, autocaravana, capacidad, cod_postal, latlong, cod_poblacion, firma) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE " +
+                    "nombre = ?, telefono = ?, direccion = ?, email = ?, web = ?, certificado = ?, club = ?, restaurante = ?, tienda = ?, autocaravana = ?, capacidad = ?, cod_postal = ?, latlong = ?, cod_poblacion = ?, firma = ?");
 
             int i = 1;
-            int x = i + 16;
+            int x = i + 15;
 
             //Nombre
             st.setString(i++, alojamiento.getNombre());
@@ -102,20 +102,16 @@ public class Conexion {
             st.setInt(x++, alojamiento.getCapacidad());
 
             //Codigo postal
-            st.setString(i++, alojamiento.getCodPostal());
-            st.setString(x++, alojamiento.getCodPostal());
+            st.setInt(i++, alojamiento.getCodPostal());
+            st.setInt(x++, alojamiento.getCodPostal());
 
             //Latitud y longitud
             st.setString(i++, alojamiento.getLatlong());
             st.setString(x++, alojamiento.getLatlong());
 
-            //Municipio
-            st.setString(i++, alojamiento.getMunicipio());
-            st.setString(x++, alojamiento.getMunicipio());
-
-            //Territorio
-            st.setString(i++, alojamiento.getTerritorio());
-            st.setString(x++, alojamiento.getTerritorio());
+            //Codigo de poblacion
+            st.setInt(i++, alojamiento.getCodPoblacion());
+            st.setInt(x++, alojamiento.getCodPoblacion());
 
             //Firma
             st.setString(i, alojamiento.getFirma());

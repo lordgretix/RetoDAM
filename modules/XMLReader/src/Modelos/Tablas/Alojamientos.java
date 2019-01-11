@@ -16,10 +16,9 @@ public class Alojamientos extends Traducciones{
     private String firma;
     private boolean tienda = false;
     private int capacidad = 0;
-    private String codPostal = "";
+    private int codPostal;
     private String latlong = "";
-    private String municipio = "";
-    private String territorio = "";
+    private int codPoblacion;
 	private String json;
 
     public Alojamientos() {
@@ -29,11 +28,11 @@ public class Alojamientos extends Traducciones{
     public Alojamientos(int idTraduccion, int idAlojamiento, String idioma, String tipo, String resumen,
                         String descripcion, int id, String nombre, String localidad, String telefono, String direccion,
                         boolean certificado, String email, String web, boolean restaurante, boolean club,
-                        boolean autocarabana, String firma, boolean tienda, int capacidad, String codPostal,
-                        String latlong, String municipio, String territorio, String json) {
+                        boolean autocarabana, String firma, boolean tienda, int capacidad, int codPostal,
+                        String latlong, int codPoblacion, String json) {
         super(idTraduccion, idAlojamiento, idioma, tipo, resumen, descripcion);
         this.id = id;
-        this.nombre = cleanString(nombre);
+        this.nombre = nombre;
         this.localidad = localidad;
         this.telefono = telefono;
         this.direccion = direccion;
@@ -48,17 +47,16 @@ public class Alojamientos extends Traducciones{
         this.capacidad = capacidad;
         this.codPostal = codPostal;
         this.latlong = latlong;
-        this.municipio = municipio;
-        this.territorio = territorio;
+        this.codPoblacion = codPoblacion;
         this.json = json;
     }
 
-    public int getIdTraduccion() {
+    public int getId() {
         return id;
     }
 
-    public void setIdTraduccion(int idTraduccion) {
-        this.id = idTraduccion;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -66,7 +64,7 @@ public class Alojamientos extends Traducciones{
     }
 
     public void setNombre(String nombre) {
-        this.nombre = cleanString(nombre);
+        this.nombre = nombre;
     }
 
     public String getLocalidad() {
@@ -101,38 +99,6 @@ public class Alojamientos extends Traducciones{
         this.certificado = certificado;
     }
 
-    public boolean isClub() {
-        return club;
-    }
-
-    public void setClub(boolean club) {
-        this.club = club;
-    }
-
-    public boolean isRestaurante() {
-        return restaurante;
-    }
-
-    public void setRestaurante(boolean restaurante) {
-        this.restaurante = restaurante;
-    }
-
-    public boolean isAutocarabana() {
-        return autocarabana;
-    }
-
-    public void setAutocarabana(boolean autocarabana) {
-        this.autocarabana = autocarabana;
-    }
-
-    public boolean isTienda() {
-        return tienda;
-    }
-
-    public void setTienda(boolean tienda) {
-        this.tienda = tienda;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -149,6 +115,46 @@ public class Alojamientos extends Traducciones{
         this.web = web;
     }
 
+    public boolean isRestaurante() {
+        return restaurante;
+    }
+
+    public void setRestaurante(boolean restaurante) {
+        this.restaurante = restaurante;
+    }
+
+    public boolean isClub() {
+        return club;
+    }
+
+    public void setClub(boolean club) {
+        this.club = club;
+    }
+
+    public boolean isAutocarabana() {
+        return autocarabana;
+    }
+
+    public void setAutocarabana(boolean autocarabana) {
+        this.autocarabana = autocarabana;
+    }
+
+    public String getFirma() {
+        return firma;
+    }
+
+    public void setFirma(String firma) {
+        this.firma = firma;
+    }
+
+    public boolean isTienda() {
+        return tienda;
+    }
+
+    public void setTienda(boolean tienda) {
+        this.tienda = tienda;
+    }
+
     public int getCapacidad() {
         return capacidad;
     }
@@ -157,11 +163,11 @@ public class Alojamientos extends Traducciones{
         this.capacidad = capacidad;
     }
 
-    public String getCodPostal() {
+    public int getCodPostal() {
         return codPostal;
     }
 
-    public void setCodPostal(String codPostal) {
+    public void setCodPostal(int codPostal) {
         this.codPostal = codPostal;
     }
 
@@ -173,28 +179,12 @@ public class Alojamientos extends Traducciones{
         this.latlong = latlong;
     }
 
-    public String getMunicipio() {
-        return municipio;
+    public int getCodPoblacion() {
+        return codPoblacion;
     }
 
-    public void setMunicipio(String municipio) {
-        this.municipio = municipio;
-    }
-
-    public String getTerritorio() {
-        return territorio;
-    }
-
-    public void setTerritorio(String territorio) {
-        this.territorio = territorio;
-    }
-
-    public String getFirma() {
-        return firma;
-    }
-
-    public void setFirma(String firma) {
-        this.firma = firma;
+    public void setCodPoblacion(int codPoblacion) {
+        this.codPoblacion = codPoblacion;
     }
 
     public String getJson() {
