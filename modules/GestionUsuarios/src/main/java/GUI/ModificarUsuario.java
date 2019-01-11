@@ -8,6 +8,8 @@ import Modelos.Tablas.Usuarios.Usuarios;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.awt.*;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
@@ -76,7 +78,7 @@ public class ModificarUsuario {
             //---- txtPassword ----
             txtPassword.setFont(new Font("Tahoma", Font.PLAIN, 14));
             txtPassword.setEnabled(false);
-            txtPassword.setText("password");
+            txtPassword.addFocusListener(this.passwordPlaceholder());
 
             //---- lblPasswordRepeat ----
             lblPasswordRepeat.setText("Repetir Contrase\u00f1a");
@@ -85,7 +87,7 @@ public class ModificarUsuario {
             //---- txtPasswordRepeat ----
             txtPasswordRepeat.setFont(new Font("Tahoma", Font.PLAIN, 14));
             txtPasswordRepeat.setEnabled(false);
-            txtPasswordRepeat.setText("password");
+            txtPasswordRepeat.addFocusListener(this.passwordPlaceholder());
 
             //---- comboRol ----
             comboRol.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -282,5 +284,32 @@ public class ModificarUsuario {
 
     public void setCbPassword(JCheckBox cbPassword) {
         this.cbPassword = cbPassword;
+    }
+
+    private FocusListener passwordPlaceholder(){
+
+        return new FocusListener() {
+            boolean hasChange = false;
+
+            @Override
+            public void focusGained(FocusEvent e) {
+                System.out.println("FocusGained: "+hasChange);
+                if(!hasChange){
+                    ((JPasswordField) e.getComponent()).setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                System.out.println("FocusLost: "+hasChange);
+                if(((JPasswordField)e.getComponent()).getPassword().length==0){
+                    ((JPasswordField) e.getComponent()).setText("password");
+                    e.getComponent().setForeground(Color.LIGHT_GRAY);
+                }else{
+                    hasChange = true;
+                    e.getComponent().setForeground(Color.BLACK);
+                }
+            }
+        };
     }
 }

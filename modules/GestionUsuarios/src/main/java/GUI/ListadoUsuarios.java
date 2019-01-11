@@ -41,7 +41,12 @@ public class ListadoUsuarios{
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - taxpkhqr
         scrollPane1 = new JScrollPane();
-        tableUsuarios = new JTable();
+        tableUsuarios = new JTable(){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
         txtBuscar = new JTextField();
         lblBuscar = new JLabel();
         btnBuscar = new JButton();

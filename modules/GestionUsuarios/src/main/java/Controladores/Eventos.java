@@ -9,10 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.util.Arrays;
 
 
@@ -92,6 +89,15 @@ public class Eventos {
 
         window.getBtnBorrar().addActionListener(e -> {
 
+        });
+
+        window.getTableUsuarios().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if(e.getClickCount()==2){
+                    window.getBtnModificar().doClick();
+                }
+            }
         });
 
         refreshUsersTable(window);
