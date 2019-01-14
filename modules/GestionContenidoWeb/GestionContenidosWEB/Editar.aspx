@@ -8,59 +8,78 @@
             <br />
 
             <div class="form-row">
-                <div class="form-group col-md-5">
-                    <label for="inputPassword4">Nombre</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Nombre">
+                <div class="form-group col-md-4">
+                    <label for="inputNombre">Nombre</label>
+                    <asp:TextBox ID="tbNombre" runat="server" type="text" class="form-control" placeholder="Nombre"></asp:TextBox>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    <asp:TextBox ID="tbEmail" runat="server" type="email" class="form-control" placeholder="Email"></asp:TextBox>
                 </div>
                 <div class="form-group col-md-2">
-                    <label for="inputEmail4">Telefono</label>
-                    <input type="tel" class="form-control" id="inputTelefono">
+                    <label for="inputTelefono">Telefono</label>
+                    <asp:TextBox ID="tbTelefono" runat="server" type="tel" class="form-control"></asp:TextBox>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputAddress">Direccion</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    <asp:TextBox ID="tbDireccion" runat="server" type="text" class="form-control" placeholder="1234 Gran Vía "></asp:TextBox>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputAddress2">Web</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="web">
+                    <asp:TextBox ID="tbWeb" runat="server" type="text" class="form-control" placeholder="web"></asp:TextBox>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="inputCity">Municipio</label>
-                    <input type="text" class="form-control" id="inputCity">
+                    <label for="inputMunicipio">Municipio</label>
+                     <asp:DropDownList ID="DDL_municipio" runat="server" class="form-control">
+                    </asp:DropDownList>
+                   
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputState">Territorio</label>
-                    <select id="inputState" class="form-control">
+                    <asp:DropDownList ID="DDL_provincia" runat="server" class="form-control" AutoPostBack="True">
+                        <asp:ListItem>Bizkaia</asp:ListItem>
+                        <asp:ListItem>Gipuzkoa</asp:ListItem>
+                        <asp:ListItem Value="Araba/Alava">Araba/Alava</asp:ListItem>
+                    </asp:DropDownList>
+                    <%--  <select id="inputState" class="form-control">
                         <option selected>Bizkaia</option>
                         <option>Gipuzkoa</option>
                         <option>Alava</option>
-                    </select>
+                    </select>--%>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="inputZip">Codigo Postal</label>
-                    <input type="text" class="form-control" id="inputZip">
+                    <asp:DropDownList ID="DDL_CP" runat="server" class="form-control">
+                        <asp:ListItem></asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
+
+                    </asp:DropDownList>
+                    <%--<asp:TextBox ID="tbCP" runat="server" type="text" class="form-control"  placeholder="00000"></asp:TextBox>--%>
                 </div>
                 <div class="form-group col-md-2">
                     <label for="inputEmail4">Capacidad</label>
-                    <input type="number" class="form-control" id="inputCapacidad">
+                    <%--<input type="number" class="form-control" id="inputCapacidad">--%>
+                    <asp:TextBox ID="tbCapacidad" runat="server" type="number" class="form-control"></asp:TextBox>
                 </div>
             </div>
             <div class="form-row">
-                 <div class="form-group col-md-10">
-                      <label for="">Descripción</label>
-                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
-                    
+                <div class="form-group col-md-6">
+                    <label for="">Resumen</label>
+                    <%--<textarea class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>--%>
+                    <asp:TextBox ID="TextBox1" runat="server" class="form-control" Rows="7"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Descripción</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea2" rows="6"></textarea>
+
                 </div>
             </div>
 
@@ -93,7 +112,8 @@
         <div class="form-row">
             <br />
 
-            <button type="submit" class="btn btn-primary">Añadir</button>
+            <%--<button type="submit" class="btn btn-primary">Añadir</button>--%>
+            <asp:Button ID="btnInsertar" runat="server" Text="Añadir" type="submit" class="btn btn-primary" />
             <br />
             <br />
         </div>

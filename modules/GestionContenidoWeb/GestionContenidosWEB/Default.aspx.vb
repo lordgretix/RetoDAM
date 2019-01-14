@@ -18,9 +18,9 @@ Partial Class _Default
 
     Private Sub mostrarTabla()
         Dim sql As String
-        Dim mistring As String = ""
-        'sql = "SELECT * FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
-        sql = "SELECT a.id,t.tipo,a.nombre,a.direccion,a.telefono,a.email,a.web,a.municipio,a.territorio FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
+        'Dim mistring As String = ""
+        sql = "SELECT * FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
+        'sql = "SELECT a.id,t.tipo,a.nombre,a.direccion,a.telefono,a.email,a.web,a.municipio,a.territorio FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
         Dim commando As New MySqlCommand(sql, Conexion.cnn1)
         Dim adapter As New MySqlDataAdapter(commando)
 

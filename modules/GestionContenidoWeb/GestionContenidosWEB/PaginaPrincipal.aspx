@@ -3,12 +3,17 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <br />
-    <asp:Label ID="Label1" runat="server" Text="Buscar:  "></asp:Label><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><br />
+    <i class="fa fa-fw fa-search"></i>
+    <asp:TextBox ID="tb_Buscar" runat="server" placeholder="Buscar.."></asp:TextBox>&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="btn_Buscar" runat="server" Text="Buscar" class="btn btn-primary" />
+    <br />
+    <asp:Label ID="lb_Contador" runat="server" Text=""></asp:Label>
     <br />
 
     <asp:Button ID="Button1" runat="server" Text="Mostrar Tabla" class="btn btn-primary" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="Button2" runat="server" Text="Mapa" class="btn btn-primary" />
+    <br />
     <br />
     <asp:Panel ID="Panel1" runat="server" Visible="False">
         <br />
@@ -28,11 +33,12 @@
 
         <section>
             <!-- Button to Open the Modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            <%--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                 Actualizar
-            </button>
-            <asp:Button ID="Button4" runat="server" Text="Insertar" class="btn btn-primary" />
-            <asp:Button ID="Button5" runat="server" Text="Eliminar" class="btn btn-primary" />
+            </button>--%>
+            <asp:Button ID="Button5" runat="server" Text="Actualizar"  class="btn btn-primary" data-toggle="modal" data-target="#myModal" />
+            <asp:Button ID="btnInsertar" runat="server" Text="Insertar" class="btn btn-primary" />
+            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" class="btn btn-primary" />
             <!-- The Modal -->
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog modal-dialog-centered">
@@ -56,7 +62,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Email</label>
-                                        <asp:TextBox ID="tbEmail" runat="server" ype="email" class="form-control" placeholder="Email"></asp:TextBox>
+                                        <asp:TextBox ID="tbEmail" runat="server" type="email" class="form-control" placeholder="Email"></asp:TextBox>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="inputEmail4">Telefono</label>
@@ -132,7 +138,7 @@
                         <div class="modal-footer">
 
                             <%-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Actualizar</button>--%>
-                            <asp:Button ID="Button3" runat="server" Text="Actualizar" class="btn btn-secondary" data-dismiss="modal" />
+                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" class="btn btn-secondary"  />
                         </div>
 
                     </div>
