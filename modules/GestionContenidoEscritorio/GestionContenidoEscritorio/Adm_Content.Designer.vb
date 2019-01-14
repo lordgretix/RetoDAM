@@ -37,9 +37,6 @@ Partial Class Adm_Content
         Me.IdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CastellanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EuskeraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SettingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FontToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FondoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Btn_buscar = New System.Windows.Forms.Button()
         Me.Label_num = New System.Windows.Forms.Label()
         Me.Btn_Count = New System.Windows.Forms.Button()
@@ -77,7 +74,7 @@ Partial Class Adm_Content
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem1, Me.InicioToolStripMenuItem, Me.SettingToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem1, Me.InicioToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(883, 24)
@@ -94,18 +91,18 @@ Partial Class Adm_Content
         'UserToolStripMenuItem
         '
         Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.UserToolStripMenuItem.Text = "&User"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(139, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
         '
         'CerrarSesionToolStripMenuItem
         '
         Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
-        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CerrarSesionToolStripMenuItem.Text = "&Cerrar sesion"
         '
         'InicioToolStripMenuItem
@@ -151,25 +148,6 @@ Partial Class Adm_Content
         Me.EuskeraToolStripMenuItem.Name = "EuskeraToolStripMenuItem"
         Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
         Me.EuskeraToolStripMenuItem.Text = "&Euskera"
-        '
-        'SettingToolStripMenuItem
-        '
-        Me.SettingToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontToolStripMenuItem, Me.FondoToolStripMenuItem})
-        Me.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem"
-        Me.SettingToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
-        Me.SettingToolStripMenuItem.Text = "&Setting"
-        '
-        'FontToolStripMenuItem
-        '
-        Me.FontToolStripMenuItem.Name = "FontToolStripMenuItem"
-        Me.FontToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
-        Me.FontToolStripMenuItem.Text = "&Formato de Texto"
-        '
-        'FondoToolStripMenuItem
-        '
-        Me.FondoToolStripMenuItem.Name = "FondoToolStripMenuItem"
-        Me.FondoToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
-        Me.FondoToolStripMenuItem.Text = "&Fondo"
         '
         'Btn_buscar
         '
@@ -231,9 +209,6 @@ Partial Class Adm_Content
     Friend WithEvents BuscarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NuevoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ActualizarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SettingToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents FontToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents FondoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Btn_buscar As System.Windows.Forms.Button
     Friend WithEvents IdiomaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CastellanoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

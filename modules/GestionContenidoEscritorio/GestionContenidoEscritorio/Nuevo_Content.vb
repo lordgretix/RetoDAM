@@ -21,4 +21,18 @@ Public Class Nuevo_Content
         commando.CommandText = sql
         adapter.SelectCommand = commando
     End Sub
+
+    Private Sub Text_firma_TextChanged(sender As Object, e As EventArgs) Handles Text_firma.TextChanged
+
+    End Sub
+
+    Private Sub CerrarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesionToolStripMenuItem.Click
+        Me.Hide()
+        Form_Ini.Show()
+        Form_Ini.iniciado = False
+    End Sub
+
+    Private Sub UserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserToolStripMenuItem.Click
+        MsgBox("Usuario iniciado: " & usuario)
+    End Sub
 End Class

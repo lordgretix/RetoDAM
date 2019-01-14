@@ -95,6 +95,7 @@ Public Class Adm_Content
     Private Sub CerrarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesionToolStripMenuItem.Click
         Me.Hide()
         Form_Ini.Show()
+        Form_Ini.iniciado = False
     End Sub
 
     Private Sub UserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserToolStripMenuItem.Click
@@ -105,9 +106,7 @@ Public Class Adm_Content
         Dim fila As Integer
         fila = Me.DataGridView1.CurrentRow.Index
         Dim id As Integer = Me.DataGridView1.Item(0, fila).Value
-
-
-
+        Modif_Content.Load_view(id)
     End Sub
 
 End Class

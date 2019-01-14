@@ -7,7 +7,7 @@ Imports System.Text
 Public Class Form_Ini
 
     Public cnn1 As MySqlConnection
-    Dim iniciado As Boolean = False
+    Public iniciado As Boolean = False
     Private Function encriptarPassword() As String
         Dim SHA256 As SHA256 = SHA256Managed.Create()
         Dim hash() As Byte = SHA256.ComputeHash(Encoding.UTF8.GetBytes(Me.TextPassword.Text))
@@ -107,4 +107,5 @@ Public Class Form_Ini
         End If
 
     End Sub
+
 End Class
