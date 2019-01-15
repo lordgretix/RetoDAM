@@ -92,6 +92,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="alojamiento.vb" />
+    <Compile Include="Filtros.Designer.vb">
+      <DependentUpon>Filtros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Filtros.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form_Ini.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Adm_Content.resx">
       <DependentUpon>Adm_Content.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filtros.resx">
+      <DependentUpon>Filtros.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Ini.resx">
       <DependentUpon>Form_Ini.vb</DependentUpon>

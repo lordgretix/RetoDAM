@@ -28,7 +28,7 @@ Public Class Form_Ini
         Try
             ' MsgBox("connecting...")
             cnn1.Open()
-            MsgBox("hecho")
+            ' MsgBox("hecho")
         Catch ex As Exception
             'MsgBox(ex.Message)
         Finally

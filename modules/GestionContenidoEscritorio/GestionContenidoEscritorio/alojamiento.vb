@@ -1,11 +1,27 @@
 ﻿Public Class alojamiento
     Dim nombre, telefono, direccion, email, web As String
     Dim certificado, club, restaurante, tienda, autocaravana As Boolean
-    Dim id, capacidad As Integer
-    Dim cod_postal, latlong, municipio, territorio, firma, json As String
+    Dim capacidad As Integer
+    Dim cod_postal, latlong, poblacion, provincia, firma As String
     Sub New()
 
     End Sub
+
+    Public Function getProvincia() As String
+        Return provincia
+    End Function
+
+    Public Function getcapacity() As Integer
+        Return capacidad
+    End Function
+
+    Public Function getFirma() As String
+        Return firma
+    End Function
+
+    Public Function getLatlong() As String
+        Return latlong
+    End Function
 
     Public Function getNombre() As String
         Return nombre
@@ -15,8 +31,8 @@
         Return direccion
     End Function
 
-    Public Function getMunicipio() As String
-        Return municipio
+    Public Function getPoblacion() As String
+        Return poblacion
     End Function
 
     Public Function getCodPostal() As Integer
@@ -35,6 +51,22 @@
         Return web
     End Function
 
+    Public Sub setProvincia(ByVal prov As String)
+        provincia = prov
+    End Sub
+
+    Public Sub setcapacity(ByVal capa As Integer)
+        capacidad = capa
+    End Sub
+
+    Public Sub setFirma(ByVal fir As String)
+        firma = fir
+    End Sub
+
+    Public Sub setLatlong(ByVal lat As String)
+        latlong = lat
+    End Sub
+
     Public Sub setNombre(ByVal nom As String)
         nombre = nom
     End Sub
@@ -43,8 +75,8 @@
         direccion = dir
     End Sub
 
-    Public Sub setMunicipio(ByVal mun As String)
-        municipio = mun
+    Public Sub setPoblacion(ByVal mun As String)
+        poblacion = mun
     End Sub
 
     Public Sub setCodPostal(ByVal cod As Integer)

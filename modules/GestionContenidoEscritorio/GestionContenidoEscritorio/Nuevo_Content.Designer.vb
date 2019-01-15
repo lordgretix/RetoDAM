@@ -44,7 +44,6 @@ Partial Class Nuevo_Content
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Text_capacity = New System.Windows.Forms.TextBox()
-        Me.Text_CP = New System.Windows.Forms.TextBox()
         Me.Text_lat = New System.Windows.Forms.TextBox()
         Me.Text_firma = New System.Windows.Forms.TextBox()
         Me.Btn_limpiar = New System.Windows.Forms.Button()
@@ -54,7 +53,7 @@ Partial Class Nuevo_Content
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Text_resu = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Text_descripcion = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.ComboBox_poblacion = New System.Windows.Forms.ComboBox()
         Me.ComboBox_provincia = New System.Windows.Forms.ComboBox()
@@ -67,6 +66,7 @@ Partial Class Nuevo_Content
         Me.IdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CastellanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EuskeraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComboBox_cp = New System.Windows.Forms.ComboBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -229,7 +229,7 @@ Partial Class Nuevo_Content
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(440, 94)
+        Me.Label7.Location = New System.Drawing.Point(440, 189)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(104, 18)
         Me.Label7.TabIndex = 16
@@ -239,7 +239,7 @@ Partial Class Nuevo_Content
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(440, 127)
+        Me.Label8.Location = New System.Drawing.Point(440, 95)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(65, 18)
         Me.Label8.TabIndex = 17
@@ -249,7 +249,7 @@ Partial Class Nuevo_Content
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(440, 158)
+        Me.Label9.Location = New System.Drawing.Point(440, 159)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(78, 18)
         Me.Label9.TabIndex = 18
@@ -259,7 +259,7 @@ Partial Class Nuevo_Content
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(440, 189)
+        Me.Label10.Location = New System.Drawing.Point(440, 128)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(73, 18)
         Me.Label10.TabIndex = 19
@@ -283,18 +283,10 @@ Partial Class Nuevo_Content
         Me.Text_capacity.Size = New System.Drawing.Size(202, 24)
         Me.Text_capacity.TabIndex = 22
         '
-        'Text_CP
-        '
-        Me.Text_CP.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_CP.Location = New System.Drawing.Point(549, 86)
-        Me.Text_CP.Name = "Text_CP"
-        Me.Text_CP.Size = New System.Drawing.Size(202, 24)
-        Me.Text_CP.TabIndex = 23
-        '
         'Text_lat
         '
         Me.Text_lat.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_lat.Location = New System.Drawing.Point(549, 119)
+        Me.Text_lat.Location = New System.Drawing.Point(549, 87)
         Me.Text_lat.Name = "Text_lat"
         Me.Text_lat.Size = New System.Drawing.Size(202, 24)
         Me.Text_lat.TabIndex = 24
@@ -310,7 +302,7 @@ Partial Class Nuevo_Content
         'Btn_limpiar
         '
         Me.Btn_limpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_limpiar.Location = New System.Drawing.Point(64, 568)
+        Me.Btn_limpiar.Location = New System.Drawing.Point(58, 581)
         Me.Btn_limpiar.Name = "Btn_limpiar"
         Me.Btn_limpiar.Size = New System.Drawing.Size(75, 23)
         Me.Btn_limpiar.TabIndex = 29
@@ -374,13 +366,14 @@ Partial Class Nuevo_Content
         Me.Label15.TabIndex = 35
         Me.Label15.Text = "Descripcion:"
         '
-        'TextBox1
+        'Text_descripcion
         '
-        Me.TextBox1.Location = New System.Drawing.Point(163, 388)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(586, 155)
-        Me.TextBox1.TabIndex = 36
+        Me.Text_descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Text_descripcion.Location = New System.Drawing.Point(163, 388)
+        Me.Text_descripcion.Multiline = True
+        Me.Text_descripcion.Name = "Text_descripcion"
+        Me.Text_descripcion.Size = New System.Drawing.Size(586, 155)
+        Me.Text_descripcion.TabIndex = 36
         '
         'Label16
         '
@@ -396,7 +389,7 @@ Partial Class Nuevo_Content
         '
         Me.ComboBox_poblacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_poblacion.FormattingEnabled = True
-        Me.ComboBox_poblacion.Location = New System.Drawing.Point(549, 148)
+        Me.ComboBox_poblacion.Location = New System.Drawing.Point(549, 149)
         Me.ComboBox_poblacion.Name = "ComboBox_poblacion"
         Me.ComboBox_poblacion.Size = New System.Drawing.Size(200, 26)
         Me.ComboBox_poblacion.TabIndex = 37
@@ -405,7 +398,7 @@ Partial Class Nuevo_Content
         '
         Me.ComboBox_provincia.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox_provincia.FormattingEnabled = True
-        Me.ComboBox_provincia.Location = New System.Drawing.Point(549, 179)
+        Me.ComboBox_provincia.Location = New System.Drawing.Point(549, 118)
         Me.ComboBox_provincia.Name = "ComboBox_provincia"
         Me.ComboBox_provincia.Size = New System.Drawing.Size(200, 26)
         Me.ComboBox_provincia.TabIndex = 38
@@ -454,7 +447,7 @@ Partial Class Nuevo_Content
         '
         Me.IdiomaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem, Me.EuskeraToolStripMenuItem})
         Me.IdiomaToolStripMenuItem.Name = "IdiomaToolStripMenuItem"
-        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
         Me.IdiomaToolStripMenuItem.Text = "&Idioma"
         '
         'CastellanoToolStripMenuItem
@@ -469,16 +462,26 @@ Partial Class Nuevo_Content
         Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
         Me.EuskeraToolStripMenuItem.Text = "&Euskera"
         '
+        'ComboBox_cp
+        '
+        Me.ComboBox_cp.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_cp.FormattingEnabled = True
+        Me.ComboBox_cp.Location = New System.Drawing.Point(549, 182)
+        Me.ComboBox_cp.Name = "ComboBox_cp"
+        Me.ComboBox_cp.Size = New System.Drawing.Size(200, 26)
+        Me.ComboBox_cp.TabIndex = 40
+        '
         'Nuevo_Content
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(876, 662)
+        Me.Controls.Add(Me.ComboBox_cp)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.ComboBox_provincia)
         Me.Controls.Add(Me.ComboBox_poblacion)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Text_descripcion)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Text_resu)
@@ -489,7 +492,6 @@ Partial Class Nuevo_Content
         Me.Controls.Add(Me.Btn_limpiar)
         Me.Controls.Add(Me.Text_firma)
         Me.Controls.Add(Me.Text_lat)
-        Me.Controls.Add(Me.Text_CP)
         Me.Controls.Add(Me.Text_capacity)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
@@ -542,7 +544,6 @@ Partial Class Nuevo_Content
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Text_capacity As System.Windows.Forms.TextBox
-    Friend WithEvents Text_CP As System.Windows.Forms.TextBox
     Friend WithEvents Text_lat As System.Windows.Forms.TextBox
     Friend WithEvents Text_firma As System.Windows.Forms.TextBox
     Friend WithEvents Btn_limpiar As System.Windows.Forms.Button
@@ -552,7 +553,7 @@ Partial Class Nuevo_Content
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Text_resu As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Text_descripcion As System.Windows.Forms.TextBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents ComboBox_poblacion As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox_provincia As System.Windows.Forms.ComboBox
@@ -565,4 +566,5 @@ Partial Class Nuevo_Content
     Friend WithEvents IdiomaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CastellanoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EuskeraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ComboBox_cp As System.Windows.Forms.ComboBox
 End Class

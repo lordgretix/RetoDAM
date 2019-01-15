@@ -24,7 +24,6 @@ Partial Class Adm_Content
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Btn_add = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -37,9 +36,7 @@ Partial Class Adm_Content
         Me.IdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CastellanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EuskeraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Btn_buscar = New System.Windows.Forms.Button()
         Me.Label_num = New System.Windows.Forms.Label()
-        Me.Btn_Count = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -63,15 +60,6 @@ Partial Class Adm_Content
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Administracion de locales de alojamientos"
         '
-        'Btn_add
-        '
-        Me.Btn_add.Location = New System.Drawing.Point(752, 100)
-        Me.Btn_add.Name = "Btn_add"
-        Me.Btn_add.Size = New System.Drawing.Size(104, 23)
-        Me.Btn_add.TabIndex = 2
-        Me.Btn_add.Text = "&Añadir Nuevo"
-        Me.Btn_add.UseVisualStyleBackColor = True
-        '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem1, Me.InicioToolStripMenuItem})
@@ -91,18 +79,18 @@ Partial Class Adm_Content
         'UserToolStripMenuItem
         '
         Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.UserToolStripMenuItem.Text = "&User"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(139, 6)
         '
         'CerrarSesionToolStripMenuItem
         '
         Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
-        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.CerrarSesionToolStripMenuItem.Text = "&Cerrar sesion"
         '
         'InicioToolStripMenuItem
@@ -115,26 +103,26 @@ Partial Class Adm_Content
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.BuscarToolStripMenuItem.Text = "&Buscar"
         '
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.NuevoToolStripMenuItem.Text = "&Nuevo"
         '
         'ActualizarToolStripMenuItem
         '
         Me.ActualizarToolStripMenuItem.Name = "ActualizarToolStripMenuItem"
-        Me.ActualizarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ActualizarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.ActualizarToolStripMenuItem.Text = "&Actualizar"
         '
         'IdiomaToolStripMenuItem
         '
         Me.IdiomaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem, Me.EuskeraToolStripMenuItem})
         Me.IdiomaToolStripMenuItem.Name = "IdiomaToolStripMenuItem"
-        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.IdiomaToolStripMenuItem.Text = "&Idioma"
         '
         'CastellanoToolStripMenuItem
@@ -149,15 +137,6 @@ Partial Class Adm_Content
         Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
         Me.EuskeraToolStripMenuItem.Text = "&Euskera"
         '
-        'Btn_buscar
-        '
-        Me.Btn_buscar.Location = New System.Drawing.Point(752, 71)
-        Me.Btn_buscar.Name = "Btn_buscar"
-        Me.Btn_buscar.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_buscar.TabIndex = 4
-        Me.Btn_buscar.Text = "Buscar"
-        Me.Btn_buscar.UseVisualStyleBackColor = True
-        '
         'Label_num
         '
         Me.Label_num.AutoSize = True
@@ -166,24 +145,12 @@ Partial Class Adm_Content
         Me.Label_num.Size = New System.Drawing.Size(0, 13)
         Me.Label_num.TabIndex = 5
         '
-        'Btn_Count
-        '
-        Me.Btn_Count.Location = New System.Drawing.Point(671, 100)
-        Me.Btn_Count.Name = "Btn_Count"
-        Me.Btn_Count.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_Count.TabIndex = 6
-        Me.Btn_Count.Text = "Contar"
-        Me.Btn_Count.UseVisualStyleBackColor = True
-        '
         'Adm_Content
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(883, 544)
-        Me.Controls.Add(Me.Btn_Count)
         Me.Controls.Add(Me.Label_num)
-        Me.Controls.Add(Me.Btn_buscar)
-        Me.Controls.Add(Me.Btn_add)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -199,7 +166,6 @@ Partial Class Adm_Content
     End Sub
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Btn_add As System.Windows.Forms.Button
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents InicioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents InicioToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
@@ -209,10 +175,8 @@ Partial Class Adm_Content
     Friend WithEvents BuscarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NuevoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ActualizarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Btn_buscar As System.Windows.Forms.Button
     Friend WithEvents IdiomaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CastellanoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EuskeraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label_num As System.Windows.Forms.Label
-    Friend WithEvents Btn_Count As System.Windows.Forms.Button
 End Class

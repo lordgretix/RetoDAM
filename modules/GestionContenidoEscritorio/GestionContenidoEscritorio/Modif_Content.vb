@@ -1,11 +1,12 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Modif_Content
 
-    Dim cod_poblacion, cod_postal As String
+    Dim cod_poblacion, cod_postal, id_alo As String
     Private Sub Modif_Content_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
     Public Sub Load_view(id As Integer)
+        id_alo = id
         conectar()
         Try
             Dim sql As String = "Select * from alojamientos where id = " & id
@@ -37,9 +38,9 @@ Public Class Modif_Content
             Dim cmd2 As New MySqlCommand(sql, cnn1)
             dr = cmd2.ExecuteReader
             If dr.HasRows Then
-                    Me.Text_Tipo.Text = dr(3)
-                    Me.Text_resu.Text = dr(4)
-                    Me.Text_descripcion.Text = dr(5)
+                Me.Text_Tipo.Text = dr(3)
+                Me.Text_resu.Text = dr(4)
+                Me.Text_descripcion.Text = dr(5)
 
             End If
             dr.Close()
@@ -59,6 +60,7 @@ Public Class Modif_Content
     End Sub
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
         Nuevo_Content.Show()
+        Me.Hide()
     End Sub
 
     Private Sub CerrarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesionToolStripMenuItem.Click
@@ -69,5 +71,20 @@ Public Class Modif_Content
 
     Private Sub UserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserToolStripMenuItem.Click
         MsgBox("Usuario iniciado: " & usuario)
+    End Sub
+
+    Private Sub Btn_borrar_Click(sender As Object, e As EventArgs) Handles Btn_borrar.Click
+        Try
+            Dim sql As String = "Delete from alojamientos where id = " & id_alo & " on delete cascade"
+            Dim cmd As New MySqlCommand(sql, cnn1)
+            'MsgBox("El registro de " & Me.Text_nombre.Text & " eliminado")
+            If MessageBox.Show("El registro de " & Me.Text_nombre.Text & " será eliminado", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                cmd.ExecuteNonQuery()
+                MsgBox("Registro eliminado")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Me.Hide()
     End Sub
 End Class
