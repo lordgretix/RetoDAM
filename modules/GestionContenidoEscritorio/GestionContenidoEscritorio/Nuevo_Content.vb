@@ -2,6 +2,7 @@
 
 Public Class Nuevo_Content
 
+    Public idioma As String = "es"
     Public added As Boolean = False
     Private Sub Btn_add_Click(sender As Object, e As EventArgs) Handles Btn_add.Click
         añadir()
@@ -9,19 +10,52 @@ Public Class Nuevo_Content
     End Sub
 
     Private Sub añadir()
-        Dim sql As String
-        Dim das1 As New DataSet
-        'sql = "Insert into alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
-        'sql = "SELECT a.id, a.nombre, a.telefono, a.direccion, a.email, a.web, a.firma, a.municipio, territorio, t.tipo, t.resumen FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
-        sql = "INSERT INTO alojamientos ( nombre, telefono, direccion, email, web, certificado, club, restaurante, tienda, autocaravana, "
-        sql &= "capacidad, cod_postal, latlong, cod_poblacion, firma) VALUES ( @nom, @tel, @dir, @mail, "
-        sql &= "@web, @certi, @club, @resta, @tienda, @auto, @capacy, @cp, @latlo, @codpo, @firma)"
-        Dim commando As New MySqlCommand
-        Dim adapter As New MySqlDataAdapter
+        'añadir datos a tabla de alojamientos
+        Try
+            Dim sql As String
+            sql = "INSERT INTO alojamientos (nombre, telefono, direccion, email, web, certificado, club, restaurante, tienda, autocaravana, "
+            sql &= "capacidad, cod_postal, latlong, cod_poblacion, firma) VALUES ( @nom, @tel, @dir, @mail, "
+            sql &= "@web, @certi, @club, @resta, @tienda, @auto, @capacy, @cp, @latlo, @codpob, @firma)"
+            Dim cmd As New MySqlCommand(sql, cnn1)
+            cmd.Parameters.AddWithValue("@nom", Me.Text_nombre.Text)
+            cmd.Parameters.AddWithValue("@tel", Me.Text_tel.Text)
+            cmd.Parameters.AddWithValue("@dir", Me.Text_direccion.Text)
+            cmd.Parameters.AddWithValue("@mail", Me.Text_email.Text)
+            cmd.Parameters.AddWithValue("@web", Me.Text_web.Text)
+            cmd.Parameters.AddWithValue("@certi", Me.Check_certificado.Checked)
+            cmd.Parameters.AddWithValue("@club", Me.Check_club.Checked)
+            cmd.Parameters.AddWithValue("@resta", Me.Check_restaurante.Checked)
+            cmd.Parameters.AddWithValue("@tienda", Me.Check_tienda.Checked)
+            cmd.Parameters.AddWithValue("@auto", Me.Check_caravana.Checked)
+            cmd.Parameters.AddWithValue("@capacy", Me.Text_capacity.Text)
+            cmd.Parameters.AddWithValue("@cp", Me.ComboBox_cp.SelectedItem)
+            cmd.Parameters.AddWithValue("@latlo", Me.Text_lat.Text)
+            'poblacion hay que hacer un query para coger el codigo ya que en el combobox esta los nombres
+            cmd.Parameters.AddWithValue("@codpob", obtenerCodPob())
+            cmd.Parameters.AddWithValue("@firma", Me.Text_firma.Text) 'la firma es unica
+            cmd.ExecuteNonQuery()
 
-        commando.Connection = cnn1
-        commando.CommandText = sql
-        adapter.SelectCommand = commando
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        'añadir datos a tabla de traducciones
+        Try
+            Dim sql As String
+            sql = "INSERT INTO traducciones (alojamiento, idioma, tipo, resumen, descripcion) values (@id_alo, "
+            sql &= "@idioma, @tipo, @resumen, @descripcion)"
+            Dim cmd As New MySqlCommand(sql, cnn1)
+            'hay que hacer un query para obtener el id de la alojamiento el cual relaciona las dos tablas
+            cmd.Parameters.AddWithValue("@id_alo", obtenerCodAlo())
+            cmd.Parameters.AddWithValue("@idioma", idioma) 'por defecto esta en castellano
+            cmd.Parameters.AddWithValue("@tipo", Me.Text_Tipo.Text)
+            cmd.Parameters.AddWithValue("@resumen", Me.Text_resu.Text)
+            cmd.Parameters.AddWithValue("@descripcion", Me.Text_descripcion.Text)
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Me.Hide()
     End Sub
 
     Private Sub Text_firma_TextChanged(sender As Object, e As EventArgs) Handles Text_firma.TextChanged
@@ -78,6 +112,8 @@ Public Class Nuevo_Content
     End Sub
 
     Private Sub ComboBox_provincia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_provincia.SelectedIndexChanged
+        'Dim tabla As New DataTable
+
         Try
             Me.ComboBox_poblacion.Items.Clear()
 
@@ -90,6 +126,16 @@ Public Class Nuevo_Content
             End While
             dr.Close()
             Me.ComboBox_poblacion.SelectedIndex = -1
+
+            'la siguente forma es meterlo como una tabla pero da un fallo al 
+            'intentar cargar los codigos postales
+            'Dim adap = New MySqlDataAdapter(cmd)
+            'adap.Fill(tabla)
+            'Me.ComboBox_poblacion.DataSource = tabla
+            'Me.ComboBox_poblacion.DisplayMember = "poblacion"
+            'Me.ComboBox_poblacion.ValueMember = "cod_poblacion"
+            'Me.ComboBox_poblacion.SelectedIndex = -1
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -97,6 +143,7 @@ Public Class Nuevo_Content
     End Sub
 
     Private Sub ComboBox_poblacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_poblacion.SelectedIndexChanged
+
         Try
             Me.ComboBox_cp.Items.Clear()
 
@@ -112,5 +159,49 @@ Public Class Nuevo_Content
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+
+    End Sub
+
+    Private Function obtenerCodPob() As Object
+        Dim cod_pob As String = ""
+        Try
+            Dim sql As String = "SELECT cod_poblacion FROM codigos_postales where poblacion ='" & Me.ComboBox_poblacion.SelectedItem & "' "
+            sql &= "and provincia='" & Me.ComboBox_provincia.SelectedItem & "'"
+            Dim cmd As New MySqlCommand(sql, cnn1)
+            Dim dr As MySqlDataReader
+            dr = cmd.ExecuteReader
+            While dr.Read
+                cod_pob = (dr.Item(0))
+            End While
+            dr.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return cod_pob
+    End Function
+
+    Private Function obtenerCodAlo() As Object
+        Dim cod_alo As String = ""
+        Try
+            Dim sql As String = "SELECT id FROM alojamientos where firma ='" & Me.Text_firma.Text & "' "
+            Dim cmd As New MySqlCommand(sql, cnn1)
+            Dim dr As MySqlDataReader
+            dr = cmd.ExecuteReader
+            While dr.Read
+                cod_alo = (dr.Item(0))
+            End While
+            dr.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return cod_alo
+    End Function
+
+    Private Sub CastellanoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CastellanoToolStripMenuItem.Click
+        idioma = "es"
+    End Sub
+
+    Private Sub EuskeraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EuskeraToolStripMenuItem.Click
+        idioma = "eus"
     End Sub
 End Class

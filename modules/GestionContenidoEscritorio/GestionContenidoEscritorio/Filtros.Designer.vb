@@ -38,7 +38,7 @@ Partial Class Filtros
         Me.Text_filnom.Location = New System.Drawing.Point(181, 35)
         Me.Text_filnom.Name = "Text_filnom"
         Me.Text_filnom.Size = New System.Drawing.Size(179, 22)
-        Me.Text_filnom.TabIndex = 11
+        Me.Text_filnom.TabIndex = 0
         '
         'Btn_buscar
         '
@@ -86,7 +86,7 @@ Partial Class Filtros
         Me.Text_fildir.Location = New System.Drawing.Point(181, 66)
         Me.Text_fildir.Name = "Text_fildir"
         Me.Text_fildir.Size = New System.Drawing.Size(179, 22)
-        Me.Text_fildir.TabIndex = 15
+        Me.Text_fildir.TabIndex = 1
         '
         'Numeric_fil
         '
@@ -94,10 +94,11 @@ Partial Class Filtros
         Me.Numeric_fil.Location = New System.Drawing.Point(181, 94)
         Me.Numeric_fil.Name = "Numeric_fil"
         Me.Numeric_fil.Size = New System.Drawing.Size(179, 21)
-        Me.Numeric_fil.TabIndex = 17
+        Me.Numeric_fil.TabIndex = 2
         '
         'Filtros
         '
+        Me.AcceptButton = Me.Btn_buscar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(438, 163)

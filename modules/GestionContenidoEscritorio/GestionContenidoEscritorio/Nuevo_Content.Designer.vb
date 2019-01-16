@@ -447,19 +447,19 @@ Partial Class Nuevo_Content
         '
         Me.IdiomaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem, Me.EuskeraToolStripMenuItem})
         Me.IdiomaToolStripMenuItem.Name = "IdiomaToolStripMenuItem"
-        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
+        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.IdiomaToolStripMenuItem.Text = "&Idioma"
         '
         'CastellanoToolStripMenuItem
         '
         Me.CastellanoToolStripMenuItem.Name = "CastellanoToolStripMenuItem"
-        Me.CastellanoToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.CastellanoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CastellanoToolStripMenuItem.Text = "&Castellano"
         '
         'EuskeraToolStripMenuItem
         '
         Me.EuskeraToolStripMenuItem.Name = "EuskeraToolStripMenuItem"
-        Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EuskeraToolStripMenuItem.Text = "&Euskera"
         '
         'ComboBox_cp

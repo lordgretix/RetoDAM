@@ -44,10 +44,7 @@ Partial Class Modif_Content
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Text_capacity = New System.Windows.Forms.TextBox()
-        Me.Text_CP = New System.Windows.Forms.TextBox()
         Me.Text_lat = New System.Windows.Forms.TextBox()
-        Me.Text_poblacion = New System.Windows.Forms.TextBox()
-        Me.Text_provincia = New System.Windows.Forms.TextBox()
         Me.Text_firma = New System.Windows.Forms.TextBox()
         Me.Btn_Volver = New System.Windows.Forms.Button()
         Me.Btn_save = New System.Windows.Forms.Button()
@@ -69,6 +66,9 @@ Partial Class Modif_Content
         Me.CastellanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EuskeraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Btn_borrar = New System.Windows.Forms.Button()
+        Me.ComboBox_cp = New System.Windows.Forms.ComboBox()
+        Me.ComboBox_provincia = New System.Windows.Forms.ComboBox()
+        Me.ComboBox_poblacion = New System.Windows.Forms.ComboBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -285,14 +285,6 @@ Partial Class Modif_Content
         Me.Text_capacity.Size = New System.Drawing.Size(202, 24)
         Me.Text_capacity.TabIndex = 22
         '
-        'Text_CP
-        '
-        Me.Text_CP.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_CP.Location = New System.Drawing.Point(549, 182)
-        Me.Text_CP.Name = "Text_CP"
-        Me.Text_CP.Size = New System.Drawing.Size(202, 24)
-        Me.Text_CP.TabIndex = 23
-        '
         'Text_lat
         '
         Me.Text_lat.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -300,22 +292,6 @@ Partial Class Modif_Content
         Me.Text_lat.Name = "Text_lat"
         Me.Text_lat.Size = New System.Drawing.Size(202, 24)
         Me.Text_lat.TabIndex = 24
-        '
-        'Text_poblacion
-        '
-        Me.Text_poblacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_poblacion.Location = New System.Drawing.Point(549, 149)
-        Me.Text_poblacion.Name = "Text_poblacion"
-        Me.Text_poblacion.Size = New System.Drawing.Size(202, 24)
-        Me.Text_poblacion.TabIndex = 25
-        '
-        'Text_provincia
-        '
-        Me.Text_provincia.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Text_provincia.Location = New System.Drawing.Point(549, 118)
-        Me.Text_provincia.Name = "Text_provincia"
-        Me.Text_provincia.Size = New System.Drawing.Size(202, 24)
-        Me.Text_provincia.TabIndex = 26
         '
         'Text_firma
         '
@@ -454,26 +430,26 @@ Partial Class Modif_Content
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevoToolStripMenuItem.Text = "&Nuevo"
         '
         'IdiomaToolStripMenuItem
         '
         Me.IdiomaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem, Me.EuskeraToolStripMenuItem})
         Me.IdiomaToolStripMenuItem.Name = "IdiomaToolStripMenuItem"
-        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
+        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.IdiomaToolStripMenuItem.Text = "&Idioma"
         '
         'CastellanoToolStripMenuItem
         '
         Me.CastellanoToolStripMenuItem.Name = "CastellanoToolStripMenuItem"
-        Me.CastellanoToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.CastellanoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CastellanoToolStripMenuItem.Text = "&Castellano"
         '
         'EuskeraToolStripMenuItem
         '
         Me.EuskeraToolStripMenuItem.Name = "EuskeraToolStripMenuItem"
-        Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EuskeraToolStripMenuItem.Text = "&Euskera"
         '
         'Btn_borrar
@@ -485,12 +461,42 @@ Partial Class Modif_Content
         Me.Btn_borrar.Text = "Eliminar"
         Me.Btn_borrar.UseVisualStyleBackColor = True
         '
+        'ComboBox_cp
+        '
+        Me.ComboBox_cp.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_cp.FormattingEnabled = True
+        Me.ComboBox_cp.Location = New System.Drawing.Point(547, 182)
+        Me.ComboBox_cp.Name = "ComboBox_cp"
+        Me.ComboBox_cp.Size = New System.Drawing.Size(200, 26)
+        Me.ComboBox_cp.TabIndex = 43
+        '
+        'ComboBox_provincia
+        '
+        Me.ComboBox_provincia.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_provincia.FormattingEnabled = True
+        Me.ComboBox_provincia.Location = New System.Drawing.Point(547, 118)
+        Me.ComboBox_provincia.Name = "ComboBox_provincia"
+        Me.ComboBox_provincia.Size = New System.Drawing.Size(200, 26)
+        Me.ComboBox_provincia.TabIndex = 42
+        '
+        'ComboBox_poblacion
+        '
+        Me.ComboBox_poblacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox_poblacion.FormattingEnabled = True
+        Me.ComboBox_poblacion.Location = New System.Drawing.Point(547, 149)
+        Me.ComboBox_poblacion.Name = "ComboBox_poblacion"
+        Me.ComboBox_poblacion.Size = New System.Drawing.Size(200, 26)
+        Me.ComboBox_poblacion.TabIndex = 41
+        '
         'Modif_Content
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(876, 662)
+        Me.Controls.Add(Me.ComboBox_cp)
+        Me.Controls.Add(Me.ComboBox_provincia)
+        Me.Controls.Add(Me.ComboBox_poblacion)
         Me.Controls.Add(Me.Btn_borrar)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Text_descripcion)
@@ -503,10 +509,7 @@ Partial Class Modif_Content
         Me.Controls.Add(Me.Btn_save)
         Me.Controls.Add(Me.Btn_Volver)
         Me.Controls.Add(Me.Text_firma)
-        Me.Controls.Add(Me.Text_provincia)
-        Me.Controls.Add(Me.Text_poblacion)
         Me.Controls.Add(Me.Text_lat)
-        Me.Controls.Add(Me.Text_CP)
         Me.Controls.Add(Me.Text_capacity)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
@@ -559,10 +562,7 @@ Partial Class Modif_Content
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Text_capacity As System.Windows.Forms.TextBox
-    Friend WithEvents Text_CP As System.Windows.Forms.TextBox
     Friend WithEvents Text_lat As System.Windows.Forms.TextBox
-    Friend WithEvents Text_poblacion As System.Windows.Forms.TextBox
-    Friend WithEvents Text_provincia As System.Windows.Forms.TextBox
     Friend WithEvents Text_firma As System.Windows.Forms.TextBox
     Friend WithEvents Btn_Volver As System.Windows.Forms.Button
     Friend WithEvents Btn_save As System.Windows.Forms.Button
@@ -584,4 +584,7 @@ Partial Class Modif_Content
     Friend WithEvents EuskeraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NuevoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Btn_borrar As System.Windows.Forms.Button
+    Friend WithEvents ComboBox_cp As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox_provincia As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox_poblacion As System.Windows.Forms.ComboBox
 End Class

@@ -24,6 +24,7 @@ Public Class Adm_Content
             adapter.Fill(das1, "aaa")
 
             Me.DataGridView1.DataSource = das1.Tables("aaa")
+            Me.DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -59,12 +60,12 @@ Public Class Adm_Content
         adapter.SelectCommand = commando
 
         adapter.Fill(das1, "aaa")
-        Me.DataGridView1.Columns(1).HeaderText = "Izena"
-        Me.DataGridView1.Columns(2).HeaderText = "Telefonoa"
-        Me.DataGridView1.Columns(3).HeaderText = "Helbidea"
-        Me.DataGridView1.Columns(6).HeaderText = "Sinadura"
-        Me.DataGridView1.Columns(7).HeaderText = "Mota"
-        Me.DataGridView1.Columns(8).HeaderText = "Laburpena"
+        Me.DataGridView1.Columns(1).HeaderText = "izena"
+        Me.DataGridView1.Columns(2).HeaderText = "telefonoa"
+        Me.DataGridView1.Columns(3).HeaderText = "helbidea"
+        Me.DataGridView1.Columns(6).HeaderText = "sinadura"
+        Me.DataGridView1.Columns(7).HeaderText = "mota"
+        Me.DataGridView1.Columns(8).HeaderText = "laburpena"
         Me.DataGridView1.DataSource = das1.Tables("aaa")
 
     End Sub
@@ -84,10 +85,15 @@ Public Class Adm_Content
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        Dim fila As Integer
-        fila = Me.DataGridView1.CurrentRow.Index
-        Dim id As Integer = Me.DataGridView1.Item(0, fila).Value
-        Modif_Content.Load_view(id)
+        Try
+            Dim fila As Integer
+            fila = Me.DataGridView1.CurrentRow.Index
+            Dim id As Integer = Me.DataGridView1.Item(0, fila).Value
+            Modif_Content.Load_view(id)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub BuscarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem.Click
