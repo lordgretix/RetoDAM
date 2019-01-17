@@ -37,6 +37,7 @@ Partial Class Adm_Content
         Me.CastellanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EuskeraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label_num = New System.Windows.Forms.Label()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -95,7 +96,7 @@ Partial Class Adm_Content
         '
         'InicioToolStripMenuItem
         '
-        Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarToolStripMenuItem, Me.NuevoToolStripMenuItem, Me.ActualizarToolStripMenuItem, Me.IdiomaToolStripMenuItem})
+        Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarToolStripMenuItem, Me.ActualizarToolStripMenuItem, Me.IdiomaToolStripMenuItem, Me.ToolStripMenuItem2, Me.NuevoToolStripMenuItem})
         Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
         Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
         Me.InicioToolStripMenuItem.Text = "&Contenidos"
@@ -103,26 +104,26 @@ Partial Class Adm_Content
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BuscarToolStripMenuItem.Text = "&Buscar"
         '
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevoToolStripMenuItem.Text = "&Nuevo"
         '
         'ActualizarToolStripMenuItem
         '
         Me.ActualizarToolStripMenuItem.Name = "ActualizarToolStripMenuItem"
-        Me.ActualizarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.ActualizarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ActualizarToolStripMenuItem.Text = "&Actualizar"
         '
         'IdiomaToolStripMenuItem
         '
         Me.IdiomaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem, Me.EuskeraToolStripMenuItem})
         Me.IdiomaToolStripMenuItem.Name = "IdiomaToolStripMenuItem"
-        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.IdiomaToolStripMenuItem.Text = "&Idioma"
         '
         'CastellanoToolStripMenuItem
@@ -144,6 +145,11 @@ Partial Class Adm_Content
         Me.Label_num.Name = "Label_num"
         Me.Label_num.Size = New System.Drawing.Size(0, 13)
         Me.Label_num.TabIndex = 5
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(149, 6)
         '
         'Adm_Content
         '
@@ -179,4 +185,5 @@ Partial Class Adm_Content
     Friend WithEvents CastellanoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EuskeraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label_num As System.Windows.Forms.Label
+    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
 End Class

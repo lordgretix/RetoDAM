@@ -69,6 +69,10 @@ Partial Class Modif_Content
         Me.ComboBox_cp = New System.Windows.Forms.ComboBox()
         Me.ComboBox_provincia = New System.Windows.Forms.ComboBox()
         Me.ComboBox_poblacion = New System.Windows.Forms.ComboBox()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.AñadirNuevoTraduccionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CastellanoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EuskeraToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -76,6 +80,7 @@ Partial Class Modif_Content
         '
         Me.Text_nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_nombre.Location = New System.Drawing.Point(164, 48)
+        Me.Text_nombre.MaxLength = 100
         Me.Text_nombre.Name = "Text_nombre"
         Me.Text_nombre.Size = New System.Drawing.Size(202, 24)
         Me.Text_nombre.TabIndex = 0
@@ -84,6 +89,7 @@ Partial Class Modif_Content
         '
         Me.Text_tel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_tel.Location = New System.Drawing.Point(165, 86)
+        Me.Text_tel.MaxLength = 15
         Me.Text_tel.Name = "Text_tel"
         Me.Text_tel.Size = New System.Drawing.Size(202, 24)
         Me.Text_tel.TabIndex = 1
@@ -92,6 +98,7 @@ Partial Class Modif_Content
         '
         Me.Text_direccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_direccion.Location = New System.Drawing.Point(166, 119)
+        Me.Text_direccion.MaxLength = 150
         Me.Text_direccion.Name = "Text_direccion"
         Me.Text_direccion.Size = New System.Drawing.Size(202, 24)
         Me.Text_direccion.TabIndex = 2
@@ -100,6 +107,7 @@ Partial Class Modif_Content
         '
         Me.Text_email.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_email.Location = New System.Drawing.Point(166, 150)
+        Me.Text_email.MaxLength = 100
         Me.Text_email.Name = "Text_email"
         Me.Text_email.Size = New System.Drawing.Size(202, 24)
         Me.Text_email.TabIndex = 3
@@ -108,6 +116,7 @@ Partial Class Modif_Content
         '
         Me.Text_web.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_web.Location = New System.Drawing.Point(165, 183)
+        Me.Text_web.MaxLength = 250
         Me.Text_web.Name = "Text_web"
         Me.Text_web.Size = New System.Drawing.Size(202, 24)
         Me.Text_web.TabIndex = 4
@@ -281,6 +290,7 @@ Partial Class Modif_Content
         '
         Me.Text_capacity.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_capacity.Location = New System.Drawing.Point(549, 52)
+        Me.Text_capacity.MaxLength = 5
         Me.Text_capacity.Name = "Text_capacity"
         Me.Text_capacity.Size = New System.Drawing.Size(202, 24)
         Me.Text_capacity.TabIndex = 6
@@ -289,6 +299,7 @@ Partial Class Modif_Content
         '
         Me.Text_lat.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_lat.Location = New System.Drawing.Point(549, 86)
+        Me.Text_lat.MaxLength = 50
         Me.Text_lat.Name = "Text_lat"
         Me.Text_lat.Size = New System.Drawing.Size(202, 24)
         Me.Text_lat.TabIndex = 7
@@ -298,6 +309,7 @@ Partial Class Modif_Content
         Me.Text_firma.Enabled = False
         Me.Text_firma.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_firma.Location = New System.Drawing.Point(548, 212)
+        Me.Text_firma.MaxLength = 10
         Me.Text_firma.Name = "Text_firma"
         Me.Text_firma.Size = New System.Drawing.Size(202, 24)
         Me.Text_firma.TabIndex = 8
@@ -336,6 +348,7 @@ Partial Class Modif_Content
         '
         Me.Text_Tipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_Tipo.Location = New System.Drawing.Point(165, 218)
+        Me.Text_Tipo.MaxLength = 50
         Me.Text_Tipo.Name = "Text_Tipo"
         Me.Text_Tipo.Size = New System.Drawing.Size(202, 24)
         Me.Text_Tipo.TabIndex = 5
@@ -423,7 +436,7 @@ Partial Class Modif_Content
         '
         'InicioToolStripMenuItem
         '
-        Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.IdiomaToolStripMenuItem})
+        Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.IdiomaToolStripMenuItem, Me.ToolStripMenuItem2, Me.AñadirNuevoTraduccionToolStripMenuItem})
         Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
         Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
         Me.InicioToolStripMenuItem.Text = "&Contenidos"
@@ -488,6 +501,30 @@ Partial Class Modif_Content
         Me.ComboBox_poblacion.Name = "ComboBox_poblacion"
         Me.ComboBox_poblacion.Size = New System.Drawing.Size(200, 26)
         Me.ComboBox_poblacion.TabIndex = 41
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(204, 6)
+        '
+        'AñadirNuevoTraduccionToolStripMenuItem
+        '
+        Me.AñadirNuevoTraduccionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem1, Me.EuskeraToolStripMenuItem1})
+        Me.AñadirNuevoTraduccionToolStripMenuItem.Name = "AñadirNuevoTraduccionToolStripMenuItem"
+        Me.AñadirNuevoTraduccionToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.AñadirNuevoTraduccionToolStripMenuItem.Text = "Añadir nuevo Traduccion"
+        '
+        'CastellanoToolStripMenuItem1
+        '
+        Me.CastellanoToolStripMenuItem1.Name = "CastellanoToolStripMenuItem1"
+        Me.CastellanoToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.CastellanoToolStripMenuItem1.Text = "&Castellano"
+        '
+        'EuskeraToolStripMenuItem1
+        '
+        Me.EuskeraToolStripMenuItem1.Name = "EuskeraToolStripMenuItem1"
+        Me.EuskeraToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.EuskeraToolStripMenuItem1.Text = "&Euskera"
         '
         'Modif_Content
         '
@@ -588,4 +625,8 @@ Partial Class Modif_Content
     Friend WithEvents ComboBox_cp As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox_provincia As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox_poblacion As System.Windows.Forms.ComboBox
+    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents AñadirNuevoTraduccionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CastellanoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EuskeraToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
 End Class

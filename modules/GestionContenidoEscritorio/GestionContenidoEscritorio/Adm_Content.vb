@@ -86,7 +86,12 @@ Public Class Adm_Content
         MsgBox("Usuario iniciado: " & usuario)
     End Sub
 
-    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+    Private Sub BuscarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem.Click
+        Filtros.Show()
+
+    End Sub
+
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         Try
             Dim fila As Integer
             fila = Me.DataGridView1.CurrentRow.Index
@@ -95,11 +100,5 @@ Public Class Adm_Content
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
-    End Sub
-
-    Private Sub BuscarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem.Click
-        Filtros.Show()
-
     End Sub
 End Class

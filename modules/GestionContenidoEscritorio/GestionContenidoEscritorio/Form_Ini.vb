@@ -22,6 +22,7 @@ Public Class Form_Ini
     End Function
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        form_center(Me)
         Dim connStr As String = "server=kasserver.synology.me;database=reto_gp3;port=3307;user id=gp3;password=IFZWx5dEG12yt8QW;"
         cnn1 = New MySqlConnection(connStr)
 
@@ -41,6 +42,7 @@ Public Class Form_Ini
     Private Sub validarUserPasswor()
         Dim sql As String
         sql = "select * from usuarios where nombre='" & Me.TextUser.Text & "'"
+
         'sentencia que buscar el usuario introducido en la base de datos
         Me.lab_fail.Visible = False
         Me.Label_acceso.Visible = False
@@ -109,5 +111,26 @@ Public Class Form_Ini
         End If
 
     End Sub
+    Public Sub form_center(ByVal frm As Form, Optional ByVal parent As Form = Nothing)
 
+        Dim x As Integer
+        Dim y As Integer
+        Dim r As Rectangle
+
+        If Not parent Is Nothing Then
+            r = parent.ClientRectangle
+            x = r.Width - frm.Width + parent.Left
+            y = r.Height - frm.Height + parent.Top
+        Else
+            r = Screen.PrimaryScreen.WorkingArea
+            x = r.Width - frm.Width
+            y = r.Height - frm.Height
+        End If
+
+        x = CInt(x / 2)
+        y = CInt(y / 2)
+
+        frm.StartPosition = FormStartPosition.Manual
+        frm.Location = New Point(x, y)
+    End Sub
 End Class

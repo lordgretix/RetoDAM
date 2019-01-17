@@ -3,6 +3,8 @@ Public Class Modif_Content
 
     Dim cod_poblacion, cod_postal, id_alo, poblcaion, provincia As String
     Public idioma As String = "es"
+    Dim castellano As Boolean = False
+    Dim euskera As Boolean = False
 
     Public Sub Load_view(id As Integer)
         Dim indexcodpos As Integer
@@ -42,12 +44,14 @@ Public Class Modif_Content
             Dim cmd2 As New MySqlCommand(sql, cnn1)
             dr = cmd2.ExecuteReader
             If dr.HasRows Then
+                castellano = True
                 While dr.Read
                     Me.Text_Tipo.Text = dr.Item(3)
                     Me.Text_resu.Text = dr.Item(4)
                     Me.Text_descripcion.Text = dr.Item(5)
                 End While
-
+            Else
+                euskera = True
             End If
             dr.Close()
 
@@ -94,7 +98,7 @@ Public Class Modif_Content
         Me.ComboBox_poblacion.SelectedItem = poblcaion
         Me.ComboBox_cp.SelectedIndex = indexcodpos
         ' por alguna razon tengo que volver a darle seleccionar para poder manntener la seleccion
-
+        ' Me.MenuStrip1.Items(1).Enabled = False
     End Sub
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
         Nuevo_Content.Show()
@@ -344,4 +348,7 @@ Public Class Modif_Content
     End Sub
 
 
+    Private Sub AñadirNuevoTraduccionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AñadirNuevoTraduccionToolStripMenuItem.Click
+
+    End Sub
 End Class

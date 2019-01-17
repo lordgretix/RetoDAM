@@ -74,6 +74,7 @@ Partial Class Nuevo_Content
         '
         Me.Text_nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_nombre.Location = New System.Drawing.Point(164, 48)
+        Me.Text_nombre.MaxLength = 100
         Me.Text_nombre.Name = "Text_nombre"
         Me.Text_nombre.Size = New System.Drawing.Size(202, 24)
         Me.Text_nombre.TabIndex = 0
@@ -82,6 +83,7 @@ Partial Class Nuevo_Content
         '
         Me.Text_tel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_tel.Location = New System.Drawing.Point(164, 86)
+        Me.Text_tel.MaxLength = 15
         Me.Text_tel.Name = "Text_tel"
         Me.Text_tel.Size = New System.Drawing.Size(202, 24)
         Me.Text_tel.TabIndex = 1
@@ -90,6 +92,7 @@ Partial Class Nuevo_Content
         '
         Me.Text_direccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_direccion.Location = New System.Drawing.Point(163, 119)
+        Me.Text_direccion.MaxLength = 150
         Me.Text_direccion.Name = "Text_direccion"
         Me.Text_direccion.Size = New System.Drawing.Size(202, 24)
         Me.Text_direccion.TabIndex = 2
@@ -98,6 +101,7 @@ Partial Class Nuevo_Content
         '
         Me.Text_email.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_email.Location = New System.Drawing.Point(164, 150)
+        Me.Text_email.MaxLength = 100
         Me.Text_email.Name = "Text_email"
         Me.Text_email.Size = New System.Drawing.Size(202, 24)
         Me.Text_email.TabIndex = 3
@@ -106,6 +110,7 @@ Partial Class Nuevo_Content
         '
         Me.Text_web.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_web.Location = New System.Drawing.Point(164, 181)
+        Me.Text_web.MaxLength = 250
         Me.Text_web.Name = "Text_web"
         Me.Text_web.Size = New System.Drawing.Size(202, 24)
         Me.Text_web.TabIndex = 4
@@ -279,6 +284,7 @@ Partial Class Nuevo_Content
         '
         Me.Text_capacity.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_capacity.Location = New System.Drawing.Point(549, 52)
+        Me.Text_capacity.MaxLength = 5
         Me.Text_capacity.Name = "Text_capacity"
         Me.Text_capacity.Size = New System.Drawing.Size(202, 24)
         Me.Text_capacity.TabIndex = 22
@@ -295,6 +301,7 @@ Partial Class Nuevo_Content
         '
         Me.Text_firma.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_firma.Location = New System.Drawing.Point(549, 212)
+        Me.Text_firma.MaxLength = 10
         Me.Text_firma.Name = "Text_firma"
         Me.Text_firma.Size = New System.Drawing.Size(202, 24)
         Me.Text_firma.TabIndex = 27
@@ -333,6 +340,7 @@ Partial Class Nuevo_Content
         '
         Me.Text_Tipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_Tipo.Location = New System.Drawing.Point(163, 212)
+        Me.Text_Tipo.MaxLength = 50
         Me.Text_Tipo.Name = "Text_Tipo"
         Me.Text_Tipo.Size = New System.Drawing.Size(202, 24)
         Me.Text_Tipo.TabIndex = 32
@@ -447,19 +455,19 @@ Partial Class Nuevo_Content
         '
         Me.IdiomaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem, Me.EuskeraToolStripMenuItem})
         Me.IdiomaToolStripMenuItem.Name = "IdiomaToolStripMenuItem"
-        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
         Me.IdiomaToolStripMenuItem.Text = "&Idioma"
         '
         'CastellanoToolStripMenuItem
         '
         Me.CastellanoToolStripMenuItem.Name = "CastellanoToolStripMenuItem"
-        Me.CastellanoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CastellanoToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
         Me.CastellanoToolStripMenuItem.Text = "&Castellano"
         '
         'EuskeraToolStripMenuItem
         '
         Me.EuskeraToolStripMenuItem.Name = "EuskeraToolStripMenuItem"
-        Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
         Me.EuskeraToolStripMenuItem.Text = "&Euskera"
         '
         'ComboBox_cp
