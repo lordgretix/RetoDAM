@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Tue Jan 01 13:37:50 CET 2019
  */
 
-package GUI;
+package com.gp3.GestionUsuarios.GUI;
 
 
 import javax.swing.*;
@@ -12,9 +12,8 @@ import java.awt.*;
 /**
  * @author o6863265urykmpdv
  */
-public class ListadoUsuarios{
+public class ListadoUsuarios extends JFrame{
 
-    private JFrame frame;
     private JLabel lblLoading;
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
@@ -27,6 +26,7 @@ public class ListadoUsuarios{
     private JButton btnModificar;
     private JButton btnAdd;
     private JButton btnBorrar;
+
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     public ListadoUsuarios() {
@@ -35,8 +35,9 @@ public class ListadoUsuarios{
 
     private void initComponents() {
         this.nativeLookAndFeel();
-        frame = new JFrame();
-        frame.setMinimumSize(new Dimension(550, 300));
+        setMinimumSize(new Dimension(550, 300));
+        setTitle("Gestion Usuarios");
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - taxpkhqr
@@ -55,7 +56,7 @@ public class ListadoUsuarios{
         btnBorrar = new JButton();
 
         //======== this ========
-        Container contentPane = frame.getContentPane();
+        Container contentPane = getContentPane();
 
         //======== scrollPane1 ========
         {
@@ -139,8 +140,8 @@ public class ListadoUsuarios{
                     .addGap(20, 20, 20))
         );
 
-        frame.pack();
-        frame.setLocationRelativeTo(null);
+        pack();
+        setLocationRelativeTo(null);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
 
     }
@@ -152,14 +153,6 @@ public class ListadoUsuarios{
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-    }
-
-    public JFrame getFrame() {
-        return frame;
-    }
-
-    public void setFrame(JFrame frame) {
-        this.frame = frame;
     }
 
     public JLabel getLblLoading() {

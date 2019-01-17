@@ -1,4 +1,4 @@
-package Modelos.Tablas.Usuarios;
+package com.gp3.GestionUsuarios.Modelos.Tablas.Usuarios;
 
 public class Usuarios {
 

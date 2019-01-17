@@ -1,18 +1,17 @@
-package Controladores;
+package com.gp3.GestionUsuarios.Controladores;
 
-import Modelos.Tablas.Usuarios.Usuarios;
+import com.gp3.GestionUsuarios.Modelos.Tablas.Usuarios.Usuarios;
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.logging.log4j.Level;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static Controladores.Main.LOGGER;
+import static com.gp3.GestionUsuarios.Main.LOGGER;
 
 public class UsuariosMannager {
 
@@ -33,21 +32,19 @@ public class UsuariosMannager {
         try {
             factory = new Configuration().configure().buildSessionFactory();
         } catch (Throwable ex) {
-            System.err.println("Failed to create sessionFactory object." + ex);
-            throw new ExceptionInInitializerError(ex);
+            factory.close();
+            JOptionPane.showMessageDialog(null, "No se ha podido conectar con el servidor", "Connection Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     public boolean logIn(String username, String password){
         Session session = factory.openSession();
 
+        boolean usingPassword = password.length()>0;
+
         Transaction trans = null;
 
         boolean logged = false;
-        System.out.println("UserName: "+username);
-        System.out.println("Password: "+password);
-
-        System.out.println(DigestUtils.sha256Hex(password));
         password = DigestUtils.sha256Hex(password);
 
         try{
@@ -58,8 +55,8 @@ public class UsuariosMannager {
                 loggedUser = (Usuarios) users.get(0);
                 logged = true;
                 LOGGER.info("Session Iniciada (Username: "+username+")");
-            }else {
-                LOGGER.info("Fallo de inicio de session. Usuario ("+username+") o contraseña invalidos");
+            }else{
+                LOGGER.error("Fallo de inicio de session usuario (Username: "+username+") o contraseña (Using password: "+usingPassword+") invalidos");
             }
 
             trans.commit();
@@ -74,13 +71,22 @@ public class UsuariosMannager {
         return logged;
     }
 
-    public boolean isLogged(){
+    public void logOut(){
+        LOGGER.info("Session Finalizada (Username: "+loggedUser.getNombre()+")");
+        loggedUser = null;
+    }
+
+    public static boolean isLogged(){
         return loggedUser != null;
+    }
+
+    public static boolean isFactorySet(){
+        return factory != null;
     }
 
     public ArrayList<Usuarios> getUsers(){
 
-        ArrayList<Usuarios> usuarios = new ArrayList<Usuarios>();
+        ArrayList<Usuarios> usuarios = new ArrayList<>();
 
         Session session = factory.openSession();
         Transaction trans = null;
@@ -90,9 +96,7 @@ public class UsuariosMannager {
             List ul = session.createQuery("FROM Usuarios WHERE role>1").list();
 
             for(Object obj : ul){
-                Usuarios user = (Usuarios) obj;
-                LOGGER.log(Level.INFO, user.getNombre()+" - "+user.getPassword());
-                usuarios.add(user);
+                usuarios.add((Usuarios) obj);
             }
 
             trans.commit();
@@ -107,7 +111,7 @@ public class UsuariosMannager {
         return usuarios;
     }
 
-    public Usuarios getUser(int id){
+    public Usuarios getUsuario(int id){
         Session session = factory.openSession();
         Transaction trans = null;
 
@@ -147,6 +151,8 @@ public class UsuariosMannager {
             session.update(user);
             trans.commit();
 
+            LOGGER.warn("Actualizado Usuario (Username: "+user.getNombre()+" , ID: "+user.getId()+") por el usuario (Username: "+loggedUser.getNombre()+" , ID: "+loggedUser.getId()+")");
+
         }catch (HibernateException e) {
             if (trans!=null) trans.rollback();
             e.printStackTrace();
@@ -164,11 +170,39 @@ public class UsuariosMannager {
             session.save(user);
             trans.commit();
 
+            LOGGER.warn("Creado nuevo Usuario (Username: "+user.getNombre()+" , ID: "+user.getId()+") por el usuario (Username: "+loggedUser.getNombre()+" , ID: "+loggedUser.getId()+")");
+
+        }catch (HibernateException e) {
+            if (trans!=null) trans.rollback();
+            e.printStackTrace();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    public void removeUsuario(Usuarios user){
+        Session session = factory.openSession();
+        Transaction trans = null;
+
+        try{
+            trans = session.beginTransaction();
+            session.remove(user);
+            trans.commit();
+
+            LOGGER.warn("Borrado Usuario (Username: "+user.getNombre()+" , ID: "+user.getId()+") por el usuario (Username: "+loggedUser.getNombre()+" , ID: "+loggedUser.getId()+")");
+
         }catch (HibernateException e) {
             if (trans!=null) trans.rollback();
             e.printStackTrace();
         } finally {
             session.close();
         }
+    }
+
+    public void closeFactory(){
+        logOut();
+        factory.close();
     }
 }

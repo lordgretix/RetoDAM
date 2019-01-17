@@ -2,9 +2,11 @@
  * Created by JFormDesigner on Mon Jan 07 13:03:06 CET 2019
  */
 
-package GUI;
+package com.gp3.GestionUsuarios.GUI;
 
-import Modelos.Tablas.Usuarios.Usuarios;
+import com.gp3.GestionUsuarios.Modelos.GUI.JFieldPlaceHolder;
+import com.gp3.GestionUsuarios.Modelos.GUI.JTextFieldLimit;
+import com.gp3.GestionUsuarios.Modelos.Tablas.Usuarios.Usuarios;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.awt.*;
@@ -16,14 +18,13 @@ import javax.swing.GroupLayout;
 /**
  * @author taxpkhqr
  */
-public class ModificarUsuario {
+public class ModificarUsuario extends JDialog{
 
     private JFrame owner;
     private Usuarios user;
     private String oldPassword;
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - taxpkhqr
-    private JDialog dialog;
     private JLabel lblUsuario;
     private JTextField txtUsuario;
     private JLabel lblPassword;
@@ -45,7 +46,6 @@ public class ModificarUsuario {
 
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - taxpkhqr
-        dialog = new JDialog(owner);
         lblUsuario = new JLabel();
         txtUsuario = new JTextField();
         lblPassword = new JLabel();
@@ -59,10 +59,10 @@ public class ModificarUsuario {
 
         //======== dialog ========
         {
-            dialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
-            dialog.setTitle("Modificar Usuario");
-            dialog.setResizable(false);
-            Container dialogContentPane = dialog.getContentPane();
+            setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
+            setTitle("Modificar Usuario");
+            setResizable(false);
+            Container dialogContentPane = getContentPane();
 
             //---- lblUsuario ----
             lblUsuario.setText("Nombre de Usuario");
@@ -70,6 +70,7 @@ public class ModificarUsuario {
 
             //---- txtUsuario ----
             txtUsuario.setFont(new Font("Tahoma", Font.PLAIN, 14));
+            txtUsuario.setDocument(new JTextFieldLimit(20));
 
             //---- lblPassword ----
             lblPassword.setText("Contrase\u00f1a");
@@ -78,7 +79,7 @@ public class ModificarUsuario {
             //---- txtPassword ----
             txtPassword.setFont(new Font("Tahoma", Font.PLAIN, 14));
             txtPassword.setEnabled(false);
-            txtPassword.addFocusListener(this.passwordPlaceholder());
+            txtPassword.addKeyListener(new JFieldPlaceHolder(txtPassword, "password"));
 
             //---- lblPasswordRepeat ----
             lblPasswordRepeat.setText("Repetir Contrase\u00f1a");
@@ -87,7 +88,7 @@ public class ModificarUsuario {
             //---- txtPasswordRepeat ----
             txtPasswordRepeat.setFont(new Font("Tahoma", Font.PLAIN, 14));
             txtPasswordRepeat.setEnabled(false);
-            txtPasswordRepeat.addFocusListener(this.passwordPlaceholder());
+            txtPasswordRepeat.addKeyListener(new JFieldPlaceHolder(txtPasswordRepeat, "password"));
 
             //---- comboRol ----
             comboRol.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -155,8 +156,8 @@ public class ModificarUsuario {
                         .addComponent(btnModificar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(25, Short.MAX_VALUE))
             );
-            dialog.pack();
-            dialog.setLocationRelativeTo(null);
+            pack();
+            setLocationRelativeTo(null);
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
@@ -196,14 +197,6 @@ public class ModificarUsuario {
 
     public void setOldPassword(String oldPassword) {
         this.oldPassword = oldPassword;
-    }
-
-    public JDialog getDialog() {
-        return dialog;
-    }
-
-    public void setDialog(JDialog dialog) {
-        this.dialog = dialog;
     }
 
     public JLabel getLblUsuario() {
@@ -286,14 +279,13 @@ public class ModificarUsuario {
         this.cbPassword = cbPassword;
     }
 
-    private FocusListener passwordPlaceholder(){
+    private FocusListener passwordPlaceholder(Component component){
 
         return new FocusListener() {
             boolean hasChange = false;
 
             @Override
             public void focusGained(FocusEvent e) {
-                System.out.println("FocusGained: "+hasChange);
                 if(!hasChange){
                     ((JPasswordField) e.getComponent()).setText("");
                 }
@@ -301,7 +293,6 @@ public class ModificarUsuario {
 
             @Override
             public void focusLost(FocusEvent e) {
-                System.out.println("FocusLost: "+hasChange);
                 if(((JPasswordField)e.getComponent()).getPassword().length==0){
                     ((JPasswordField) e.getComponent()).setText("password");
                     e.getComponent().setForeground(Color.LIGHT_GRAY);
@@ -310,6 +301,12 @@ public class ModificarUsuario {
                     e.getComponent().setForeground(Color.BLACK);
                 }
             }
-        };
+
+            public FocusListener init(Component component){
+                focusLost(new FocusEvent(component, FocusEvent.FOCUS_LOST));
+                return this;
+            }
+
+        }.init(component);
     }
 }

@@ -1,22 +1,16 @@
-/*
- * Created by JFormDesigner on Sat Jan 05 21:10:09 CET 2019
- */
+package com.gp3.GestionUsuarios.GUI;
 
-package GUI;
-
-import Modelos.Tablas.Usuarios.Usuarios;
+import com.gp3.GestionUsuarios.Modelos.GUI.JTextFieldLimit;
+import com.gp3.GestionUsuarios.Modelos.Tablas.Usuarios.Usuarios;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
-/**
- * @author o6863265urykmpdv
- */
-public class NuevoUsuario{
 
-    private JDialog dialog;
+public class NuevoUsuario extends JDialog{
+
     private JFrame owner;
     private Usuarios user;
 
@@ -40,7 +34,6 @@ public class NuevoUsuario{
     }
 
     private void initComponents() {
-        dialog = new JDialog();
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - taxpkhqr
         lblUsuario = new JLabel();
@@ -54,10 +47,10 @@ public class NuevoUsuario{
         btnCrear = new JButton();
 
         //======== this ========
-        dialog.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
-        dialog.setTitle("Nuevo Usuario");
-        dialog.setResizable(false);
-        Container contentPane = dialog.getContentPane();
+        setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
+        setTitle("Nuevo Usuario");
+        setResizable(false);
+        Container contentPane = getContentPane();
 
         //---- lblUsuario ----
         lblUsuario.setText("Nombre de Usuario");
@@ -65,6 +58,7 @@ public class NuevoUsuario{
 
         //---- txtUsuario ----
         txtUsuario.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        txtUsuario.setDocument(new JTextFieldLimit(20));
 
         //---- lblPassword ----
         lblPassword.setText("Contrase\u00f1a");
@@ -138,8 +132,8 @@ public class NuevoUsuario{
                     .addComponent(btnCrear, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(25, Short.MAX_VALUE))
         );
-        dialog.pack();
-        dialog.setLocationRelativeTo(null);
+        pack();
+        setLocationRelativeTo(null);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
@@ -147,14 +141,6 @@ public class NuevoUsuario{
         this.user.setNombre(this.txtUsuario.getText());
         this.user.setPassword(DigestUtils.sha256Hex(String.valueOf(this.getTxtPassword().getPassword())));
         this.user.setRole(this.comboRol.getSelectedIndex()+2);
-    }
-
-    public JDialog getDialog() {
-        return dialog;
-    }
-
-    public void setDialog(JDialog dialog) {
-        this.dialog = dialog;
     }
 
     public Window getOwner() {
