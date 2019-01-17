@@ -1,10 +1,12 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Modif_Content
 
-    Dim cod_poblacion, cod_postal, id_alo As String
+    Dim cod_poblacion, cod_postal, id_alo, poblcaion, provincia As String
     Public idioma As String = "es"
 
     Public Sub Load_view(id As Integer)
+        Dim indexcodpos As Integer
+        Dim intValue As Integer
         id_alo = id
         conectar()
         llenarComboboxs()
@@ -49,22 +51,50 @@ Public Class Modif_Content
             End If
             dr.Close()
 
-            sql = " Select * from codigos_postales where cod_poblacion = " & cod_poblacion & " and cod_postal = " & cod_postal
+            'sql = " Select * from codigos_postales where cod_poblacion = " & cod_poblacion & " and cod_postal = " & cod_postal
+            'Dim cmd3 As New MySqlCommand(sql, cnn1)
+            'dr = cmd3.ExecuteReader
+            'If dr.HasRows Then
+            '    While dr.Read
+            '        Me.ComboBox_poblacion.SelectedItem = dr.Item(3)
+            '        Me.ComboBox_provincia.SelectedItem = dr.Item(4)
+            '    End While
+            'End If
+            sql = "select * from codigos_postales where cod_poblacion= " & cod_poblacion & " and cod_postal= " & cod_postal
             Dim cmd3 As New MySqlCommand(sql, cnn1)
+            dr.Close()
             dr = cmd3.ExecuteReader
             If dr.HasRows Then
                 While dr.Read
-                    Me.ComboBox_poblacion.SelectedItem = dr.Item(3)
-                    Me.ComboBox_provincia.SelectedItem = dr.Item(4)
+                    poblcaion = dr.Item(3)
+                    provincia = dr.Item(4)
                 End While
             End If
-            desconectar()
+
             dr.Close()
+            Me.ComboBox_poblacion.SelectedItem = poblcaion
+            Me.ComboBox_provincia.SelectedItem = provincia
+
+            For i As Integer = 0 To ComboBox_cp.Items.Count - 1
+                ComboBox_cp.SelectedIndex = i
+                intValue = ComboBox_cp.Items(i)
+                If intValue = cod_postal Then
+                    indexcodpos = i
+                End If
+            Next
+            Me.ComboBox_cp.SelectedIndex = indexcodpos
+
         Catch ex As Exception
             MsgBox(ex.Message)
-        End Try
+        Finally
 
+        End Try
+        desconectar()
         Me.Show()
+        Me.ComboBox_poblacion.SelectedItem = poblcaion
+        Me.ComboBox_cp.SelectedIndex = indexcodpos
+        ' por alguna razon tengo que volver a darle seleccionar para poder manntener la seleccion
+
     End Sub
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
         Nuevo_Content.Show()
@@ -103,13 +133,15 @@ Public Class Modif_Content
     End Sub
 
     Private Sub Btn_save_Click(sender As Object, e As EventArgs) Handles Btn_save.Click
+        conectar()
         Try
+            MsgBox(Me.ComboBox_cp.SelectedItem)
             Dim sql As String
             sql = "update alojamientos set nombre= @nom, telefono= @tel, direccion= @dir, email= @mail,"
             sql &= "web= @web, certificado= @certi, club= @club, restaurante= @resta, tienda= @tienda,"
             sql &= "autocaravana= @auto, capacidad= @capacy, cod_postal= @cp, latlong= @latlo, "
-            sql &= "cod_poblacion= @codpob, firma= @firma)"
-
+            sql &= "cod_poblacion= @codpob where firma= @firma"
+            'las firmas no son editables
             Dim cmd As New MySqlCommand(sql, cnn1)
             cmd.Parameters.AddWithValue("@nom", Me.Text_nombre.Text)
             cmd.Parameters.AddWithValue("@tel", Me.Text_tel.Text)
@@ -125,8 +157,9 @@ Public Class Modif_Content
             cmd.Parameters.AddWithValue("@cp", Me.ComboBox_cp.SelectedItem)
             cmd.Parameters.AddWithValue("@latlo", Me.Text_lat.Text)
             'poblacion hay que hacer un query para coger el codigo ya que en el combobox esta los nombres
+            ' MsgBox(obtenerCodPob())
             cmd.Parameters.AddWithValue("@codpob", obtenerCodPob())
-            cmd.Parameters.AddWithValue("@firma", Me.Text_firma.Text) 'la firma es unica
+            cmd.Parameters.AddWithValue("@firma", Me.Text_firma.Text)
             cmd.ExecuteNonQuery()
 
         Catch ex As Exception
@@ -136,7 +169,7 @@ Public Class Modif_Content
         Try
             Dim sql As String
             sql = "update traducciones set alojamiento= @id_alo, idioma= @idioma, tipo=@tipo, "
-            sql &= "resumen= @resumen, descripcion= @descripcion"
+            sql &= "resumen= @resumen, descripcion= @descripcion where id=@id_tradu"
 
             Dim cmd As New MySqlCommand(sql, cnn1)
             'hay que hacer un query para obtener el id de la alojamiento el cual relaciona las dos tablas
@@ -145,10 +178,15 @@ Public Class Modif_Content
             cmd.Parameters.AddWithValue("@tipo", Me.Text_Tipo.Text)
             cmd.Parameters.AddWithValue("@resumen", Me.Text_resu.Text)
             cmd.Parameters.AddWithValue("@descripcion", Me.Text_descripcion.Text)
+            cmd.Parameters.AddWithValue("@id_tradu", obtenerIdTradu())
             cmd.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+        MsgBox("actualizado")
+        Adm_Content.cargardata("SELECT a.id, a.nombre, a.telefono, a.direccion, a.email, a.web, a.firma, t.tipo, t.resumen FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'")
+        desconectar()
+        Me.Hide()
     End Sub
 
     Private Sub llenarComboboxs()
@@ -197,6 +235,7 @@ Public Class Modif_Content
     End Sub
 
     Private Function obtenerCodAlo() As Object
+
         Dim cod_alo As String = ""
         Try
             Dim sql As String = "SELECT id FROM alojamientos where firma ='" & Me.Text_firma.Text & "' "
@@ -211,13 +250,37 @@ Public Class Modif_Content
             MsgBox(ex.Message)
         End Try
         Return cod_alo
+
+    End Function
+
+    Private Function obtenerIdTradu() As Object
+        Dim cod_tradu As String = ""
+        Try
+            Dim sql As String = "SELECT id FROM traducciones where alojamiento ='" & id_alo & "' "
+            sql &= "and idioma='" & idioma & "'"
+            Dim cmd As New MySqlCommand(sql, cnn1)
+            Dim dr As MySqlDataReader
+            dr = cmd.ExecuteReader
+            While dr.Read
+                cod_tradu = (dr.Item(0))
+            End While
+            dr.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return cod_tradu
+
     End Function
 
     Private Function obtenerCodPob() As Object
+
         Dim cod_pob As String = ""
         Try
             Dim sql As String = "SELECT cod_poblacion FROM codigos_postales where poblacion ='" & Me.ComboBox_poblacion.SelectedItem & "' "
             sql &= "and provincia='" & Me.ComboBox_provincia.SelectedItem & "'"
+            'MsgBox(Me.ComboBox_poblacion.SelectedItem)
+            'MsgBox(Me.ComboBox_provincia.SelectedItem)
+
             Dim cmd As New MySqlCommand(sql, cnn1)
             Dim dr As MySqlDataReader
             dr = cmd.ExecuteReader
@@ -229,9 +292,11 @@ Public Class Modif_Content
             MsgBox(ex.Message)
         End Try
         Return cod_pob
+
     End Function
 
     Private Sub ComboBox_provincia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_provincia.SelectedIndexChanged
+        conectar()
         Try
             Me.ComboBox_poblacion.Items.Clear()
 
@@ -247,10 +312,11 @@ Public Class Modif_Content
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
+        desconectar()
     End Sub
 
     Private Sub ComboBox_poblacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_poblacion.SelectedIndexChanged
+        conectar()
         Try
             Me.ComboBox_cp.Items.Clear()
 
@@ -266,7 +332,7 @@ Public Class Modif_Content
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
+        desconectar
     End Sub
 
     Private Sub CastellanoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CastellanoToolStripMenuItem.Click
@@ -276,4 +342,6 @@ Public Class Modif_Content
     Private Sub EuskeraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EuskeraToolStripMenuItem.Click
         idioma = "eus"
     End Sub
+
+
 End Class

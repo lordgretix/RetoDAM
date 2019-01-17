@@ -283,7 +283,7 @@ Partial Class Modif_Content
         Me.Text_capacity.Location = New System.Drawing.Point(549, 52)
         Me.Text_capacity.Name = "Text_capacity"
         Me.Text_capacity.Size = New System.Drawing.Size(202, 24)
-        Me.Text_capacity.TabIndex = 22
+        Me.Text_capacity.TabIndex = 6
         '
         'Text_lat
         '
@@ -291,15 +291,16 @@ Partial Class Modif_Content
         Me.Text_lat.Location = New System.Drawing.Point(549, 86)
         Me.Text_lat.Name = "Text_lat"
         Me.Text_lat.Size = New System.Drawing.Size(202, 24)
-        Me.Text_lat.TabIndex = 24
+        Me.Text_lat.TabIndex = 7
         '
         'Text_firma
         '
+        Me.Text_firma.Enabled = False
         Me.Text_firma.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Text_firma.Location = New System.Drawing.Point(548, 212)
         Me.Text_firma.Name = "Text_firma"
         Me.Text_firma.Size = New System.Drawing.Size(202, 24)
-        Me.Text_firma.TabIndex = 27
+        Me.Text_firma.TabIndex = 8
         '
         'Btn_Volver
         '
@@ -337,7 +338,7 @@ Partial Class Modif_Content
         Me.Text_Tipo.Location = New System.Drawing.Point(165, 218)
         Me.Text_Tipo.Name = "Text_Tipo"
         Me.Text_Tipo.Size = New System.Drawing.Size(202, 24)
-        Me.Text_Tipo.TabIndex = 32
+        Me.Text_Tipo.TabIndex = 5
         '
         'Label14
         '
@@ -356,7 +357,7 @@ Partial Class Modif_Content
         Me.Text_resu.Multiline = True
         Me.Text_resu.Name = "Text_resu"
         Me.Text_resu.Size = New System.Drawing.Size(202, 97)
-        Me.Text_resu.TabIndex = 34
+        Me.Text_resu.TabIndex = 9
         '
         'Label15
         '
@@ -375,7 +376,7 @@ Partial Class Modif_Content
         Me.Text_descripcion.Multiline = True
         Me.Text_descripcion.Name = "Text_descripcion"
         Me.Text_descripcion.Size = New System.Drawing.Size(586, 155)
-        Me.Text_descripcion.TabIndex = 36
+        Me.Text_descripcion.TabIndex = 10
         '
         'Label16
         '
@@ -430,26 +431,26 @@ Partial Class Modif_Content
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
         Me.NuevoToolStripMenuItem.Text = "&Nuevo"
         '
         'IdiomaToolStripMenuItem
         '
         Me.IdiomaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem, Me.EuskeraToolStripMenuItem})
         Me.IdiomaToolStripMenuItem.Name = "IdiomaToolStripMenuItem"
-        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
         Me.IdiomaToolStripMenuItem.Text = "&Idioma"
         '
         'CastellanoToolStripMenuItem
         '
         Me.CastellanoToolStripMenuItem.Name = "CastellanoToolStripMenuItem"
-        Me.CastellanoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CastellanoToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
         Me.CastellanoToolStripMenuItem.Text = "&Castellano"
         '
         'EuskeraToolStripMenuItem
         '
         Me.EuskeraToolStripMenuItem.Name = "EuskeraToolStripMenuItem"
-        Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
         Me.EuskeraToolStripMenuItem.Text = "&Euskera"
         '
         'Btn_borrar

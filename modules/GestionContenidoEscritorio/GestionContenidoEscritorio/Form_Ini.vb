@@ -29,6 +29,8 @@ Public Class Form_Ini
             ' MsgBox("connecting...")
             cnn1.Open()
             ' MsgBox("hecho")
+            Me.TextUser.Text = "sam"
+            Me.TextPassword.Text = "1234"
         Catch ex As Exception
             'MsgBox(ex.Message)
         Finally

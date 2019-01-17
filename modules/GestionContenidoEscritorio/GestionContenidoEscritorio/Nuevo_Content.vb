@@ -58,10 +58,6 @@ Public Class Nuevo_Content
         Me.Hide()
     End Sub
 
-    Private Sub Text_firma_TextChanged(sender As Object, e As EventArgs) Handles Text_firma.TextChanged
-
-    End Sub
-
     Private Sub CerrarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesionToolStripMenuItem.Click
         Me.Hide()
         Form_Ini.Show()
@@ -95,7 +91,12 @@ Public Class Nuevo_Content
 
     End Sub
 
+    Private Sub Nuevo_Content_Disposed(sender As Object, e As EventArgs) Handles Me.Disposed
+        desconectar()
+    End Sub
+
     Private Sub Nuevo_Content_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conectar()
         Try
             Dim sql As String = "SELECT DISTINCT provincia FROM codigos_postales"
             Dim cmd As New MySqlCommand(sql, cnn1)
