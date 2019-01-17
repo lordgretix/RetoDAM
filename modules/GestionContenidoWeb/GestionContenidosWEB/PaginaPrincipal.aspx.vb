@@ -6,22 +6,23 @@ Partial Class PaginaPrincipal
     Dim idSeleccionado As Integer
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Conexion.conectar()
-        Me.Panel1.Visible = True
-        mostrarTabla()
+        'Conexion.conectar()
+        'Me.Panel1.Visible = True
+        'mostrarTabla()
+
     End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'Conexion.conectar()
-        'If Me.Panel1.Visible = True Then
-        '    Me.Panel1.Visible = False
-        '    Me.Button1.Text = "Mostrar tabla"
+        Conexion.conectar()
+        If Me.Panel1.Visible = True Then
+            Me.Panel1.Visible = False
+            Me.Button1.Text = "Mostrar tabla"
 
-        'Else
-        '    Me.Panel1.Visible = True
-        '    Me.Button1.Text = "Ocultar tabla"
-        'End If
-        'mostrarTabla()
+        Else
+            Me.Panel1.Visible = True
+            Me.Button1.Text = "Ocultar tabla"
+        End If
+        mostrarTabla()
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -35,14 +36,15 @@ Partial Class PaginaPrincipal
 
     End Sub
     Private Sub mostrarTabla()
+        Conexion.desconectar()
         Conexion.conectar()
         Me.GridView1.DataBind()
         Me.GridView1.AutoGenerateSelectButton = True
         Dim sql As String
         Dim mistring As String = ""
         'sql = "SELECT * FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
-        sql = "SELECT a.id,t.tipo,a.nombre,a.direccion,a.telefono,a.email,a.web FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
-        'sql = "SELECT * FROM alojaminetos2 "
+        sql = "SELECT a.id as ID,t.tipo as Tipo,a.nombre as Nombre,a.direccion as Direccion,a.telefono as Telefono,a.email as Email,a.web as WEB FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
+        'sql = "SELECT * FROM alojamientos "
         Dim commando As New MySqlCommand(sql, Conexion.cnn1)
         Dim adapter As New MySqlDataAdapter(commando)
 
@@ -61,49 +63,23 @@ Partial Class PaginaPrincipal
     End Sub
 
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
-        ''GridViewRow(fila = Me.GridView1.SelectedRow)
+      
+        Me.Button6.Enabled = True
 
         'Me.tb_Buscar.Text = GridView1.SelectedRow.Cells(2).Text 'tipo/nombre
 
-        'Me.tbNombre.Text = GridView1.SelectedRow.Cells(2).Text
-        'Me.tbDireccion.Text = GridView1.SelectedRow.Cells(4).Text
-        'Me.tbTelefono.Text = GridView1.SelectedRow.Cells(3).Text
-        'Me.tbEmail.Text = GridView1.SelectedRow.Cells(5).Text
-        'Me.tbWeb.Text = GridView1.SelectedRow.Cells(6).Text
-        ''Me.tbMunicipio.Text = GridView1.SelectedRow.Cells(15).Text
-        ''Me.tbCP.Text=GridView1.SelectedRow.Cells(7).Text
+        Me.tbNombre.Text = GridView1.SelectedRow.Cells(3).Text
+        Me.tbDireccion.Text = GridView1.SelectedRow.Cells(4).Text
+        Me.tbTelefono.Text = GridView1.SelectedRow.Cells(5).Text
+        Me.tbEmail.Text = GridView1.SelectedRow.Cells(6).Text
+        Me.tbWeb.Text = GridView1.SelectedRow.Cells(7).Text
+
+        'Me.tbMunicipio.Text = GridView1.SelectedRow.Cells(15).Text
+        'Me.tbCP.Text=GridView1.SelectedRow.Cells(7).Text
 
     End Sub
 
-    Protected Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
 
-        idSeleccionado = GridView1.SelectedRow.Cells(1).Text 'id
-        ' MsgBox("ID " & idSeleccionado)
-        Dim sql As String
-        sql = "UPDATE alojaminetos2  "
-        sql &= " SET nombre = '" & tbNombre.Text & "', direccion= '" & tbDireccion.Text & "'"
-        sql &= " WHERE id =  '" & idSeleccionado & "'"
-        'sql = "UPDATE alojaminetos2 Set nombre = '" & tbNombre.Text & "' WHERE alojaminetos2.id = '4'"
-        Dim commando As New MySqlCommand(sql, Conexion.cnn1)
-
-        Dim result As Integer
-        Try
-            Conexion.conectar()
-            result = commando.ExecuteNonQuery
-            MsgBox(result)
-            If result = 1 Then
-                MsgBox("Actualizado con exito!")
-                mostrarTabla()
-            Else
-                MsgBox("¡Error!")
-            End If
-        Catch ex As Exception
-            MsgBox("Error :" & vbCrLf & ex.Message)
-        Finally
-            Conexion.desconectar()
-        End Try
-
-    End Sub
 
     Private Sub contarfilas(sql As String)
         Dim commando As New MySqlCommand(sql, Conexion.cnn1)
@@ -128,30 +104,7 @@ Partial Class PaginaPrincipal
     Protected Sub btnInsertar_Click(sender As Object, e As EventArgs) Handles btnInsertar.Click
         Response.Redirect("Editar.aspx")
     End Sub
-    'Protected Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-    '    Dim sql As String
-    '    sql = "UPDATE alojaminetos2  "
-    '    sql &= " SET  nombre = 'Casa2'"
-    '    sql &= " WHERE id = 4"
 
-    '    Dim commando As New MySqlCommand(sql, Conexion.cnn1)
-
-    '    Dim result As Integer
-    '    Try
-    '        Conexion.conectar()
-    '        result = commando.ExecuteNonQuery
-    '        'MsgBox(result)
-    '        If result = 1 Then
-    '            MsgBox("Aceptadp!")
-    '        Else
-    '            MsgBox("¡Error!")
-    '        End If
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message)
-    '    Finally
-
-    '    End Try
-    'End Sub
     Protected Sub btn_Buscar_Click(sender As Object, e As EventArgs) Handles btn_Buscar.Click
         'ordenacion por COUNTRY = USA, CITY
         Dim dv As New DataView
@@ -166,7 +119,7 @@ Partial Class PaginaPrincipal
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         idSeleccionado = GridView1.SelectedRow.Cells(1).Text 'id
         Dim sql As String
-        sql = "DELETE FROM alojaminetos2  "
+        sql = "DELETE FROM alojamientos  "
         sql &= " WHERE id = '" & idSeleccionado & "'"
         'DELETE FROM `alojaminetos2` WHERE `alojaminetos2`.`id` = 4"
         Dim commando As New MySqlCommand(sql, Conexion.cnn1)
@@ -175,7 +128,7 @@ Partial Class PaginaPrincipal
         Try
             Conexion.conectar()
             result = commando.ExecuteNonQuery
-            MsgBox(result)
+            'MsgBox(result)
             If result = 1 Then
                 'MsgBox("ELIMINADO!",MsgBoxStyle.YesNoCancel)
                 mostrarTabla()
@@ -188,4 +141,10 @@ Partial Class PaginaPrincipal
 
         End Try
     End Sub
+   
+    Protected Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+
+        Response.Redirect("~\Actualizar.aspx?" + Me.GridView1.SelectedRow.Cells(1).Text)
+    End Sub
+
 End Class

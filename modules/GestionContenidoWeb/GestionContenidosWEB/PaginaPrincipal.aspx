@@ -29,6 +29,10 @@
                 <SortedDescendingHeaderStyle BackColor="#242121" />
 
             </asp:GridView>
+
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:reto_gp3ConnectionString %>" ProviderName="<%$ ConnectionStrings:reto_gp3ConnectionString.ProviderName %>" SelectCommand="SELECT id, nombre, telefono, direccion, email, web, cod_postal, firma FROM alojamientos"></asp:SqlDataSource>
+            <br />
+            <br />
         </div>
 
         <section>
@@ -36,10 +40,12 @@
             <%--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                 Actualizar
             </button>--%>
-            <asp:Button ID="Button5" runat="server" Text="Actualizar"  class="btn btn-primary" data-toggle="modal" data-target="#myModal" />
+            <asp:Button ID="Button5" runat="server" Text="Mas datos" class="btn btn-primary" data-toggle="modal" data-target="#myModal" />
             <asp:Button ID="btnInsertar" runat="server" Text="Insertar" class="btn btn-primary" />
             <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" class="btn btn-primary" />
             <!-- The Modal -->
+
+
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -50,74 +56,71 @@
                             <h4 class="modal-title">Datos</h4>
 
                         </div>
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+                            <ContentTemplate>
 
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <section>
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label for="inputPassword4">Nombre</label>
-                                        <asp:TextBox ID="tbNombre" runat="server" type="text" class="form-control" placeholder="Nombre"></asp:TextBox>
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <section>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputPassword4">Nombre</label>
+                                                <asp:TextBox ID="tbNombre" runat="server" type="text" class="form-control" placeholder="Nombre"></asp:TextBox>
 
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Email</label>
-                                        <asp:TextBox ID="tbEmail" runat="server" type="email" class="form-control" placeholder="Email"></asp:TextBox>
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label for="inputEmail4">Telefono</label>
-                                        <asp:TextBox ID="tbTelefono" runat="server" type="tel" class="form-control"></asp:TextBox>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4">Email</label>
+                                                <asp:TextBox ID="tbEmail" runat="server" type="email" class="form-control" placeholder="Email"></asp:TextBox>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="inputEmail4">Telefono</label>
+                                                <asp:TextBox ID="tbTelefono" runat="server" type="tel" class="form-control"></asp:TextBox>
 
-                                    </div>
-                                </div>
+                                            </div>
+                                        </div>
 
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputAddress">Direccion</label>
-                                        <asp:TextBox ID="tbDireccion" runat="server" type="text" class="form-control" placeholder="1234 Gran Vía "></asp:TextBox>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputAddress">Direccion</label>
+                                                <asp:TextBox ID="tbDireccion" runat="server" type="text" class="form-control" placeholder="1234 Gran Vía "></asp:TextBox>
 
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputAddress2">Web</label>
-                                        <asp:TextBox ID="tbWeb" runat="server" type="text" class="form-control" placeholder="web"></asp:TextBox>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputAddress2">Web</label>
+                                                <asp:TextBox ID="tbWeb" runat="server" type="text" class="form-control" placeholder="web"></asp:TextBox>
 
-                                    </div>
-                                </div>
+                                            </div>
+                                        </div>
 
-                                <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                        <label for="inputCity">Municipio</label>
-                                        <asp:TextBox ID="tbMunicipio" runat="server" type="text" class="form-control"></asp:TextBox>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputState">Territorio</label>
 
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="inputState">Territorio</label>
-                                       <%-- <select id="inputState" class="form-control">
-                                            <option selected>Bizkaia</option>
-                                            <option>Gipuzkoa</option>
-                                            <option>Alava</option>
-                                        </select>--%>
-                                        <asp:DropDownList ID="DropDownList2" runat="server" class="form-control">
-                                            <asp:ListItem>Bizkaia</asp:ListItem>
-                                            <asp:ListItem>Gipuzkoa</asp:ListItem>
-                                            <asp:ListItem>Alava/Araba</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
-
+                                                <asp:DropDownList ID="DDL_provincia" runat="server" class="form-control" AutoPostBack="True">
+                                                     <asp:ListItem></asp:ListItem>
+                                                    <asp:ListItem>Bizkaia</asp:ListItem>
+                                                    <asp:ListItem>Gipuzkoa</asp:ListItem>
+                                                    <asp:ListItem>Alava/Araba</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputMunicipio">Municipio</label>
+                                                <asp:DropDownList ID="DDL_municipio" runat="server" class="form-control" AutoPostBack="True"></asp:DropDownList>
+                                            </div>
+                                          
                                     <div class="form-group col-md-4">
                                         <label for="inputZip">Codigo Postal</label>
-                                        <asp:TextBox ID="tbCP" runat="server" type="text" class="form-control"></asp:TextBox>
-
+                                        <asp:DropDownList ID="DDL_CP" runat="server" class="form-control" AutoPostBack="True"></asp:DropDownList>
                                     </div>
-                                    <div class="form-group col-md-10">
-                                        <label for="inputCapacidad">Capacidad</label>
-                                        <asp:TextBox ID="tbCapacidad" runat="server" type="number" class="form-control"></asp:TextBox>
+                                            <div class="form-group col-md-10">
+                                                <label for="inputCapacidad">Capacidad</label>
+                                                <asp:TextBox ID="tbCapacidad" runat="server" type="number" class="form-control"></asp:TextBox>
 
-                                    </div>
-                                </div>
-                                <section>
-                                    <asp:Panel ID="Panel2" runat="server" Visible="True">
-                                        <%--  <div>
+                                            </div>
+                                        </div>
+                                        <section>
+                                            <asp:Panel ID="Panel2" runat="server" Visible="True">
+                                                <%--  <div>
                                             <asp:CheckBox ID="CheckBox6" runat="server" Text="Autocaravana" />
 
                                             <asp:CheckBox ID="CheckBox7" runat="server" Text="Restaurante" />
@@ -128,22 +131,26 @@
 
                                             <asp:CheckBox ID="CheckBox10" runat="server" Text="Tienda" />
                                         </div>--%>
-                                    </asp:Panel>
-                                </section>
+                                            </asp:Panel>
+                                        </section>
 
-                            </section>
-                        </div>
-
+                                    </section>
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                         <!-- Modal footer -->
                         <div class="modal-footer">
 
-                            <%-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Actualizar</button>--%>
-                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" class="btn btn-secondary"  />
+                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                           <%-- <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" class="btn btn-secondary" />--%>
                         </div>
 
                     </div>
                 </div>
             </div>
+
+            <asp:Button ID="Button6" runat="server" CssClass="btn btn-primary"  Text="Actualizar" Enabled="False" />
+
         </section>
 
     </asp:Panel>

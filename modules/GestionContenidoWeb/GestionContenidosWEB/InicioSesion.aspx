@@ -7,6 +7,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="Content/Login2.css" rel="stylesheet" />
     <link href="Content/Login.css" rel="stylesheet" />
     <title></title>
     <style>
@@ -15,16 +16,15 @@
             background-size: 200%;
             background-repeat: no-repeat;
         }
+
     </style>
 </head>
 
 <body id="fondo">
-   <%-- <img src="imagenes/enkasa.png" style="margin-left: 40%; margin-top: 5%;" />--%>
+    <img src="imagenes/enkasa.png" style="margin-left: 40%; margin-top: 5%;" />
 
     <div class="container well contenedor">
         
-               <img src="imagenes/enkasa.png" />
-      
         <div class="row">
             <div class="col-xs-12">
 
@@ -58,6 +58,10 @@
 
         </form>
     </div>
+
+
+
+
 </body>
 
 </html>
