@@ -65,14 +65,14 @@ Partial Class Modif_Content
         Me.IdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CastellanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EuskeraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Btn_borrar = New System.Windows.Forms.Button()
-        Me.ComboBox_cp = New System.Windows.Forms.ComboBox()
-        Me.ComboBox_provincia = New System.Windows.Forms.ComboBox()
-        Me.ComboBox_poblacion = New System.Windows.Forms.ComboBox()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.AñadirNuevoTraduccionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CastellanoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EuskeraToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Btn_borrar = New System.Windows.Forms.Button()
+        Me.ComboBox_cp = New System.Windows.Forms.ComboBox()
+        Me.ComboBox_provincia = New System.Windows.Forms.ComboBox()
+        Me.ComboBox_poblacion = New System.Windows.Forms.ComboBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -444,14 +444,14 @@ Partial Class Modif_Content
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.NuevoToolStripMenuItem.Text = "&Nuevo"
         '
         'IdiomaToolStripMenuItem
         '
         Me.IdiomaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem, Me.EuskeraToolStripMenuItem})
         Me.IdiomaToolStripMenuItem.Name = "IdiomaToolStripMenuItem"
-        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
+        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
         Me.IdiomaToolStripMenuItem.Text = "&Idioma"
         '
         'CastellanoToolStripMenuItem
@@ -465,6 +465,30 @@ Partial Class Modif_Content
         Me.EuskeraToolStripMenuItem.Name = "EuskeraToolStripMenuItem"
         Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
         Me.EuskeraToolStripMenuItem.Text = "&Euskera"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(204, 6)
+        '
+        'AñadirNuevoTraduccionToolStripMenuItem
+        '
+        Me.AñadirNuevoTraduccionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem1, Me.EuskeraToolStripMenuItem1})
+        Me.AñadirNuevoTraduccionToolStripMenuItem.Name = "AñadirNuevoTraduccionToolStripMenuItem"
+        Me.AñadirNuevoTraduccionToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.AñadirNuevoTraduccionToolStripMenuItem.Text = "Añadir nuevo Traduccion"
+        '
+        'CastellanoToolStripMenuItem1
+        '
+        Me.CastellanoToolStripMenuItem1.Name = "CastellanoToolStripMenuItem1"
+        Me.CastellanoToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.CastellanoToolStripMenuItem1.Text = "&Castellano"
+        '
+        'EuskeraToolStripMenuItem1
+        '
+        Me.EuskeraToolStripMenuItem1.Name = "EuskeraToolStripMenuItem1"
+        Me.EuskeraToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.EuskeraToolStripMenuItem1.Text = "&Euskera"
         '
         'Btn_borrar
         '
@@ -501,30 +525,6 @@ Partial Class Modif_Content
         Me.ComboBox_poblacion.Name = "ComboBox_poblacion"
         Me.ComboBox_poblacion.Size = New System.Drawing.Size(200, 26)
         Me.ComboBox_poblacion.TabIndex = 41
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(204, 6)
-        '
-        'AñadirNuevoTraduccionToolStripMenuItem
-        '
-        Me.AñadirNuevoTraduccionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem1, Me.EuskeraToolStripMenuItem1})
-        Me.AñadirNuevoTraduccionToolStripMenuItem.Name = "AñadirNuevoTraduccionToolStripMenuItem"
-        Me.AñadirNuevoTraduccionToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
-        Me.AñadirNuevoTraduccionToolStripMenuItem.Text = "Añadir nuevo Traduccion"
-        '
-        'CastellanoToolStripMenuItem1
-        '
-        Me.CastellanoToolStripMenuItem1.Name = "CastellanoToolStripMenuItem1"
-        Me.CastellanoToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.CastellanoToolStripMenuItem1.Text = "&Castellano"
-        '
-        'EuskeraToolStripMenuItem1
-        '
-        Me.EuskeraToolStripMenuItem1.Name = "EuskeraToolStripMenuItem1"
-        Me.EuskeraToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.EuskeraToolStripMenuItem1.Text = "&Euskera"
         '
         'Modif_Content
         '

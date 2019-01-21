@@ -66,6 +66,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -85,6 +86,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddIdioma.Designer.vb">
+      <DependentUpon>AddIdioma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddIdioma.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Adm_Content.Designer.vb">
       <DependentUpon>Adm_Content.vb</DependentUpon>
     </Compile>
@@ -98,11 +105,23 @@
     <Compile Include="Filtros.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mapa.Designer.vb">
+      <DependentUpon>Mapa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mapa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form_Ini.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Ini.Designer.vb">
       <DependentUpon>Form_Ini.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading.Designer.vb">
+      <DependentUpon>Loading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Loading.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modif_Content.Designer.vb">
@@ -135,14 +154,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddIdioma.resx">
+      <DependentUpon>AddIdioma.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Adm_Content.resx">
       <DependentUpon>Adm_Content.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Filtros.resx">
       <DependentUpon>Filtros.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mapa.resx">
+      <DependentUpon>Mapa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Ini.resx">
       <DependentUpon>Form_Ini.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading.resx">
+      <DependentUpon>Loading.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modif_Content.resx">
       <DependentUpon>Modif_Content.vb</DependentUpon>
@@ -171,6 +199,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\load_imag.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\volver.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

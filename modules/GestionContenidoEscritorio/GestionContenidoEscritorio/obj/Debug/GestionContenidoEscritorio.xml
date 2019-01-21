@@ -19,6 +19,14 @@ GestionContenidoEscritorio
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.load_imag">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.volver">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="T:GestionContenidoEscritorio.My.Resources.Resources">
 	<summary>
   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.

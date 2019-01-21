@@ -31,13 +31,14 @@ Partial Class Adm_Content
         Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ActualizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CastellanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EuskeraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label_num = New System.Windows.Forms.Label()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label_num = New System.Windows.Forms.Label()
+        Me.MapaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -48,7 +49,7 @@ Partial Class Adm_Content
         Me.DataGridView1.Location = New System.Drawing.Point(35, 133)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(822, 399)
+        Me.DataGridView1.Size = New System.Drawing.Size(822, 515)
         Me.DataGridView1.TabIndex = 0
         '
         'Label1
@@ -96,7 +97,7 @@ Partial Class Adm_Content
         '
         'InicioToolStripMenuItem
         '
-        Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarToolStripMenuItem, Me.ActualizarToolStripMenuItem, Me.IdiomaToolStripMenuItem, Me.ToolStripMenuItem2, Me.NuevoToolStripMenuItem})
+        Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActualizarToolStripMenuItem, Me.BuscarToolStripMenuItem, Me.IdiomaToolStripMenuItem, Me.MapaToolStripMenuItem, Me.ToolStripMenuItem2, Me.NuevoToolStripMenuItem})
         Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
         Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
         Me.InicioToolStripMenuItem.Text = "&Contenidos"
@@ -106,12 +107,6 @@ Partial Class Adm_Content
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
         Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BuscarToolStripMenuItem.Text = "&Buscar"
-        '
-        'NuevoToolStripMenuItem
-        '
-        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.NuevoToolStripMenuItem.Text = "&Nuevo"
         '
         'ActualizarToolStripMenuItem
         '
@@ -129,14 +124,25 @@ Partial Class Adm_Content
         'CastellanoToolStripMenuItem
         '
         Me.CastellanoToolStripMenuItem.Name = "CastellanoToolStripMenuItem"
-        Me.CastellanoToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.CastellanoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CastellanoToolStripMenuItem.Text = "&Castellano"
         '
         'EuskeraToolStripMenuItem
         '
         Me.EuskeraToolStripMenuItem.Name = "EuskeraToolStripMenuItem"
-        Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EuskeraToolStripMenuItem.Text = "&Euskera"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(149, 6)
+        '
+        'NuevoToolStripMenuItem
+        '
+        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevoToolStripMenuItem.Text = "&Nuevo"
         '
         'Label_num
         '
@@ -146,16 +152,17 @@ Partial Class Adm_Content
         Me.Label_num.Size = New System.Drawing.Size(0, 13)
         Me.Label_num.TabIndex = 5
         '
-        'ToolStripMenuItem2
+        'MapaToolStripMenuItem
         '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(149, 6)
+        Me.MapaToolStripMenuItem.Name = "MapaToolStripMenuItem"
+        Me.MapaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.MapaToolStripMenuItem.Text = "&Mapa"
         '
         'Adm_Content
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(883, 544)
+        Me.ClientSize = New System.Drawing.Size(883, 660)
         Me.Controls.Add(Me.Label_num)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridView1)
@@ -186,4 +193,5 @@ Partial Class Adm_Content
     Friend WithEvents EuskeraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label_num As System.Windows.Forms.Label
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents MapaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

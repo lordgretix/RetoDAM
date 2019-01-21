@@ -106,8 +106,10 @@ Public Class Form_Ini
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btn_inicial.Click
         validarUserPasswor()
         If iniciado Then
-            Adm_Content.Show()
             Me.Hide()
+            Loading.Show()
+            Adm_Content.Show()
+
         End If
 
     End Sub

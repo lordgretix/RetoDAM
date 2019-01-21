@@ -117,4 +117,258 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Label_acceso.Name" xml:space="preserve">
+    <value>Label_acceso</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="TextUser.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>Inicial Sesión</value>
+  </data>
+  <data name="&gt;&gt;Btn_inicial.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TextUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="&gt;&gt;Label_acceso.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Label_acceso.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Btn_inicial.Name" xml:space="preserve">
+    <value>Btn_inicial</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;TextPassword.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lab_fail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 165</value>
+  </data>
+  <data name="Label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 41</value>
+  </data>
+  <data name="Label_acceso.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 178</value>
+  </data>
+  <data name="TextPassword.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Btn_inicial.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TextUser.Name" xml:space="preserve">
+    <value>TextUser</value>
+  </data>
+  <data name="Label_acceso.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 13</value>
+  </data>
+  <data name="Label_acceso.Text" xml:space="preserve">
+    <value>Este usuario no tiene permiso de acceso</value>
+  </data>
+  <data name="&gt;&gt;TextPassword.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TextPassword.Name" xml:space="preserve">
+    <value>TextPassword</value>
+  </data>
+  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 126</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lab_fail.Name" xml:space="preserve">
+    <value>lab_fail</value>
+  </data>
+  <data name="TextUser.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TextPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 123</value>
+  </data>
+  <data name="&gt;&gt;lab_fail.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Label_acceso.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TextUser.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;TextUser.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lab_fail.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;TextUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Btn_inicial.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="Btn_inicial.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="Label_acceso.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="Label_acceso.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Stencil, 8.25pt</value>
+  </data>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
+  </data>
+  <data name="Label_acceso.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Btn_inicial.Location" type="System.Drawing.Point, System.Drawing">
+    <value>101, 206</value>
+  </data>
+  <data name="Btn_inicial.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="TextUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 81</value>
+  </data>
+  <data name="lab_fail.Text" xml:space="preserve">
+    <value>Usuario y/o password incorrecto</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 81</value>
+  </data>
+  <data name="TextPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;Btn_inicial.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TextPassword.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form_Ini</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="lab_fail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 16</value>
+  </data>
+  <data name="&gt;&gt;lab_fail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lab_fail.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lab_fail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Stencil, 8.25pt</value>
+  </data>
+  <data name="TextPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="Btn_inicial.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 23</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>433, 307</value>
+  </data>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 16</value>
+  </data>
+  <data name="Label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 15.75pt</value>
+  </data>
+  <data name="&gt;&gt;TextPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lab_fail.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 25</value>
+  </data>
+  <data name="lab_fail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 13</value>
+  </data>
+  <data name="&gt;&gt;Label_acceso.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

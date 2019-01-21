@@ -14,5 +14,8 @@
         Adm_Content.cargardata(sql)
 
         Me.Hide()
+        Me.Text_filnom.Text = Nothing
+        Me.Text_fildir.Text = Nothing
+        Me.Numeric_fil.Value = 0
     End Sub
 End Class

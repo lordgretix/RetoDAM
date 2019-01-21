@@ -50,20 +50,25 @@ Public Class Modif_Content
                     Me.Text_resu.Text = dr.Item(4)
                     Me.Text_descripcion.Text = dr.Item(5)
                 End While
+                dr.Close()
+                euskera = tieneEus(id)
+                'si tiene en catellano comprbaria si tiene en euskera
             Else
-                euskera = True
+                'si no tiene en catellano buscará direcamente en euskera
+                dr.Close()
+                sql = "Select * from traducciones where alojamiento = " & id & " and idioma= 'eus'"
+                Dim cmd2_eu As New MySqlCommand(sql, cnn1)
+                dr = cmd2_eu.ExecuteReader
+                If dr.HasRows Then
+                    euskera = True
+                    While dr.Read
+                        Me.Text_Tipo.Text = dr.Item(3)
+                        Me.Text_resu.Text = dr.Item(4)
+                        Me.Text_descripcion.Text = dr.Item(5)
+                    End While
+                End If
             End If
-            dr.Close()
 
-            'sql = " Select * from codigos_postales where cod_poblacion = " & cod_poblacion & " and cod_postal = " & cod_postal
-            'Dim cmd3 As New MySqlCommand(sql, cnn1)
-            'dr = cmd3.ExecuteReader
-            'If dr.HasRows Then
-            '    While dr.Read
-            '        Me.ComboBox_poblacion.SelectedItem = dr.Item(3)
-            '        Me.ComboBox_provincia.SelectedItem = dr.Item(4)
-            '    End While
-            'End If
             sql = "select * from codigos_postales where cod_poblacion= " & cod_poblacion & " and cod_postal= " & cod_postal
             Dim cmd3 As New MySqlCommand(sql, cnn1)
             dr.Close()
@@ -74,11 +79,10 @@ Public Class Modif_Content
                     provincia = dr.Item(4)
                 End While
             End If
-
             dr.Close()
             Me.ComboBox_poblacion.SelectedItem = poblcaion
             Me.ComboBox_provincia.SelectedItem = provincia
-
+            Loading.Close()
             For i As Integer = 0 To ComboBox_cp.Items.Count - 1
                 ComboBox_cp.SelectedIndex = i
                 intValue = ComboBox_cp.Items(i)
@@ -98,7 +102,15 @@ Public Class Modif_Content
         Me.ComboBox_poblacion.SelectedItem = poblcaion
         Me.ComboBox_cp.SelectedIndex = indexcodpos
         ' por alguna razon tengo que volver a darle seleccionar para poder manntener la seleccion
-        ' Me.MenuStrip1.Items(1).Enabled = False
+        'Me.MenuStrip1.Items(1).Enabled = False
+
+        If castellano Then
+            CastellanoToolStripMenuItem1.Enabled = False
+        End If
+        If euskera Then
+            EuskeraToolStripMenuItem1.Enabled = False
+        End If
+
     End Sub
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
         Nuevo_Content.Show()
@@ -341,14 +353,62 @@ Public Class Modif_Content
 
     Private Sub CastellanoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CastellanoToolStripMenuItem.Click
         idioma = "es"
+        cambiarIdioma()
     End Sub
 
     Private Sub EuskeraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EuskeraToolStripMenuItem.Click
         idioma = "eus"
+        cambiarIdioma()
     End Sub
 
+    Private Function tieneEus(id As Integer) As Boolean
+        Dim tiene As Boolean = False
+        Dim dr As MySqlDataReader
+        Dim sql As String
+        sql = "Select * from traducciones where alojamiento = " & id & " and idioma= 'eus'"
+        Dim cmd2_eu As New MySqlCommand(sql, cnn1)
+        dr = cmd2_eu.ExecuteReader
+        If dr.HasRows Then
+            tiene = True
+        End If
+        dr.Close()
 
-    Private Sub AñadirNuevoTraduccionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AñadirNuevoTraduccionToolStripMenuItem.Click
+        Return tiene
+    End Function
 
+    Private Sub CastellanoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CastellanoToolStripMenuItem1.Click
+        AddIdioma.AddIdioma("es", id_alo)
+    End Sub
+
+    Private Sub EuskeraToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EuskeraToolStripMenuItem1.Click
+        AddIdioma.AddIdioma("eus", id_alo)
+    End Sub
+
+    Private Sub cambiarIdioma()
+        conectar()
+        Dim dr As MySqlDataReader
+        Dim sql As String
+        Try
+            sql = "Select * from traducciones where alojamiento = " & id_alo & " and idioma= '" & idioma & "'"
+            Dim cmd2_eu As New MySqlCommand(sql, cnn1)
+            dr = cmd2_eu.ExecuteReader
+            If dr.HasRows Then
+                euskera = True
+                While dr.Read
+                    Me.Text_Tipo.Text = dr.Item(3)
+                    Me.Text_resu.Text = dr.Item(4)
+                    Me.Text_descripcion.Text = dr.Item(5)
+                End While
+            End If
+            dr.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+    End Sub
+
+    Private Sub Modif_Content_Disposed(sender As Object, e As EventArgs) Handles Me.Disposed
+        desconectar()
     End Sub
 End Class

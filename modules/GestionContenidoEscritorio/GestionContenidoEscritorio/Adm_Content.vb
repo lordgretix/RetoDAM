@@ -11,6 +11,7 @@ Public Class Adm_Content
     '    Me.Tabla = New DataTable
     'End Sub
     Public Sub cargardata(ByVal sql As String)
+
         conectar()
 
         Dim das1 As New DataSet
@@ -23,8 +24,10 @@ Public Class Adm_Content
 
             adapter.Fill(das1, "aaa")
 
+            Me.DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
             Me.DataGridView1.DataSource = das1.Tables("aaa")
             Me.DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -33,15 +36,16 @@ Public Class Adm_Content
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim sql As String
-        sql = "SELECT a.id, a.nombre, a.telefono, a.direccion, a.email, a.web, a.firma, t.tipo, t.resumen FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
+        sql = "SELECT a.id, a.nombre, a.telefono, a.direccion, a.email, a.web, a.firma, t.tipo FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
         cargardata(sql)
-
+        Loading.Hide()
+        Form_Ini.form_center(Me)
     End Sub
 
     Private Sub CastellanoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CastellanoToolStripMenuItem.Click
 
         Dim sql As String
-        sql = "SELECT a.id, a.nombre, a.telefono, a.direccion, a.email, a.web, a.firma, t.tipo, t.resumen FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
+        sql = "SELECT a.id, a.nombre, a.telefono, a.direccion, a.email, a.web, a.firma, t.tipo FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='es'"
         cargardata(sql)
 
     End Sub
@@ -50,7 +54,7 @@ Public Class Adm_Content
         conectar()
         Dim sql As String
         Dim das1 As New DataSet
-        sql = "SELECT a.id, a.nombre, a.telefono, a.direccion, a.email, a.web, a.firma, t.tipo, t.resumen FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='eus'"
+        sql = "SELECT a.id, a.nombre, a.telefono, a.direccion, a.email, a.web, a.firma, t.tipo FROM alojamientos a, traducciones t where a.id = t.alojamiento and t.idioma='eus'"
 
         Dim commando As New MySqlCommand
         Dim adapter As New MySqlDataAdapter
@@ -65,7 +69,6 @@ Public Class Adm_Content
         Me.DataGridView1.Columns(3).HeaderText = "helbidea"
         Me.DataGridView1.Columns(6).HeaderText = "sinadura"
         Me.DataGridView1.Columns(7).HeaderText = "mota"
-        Me.DataGridView1.Columns(8).HeaderText = "laburpena"
         Me.DataGridView1.DataSource = das1.Tables("aaa")
 
     End Sub
@@ -96,9 +99,16 @@ Public Class Adm_Content
             Dim fila As Integer
             fila = Me.DataGridView1.CurrentRow.Index
             Dim id As Integer = Me.DataGridView1.Item(0, fila).Value
+            Loading.Show()
             Modif_Content.Load_view(id)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub MapaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MapaToolStripMenuItem.Click
+        Loading.Show()
+        Mapa.Show()
+        Me.Hide()
     End Sub
 End Class
