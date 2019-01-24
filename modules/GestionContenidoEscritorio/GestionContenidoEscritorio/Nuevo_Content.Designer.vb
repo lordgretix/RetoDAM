@@ -67,6 +67,9 @@ Partial Class Nuevo_Content
         Me.CastellanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EuskeraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComboBox_cp = New System.Windows.Forms.ComboBox()
+        Me.textwarn2 = New System.Windows.Forms.Label()
+        Me.textwarn3 = New System.Windows.Forms.Label()
+        Me.textwarn1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -413,6 +416,7 @@ Partial Class Nuevo_Content
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.LightGreen
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem1, Me.InicioToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -479,12 +483,51 @@ Partial Class Nuevo_Content
         Me.ComboBox_cp.Size = New System.Drawing.Size(200, 26)
         Me.ComboBox_cp.TabIndex = 40
         '
+        'textwarn2
+        '
+        Me.textwarn2.AutoSize = True
+        Me.textwarn2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textwarn2.ForeColor = System.Drawing.Color.Red
+        Me.textwarn2.Location = New System.Drawing.Point(161, 239)
+        Me.textwarn2.Name = "textwarn2"
+        Me.textwarn2.Size = New System.Drawing.Size(110, 12)
+        Me.textwarn2.TabIndex = 41
+        Me.textwarn2.Text = "Este campo es obligatorio"
+        Me.textwarn2.Visible = False
+        '
+        'textwarn3
+        '
+        Me.textwarn3.AutoSize = True
+        Me.textwarn3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textwarn3.ForeColor = System.Drawing.Color.Red
+        Me.textwarn3.Location = New System.Drawing.Point(546, 239)
+        Me.textwarn3.Name = "textwarn3"
+        Me.textwarn3.Size = New System.Drawing.Size(110, 12)
+        Me.textwarn3.TabIndex = 42
+        Me.textwarn3.Text = "Este campo es obligatorio"
+        Me.textwarn3.Visible = False
+        '
+        'textwarn1
+        '
+        Me.textwarn1.AutoSize = True
+        Me.textwarn1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textwarn1.ForeColor = System.Drawing.Color.Red
+        Me.textwarn1.Location = New System.Drawing.Point(163, 73)
+        Me.textwarn1.Name = "textwarn1"
+        Me.textwarn1.Size = New System.Drawing.Size(110, 12)
+        Me.textwarn1.TabIndex = 43
+        Me.textwarn1.Text = "Este campo es obligatorio"
+        Me.textwarn1.Visible = False
+        '
         'Nuevo_Content
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(876, 662)
+        Me.Controls.Add(Me.textwarn1)
+        Me.Controls.Add(Me.textwarn3)
+        Me.Controls.Add(Me.textwarn2)
         Me.Controls.Add(Me.ComboBox_cp)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.ComboBox_provincia)
@@ -575,4 +618,7 @@ Partial Class Nuevo_Content
     Friend WithEvents CastellanoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EuskeraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ComboBox_cp As System.Windows.Forms.ComboBox
+    Friend WithEvents textwarn2 As System.Windows.Forms.Label
+    Friend WithEvents textwarn3 As System.Windows.Forms.Label
+    Friend WithEvents textwarn1 As System.Windows.Forms.Label
 End Class

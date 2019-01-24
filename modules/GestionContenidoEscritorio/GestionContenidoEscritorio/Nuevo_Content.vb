@@ -4,58 +4,77 @@ Public Class Nuevo_Content
 
     Public idioma As String = "es"
     Public added As Boolean = False
+    Dim tipo, firma As Boolean
     Private Sub Btn_add_Click(sender As Object, e As EventArgs) Handles Btn_add.Click
         añadir()
 
     End Sub
 
     Private Sub añadir()
-        'añadir datos a tabla de alojamientos
-        Try
-            Dim sql As String
-            sql = "INSERT INTO alojamientos (nombre, telefono, direccion, email, web, certificado, club, restaurante, tienda, autocaravana, "
-            sql &= "capacidad, cod_postal, latlong, cod_poblacion, firma) VALUES ( @nom, @tel, @dir, @mail, "
-            sql &= "@web, @certi, @club, @resta, @tienda, @auto, @capacy, @cp, @latlo, @codpob, @firma)"
-            Dim cmd As New MySqlCommand(sql, cnn1)
-            cmd.Parameters.AddWithValue("@nom", Me.Text_nombre.Text)
-            cmd.Parameters.AddWithValue("@tel", Me.Text_tel.Text)
-            cmd.Parameters.AddWithValue("@dir", Me.Text_direccion.Text)
-            cmd.Parameters.AddWithValue("@mail", Me.Text_email.Text)
-            cmd.Parameters.AddWithValue("@web", Me.Text_web.Text)
-            cmd.Parameters.AddWithValue("@certi", Me.Check_certificado.Checked)
-            cmd.Parameters.AddWithValue("@club", Me.Check_club.Checked)
-            cmd.Parameters.AddWithValue("@resta", Me.Check_restaurante.Checked)
-            cmd.Parameters.AddWithValue("@tienda", Me.Check_tienda.Checked)
-            cmd.Parameters.AddWithValue("@auto", Me.Check_caravana.Checked)
-            cmd.Parameters.AddWithValue("@capacy", Me.Text_capacity.Text)
-            cmd.Parameters.AddWithValue("@cp", Me.ComboBox_cp.SelectedItem)
-            cmd.Parameters.AddWithValue("@latlo", Me.Text_lat.Text)
-            'poblacion hay que hacer un query para coger el codigo ya que en el combobox esta los nombres
-            cmd.Parameters.AddWithValue("@codpob", obtenerCodPob())
-            cmd.Parameters.AddWithValue("@firma", Me.Text_firma.Text) 'la firma es unica
-            cmd.ExecuteNonQuery()
+        If Not Me.Text_firma.Text.Equals("") AndAlso Not Me.Text_Tipo.Text.Equals("") AndAlso Not Me.Text_nombre.Text.Equals("") Then
+            'añadir datos a tabla de alojamientos
+            If comprabarFirma(Me.Text_firma.Text) Then
+                Try
+                    Dim sql As String
+                    sql = "INSERT INTO alojamientos (nombre, telefono, direccion, email, web, certificado, club, restaurante, tienda, autocaravana, "
+                    sql &= "capacidad, cod_postal, latlong, cod_poblacion, firma) VALUES ( @nom, @tel, @dir, @mail, "
+                    sql &= "@web, @certi, @club, @resta, @tienda, @auto, @capacy, @cp, @latlo, @codpob, @firma)"
+                    Dim cmd As New MySqlCommand(sql, cnn1)
+                    cmd.Parameters.AddWithValue("@nom", Me.Text_nombre.Text)
+                    cmd.Parameters.AddWithValue("@tel", Me.Text_tel.Text)
+                    cmd.Parameters.AddWithValue("@dir", Me.Text_direccion.Text)
+                    cmd.Parameters.AddWithValue("@mail", Me.Text_email.Text)
+                    cmd.Parameters.AddWithValue("@web", Me.Text_web.Text)
+                    cmd.Parameters.AddWithValue("@certi", Me.Check_certificado.Checked)
+                    cmd.Parameters.AddWithValue("@club", Me.Check_club.Checked)
+                    cmd.Parameters.AddWithValue("@resta", Me.Check_restaurante.Checked)
+                    cmd.Parameters.AddWithValue("@tienda", Me.Check_tienda.Checked)
+                    cmd.Parameters.AddWithValue("@auto", Me.Check_caravana.Checked)
+                    cmd.Parameters.AddWithValue("@capacy", Me.Text_capacity.Text)
+                    cmd.Parameters.AddWithValue("@cp", Me.ComboBox_cp.SelectedItem)
+                    cmd.Parameters.AddWithValue("@latlo", Me.Text_lat.Text)
+                    'poblacion hay que hacer un query para coger el codigo ya que en el combobox esta los nombres
+                    cmd.Parameters.AddWithValue("@codpob", obtenerCodPob())
+                    cmd.Parameters.AddWithValue("@firma", Me.Text_firma.Text) 'la firma es unica
+                    cmd.ExecuteNonQuery()
 
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
 
-        'añadir datos a tabla de traducciones
-        Try
-            Dim sql As String
-            sql = "INSERT INTO traducciones (alojamiento, idioma, tipo, resumen, descripcion) values (@id_alo, "
-            sql &= "@idioma, @tipo, @resumen, @descripcion)"
-            Dim cmd As New MySqlCommand(sql, cnn1)
-            'hay que hacer un query para obtener el id de la alojamiento el cual relaciona las dos tablas
-            cmd.Parameters.AddWithValue("@id_alo", obtenerCodAlo())
-            cmd.Parameters.AddWithValue("@idioma", idioma) 'por defecto esta en castellano
-            cmd.Parameters.AddWithValue("@tipo", Me.Text_Tipo.Text)
-            cmd.Parameters.AddWithValue("@resumen", Me.Text_resu.Text)
-            cmd.Parameters.AddWithValue("@descripcion", Me.Text_descripcion.Text)
-            cmd.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        Me.Hide()
+                'añadir datos a tabla de traducciones
+                Try
+                    Dim sql As String
+                    sql = "INSERT INTO traducciones (alojamiento, idioma, tipo, resumen, descripcion) values (@id_alo, "
+                    sql &= "@idioma, @tipo, @resumen, @descripcion)"
+                    Dim cmd As New MySqlCommand(sql, cnn1)
+                    'hay que hacer un query para obtener el id de la alojamiento el cual relaciona las dos tablas
+                    cmd.Parameters.AddWithValue("@id_alo", obtenerCodAlo())
+                    cmd.Parameters.AddWithValue("@idioma", idioma) 'por defecto esta en castellano
+                    cmd.Parameters.AddWithValue("@tipo", Me.Text_Tipo.Text)
+                    cmd.Parameters.AddWithValue("@resumen", Me.Text_resu.Text)
+                    cmd.Parameters.AddWithValue("@descripcion", Me.Text_descripcion.Text)
+                    cmd.ExecuteNonQuery()
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+                Me.Hide()
+
+            Else
+                MsgBox("Esta firma ya esta en uso, intentalo con uno nuevo")
+            End If
+        Else
+            If Me.Text_nombre.Text.Equals("") Then
+                Me.textwarn1.Visible = True
+            End If
+            If Me.Text_Tipo.Text.Equals("") Then
+                Me.textwarn2.Visible = True
+            End If
+            If Me.Text_firma.Text.Equals("") Then
+                Me.textwarn3.Visible = True
+            End If
+        End If
+
     End Sub
 
     Private Sub CerrarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesionToolStripMenuItem.Click
@@ -109,7 +128,8 @@ Public Class Nuevo_Content
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
+        tipo = False
+        firma = False
     End Sub
 
     Private Sub ComboBox_provincia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_provincia.SelectedIndexChanged
@@ -196,6 +216,25 @@ Public Class Nuevo_Content
             MsgBox(ex.Message)
         End Try
         Return cod_alo
+    End Function
+    Private Function comprabarFirma(firma As String) As Object
+        Dim existe As Boolean = False
+        Try
+            Dim sql As String = "SELECT firma FROM alojamientos"
+            Dim cmd As New MySqlCommand(sql, cnn1)
+            Dim dr As MySqlDataReader
+            dr = cmd.ExecuteReader
+            While dr.Read
+                If dr.HasRows Then
+                    existe = dr.Item(0).Equals(firma)
+                End If
+
+            End While
+            dr.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return existe
     End Function
 
     Private Sub CastellanoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CastellanoToolStripMenuItem.Click

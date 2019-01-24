@@ -57,8 +57,8 @@ Partial Class Form_Ini
         '
         'Btn_inicial
         '
-        resources.ApplyResources(Me.Btn_inicial, "Btn_inicial")
         Me.Btn_inicial.BackColor = System.Drawing.Color.LimeGreen
+        resources.ApplyResources(Me.Btn_inicial, "Btn_inicial")
         Me.Btn_inicial.ForeColor = System.Drawing.Color.White
         Me.Btn_inicial.Name = "Btn_inicial"
         Me.Btn_inicial.UseVisualStyleBackColor = False
@@ -89,6 +89,7 @@ Partial Class Form_Ini
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImage = Global.GestionContenidoEscritorio.My.Resources.Resources.fondo2
         Me.Controls.Add(Me.Label_acceso)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lab_fail)

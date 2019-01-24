@@ -403,6 +403,7 @@ Partial Class Modif_Content
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.LightGreen
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem1, Me.InicioToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -481,13 +482,13 @@ Partial Class Modif_Content
         'CastellanoToolStripMenuItem1
         '
         Me.CastellanoToolStripMenuItem1.Name = "CastellanoToolStripMenuItem1"
-        Me.CastellanoToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.CastellanoToolStripMenuItem1.Size = New System.Drawing.Size(129, 22)
         Me.CastellanoToolStripMenuItem1.Text = "&Castellano"
         '
         'EuskeraToolStripMenuItem1
         '
         Me.EuskeraToolStripMenuItem1.Name = "EuskeraToolStripMenuItem1"
-        Me.EuskeraToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.EuskeraToolStripMenuItem1.Size = New System.Drawing.Size(129, 22)
         Me.EuskeraToolStripMenuItem1.Text = "&Euskera"
         '
         'Btn_borrar

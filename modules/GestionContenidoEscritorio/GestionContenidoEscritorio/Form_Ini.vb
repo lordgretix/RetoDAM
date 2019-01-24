@@ -17,7 +17,8 @@ Public Class Form_Ini
             res &= hash(i).ToString("X2")
         Next
 
-        ' Console.WriteLine(res.ToLower)
+
+        'Me.TextBox1.Text = res.ToLower
         Return res.ToLower
     End Function
 
@@ -25,7 +26,7 @@ Public Class Form_Ini
         form_center(Me)
         Dim connStr As String = "server=kasserver.synology.me;database=reto_gp3;port=3307;user id=gp3;password=IFZWx5dEG12yt8QW;"
         cnn1 = New MySqlConnection(connStr)
-
+        encriptarPassword()
         Try
             ' MsgBox("connecting...")
             cnn1.Open()
@@ -42,6 +43,7 @@ Public Class Form_Ini
     Private Sub validarUserPasswor()
         Dim sql As String
         sql = "select * from usuarios where nombre='" & Me.TextUser.Text & "'"
+
 
         'sentencia que buscar el usuario introducido en la base de datos
         Me.lab_fail.Visible = False

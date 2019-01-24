@@ -33,3 +33,4 @@ E:\RetoDAM\modules\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Deb
 E:\RetoDAM\modules\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.AddIdioma.resources
 E:\RetoDAM\modules\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.Loading.resources
 E:\RetoDAM\modules\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.Mapa.resources
+E:\RetoDAM\modules\GestionContenidoEscritorio\GestionContenidoEscritorio\obj\Debug\GestionContenidoEscritorio.informe.resources

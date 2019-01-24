@@ -111,4 +111,9 @@ Public Class Adm_Content
         Mapa.Show()
         Me.Hide()
     End Sub
+
+    Private Sub InformeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformeToolStripMenuItem.Click
+        informe.Show()
+        ' Me.Hide()
+    End Sub
 End Class
