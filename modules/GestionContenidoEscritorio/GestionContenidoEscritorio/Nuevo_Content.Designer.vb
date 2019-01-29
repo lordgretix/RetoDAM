@@ -58,6 +58,10 @@ Partial Class Nuevo_Content
         Me.ComboBox_poblacion = New System.Windows.Forms.ComboBox()
         Me.ComboBox_provincia = New System.Windows.Forms.ComboBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ComboBox_cp = New System.Windows.Forms.ComboBox()
+        Me.textwarn2 = New System.Windows.Forms.Label()
+        Me.textwarn3 = New System.Windows.Forms.Label()
+        Me.textwarn1 = New System.Windows.Forms.Label()
         Me.InicioToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
@@ -66,10 +70,6 @@ Partial Class Nuevo_Content
         Me.IdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CastellanoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EuskeraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ComboBox_cp = New System.Windows.Forms.ComboBox()
-        Me.textwarn2 = New System.Windows.Forms.Label()
-        Me.textwarn3 = New System.Windows.Forms.Label()
-        Me.textwarn1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -424,56 +424,6 @@ Partial Class Nuevo_Content
         Me.MenuStrip1.TabIndex = 39
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'InicioToolStripMenuItem1
-        '
-        Me.InicioToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserToolStripMenuItem, Me.ToolStripMenuItem1, Me.CerrarSesionToolStripMenuItem})
-        Me.InicioToolStripMenuItem1.Name = "InicioToolStripMenuItem1"
-        Me.InicioToolStripMenuItem1.Size = New System.Drawing.Size(48, 20)
-        Me.InicioToolStripMenuItem1.Text = "&Inicio"
-        '
-        'UserToolStripMenuItem
-        '
-        Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
-        Me.UserToolStripMenuItem.Text = "&User"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(139, 6)
-        '
-        'CerrarSesionToolStripMenuItem
-        '
-        Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
-        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
-        Me.CerrarSesionToolStripMenuItem.Text = "&Cerrar sesion"
-        '
-        'InicioToolStripMenuItem
-        '
-        Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IdiomaToolStripMenuItem})
-        Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
-        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
-        Me.InicioToolStripMenuItem.Text = "&Contenidos"
-        '
-        'IdiomaToolStripMenuItem
-        '
-        Me.IdiomaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem, Me.EuskeraToolStripMenuItem})
-        Me.IdiomaToolStripMenuItem.Name = "IdiomaToolStripMenuItem"
-        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
-        Me.IdiomaToolStripMenuItem.Text = "&Idioma"
-        '
-        'CastellanoToolStripMenuItem
-        '
-        Me.CastellanoToolStripMenuItem.Name = "CastellanoToolStripMenuItem"
-        Me.CastellanoToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
-        Me.CastellanoToolStripMenuItem.Text = "&Castellano"
-        '
-        'EuskeraToolStripMenuItem
-        '
-        Me.EuskeraToolStripMenuItem.Name = "EuskeraToolStripMenuItem"
-        Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
-        Me.EuskeraToolStripMenuItem.Text = "&Euskera"
-        '
         'ComboBox_cp
         '
         Me.ComboBox_cp.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -518,6 +468,61 @@ Partial Class Nuevo_Content
         Me.textwarn1.TabIndex = 43
         Me.textwarn1.Text = "Este campo es obligatorio"
         Me.textwarn1.Visible = False
+        '
+        'InicioToolStripMenuItem1
+        '
+        Me.InicioToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserToolStripMenuItem, Me.ToolStripMenuItem1, Me.CerrarSesionToolStripMenuItem})
+        Me.InicioToolStripMenuItem1.Image = Global.GestionContenidoEscritorio.My.Resources.Resources.home
+        Me.InicioToolStripMenuItem1.Name = "InicioToolStripMenuItem1"
+        Me.InicioToolStripMenuItem1.Size = New System.Drawing.Size(64, 20)
+        Me.InicioToolStripMenuItem1.Text = "&Inicio"
+        '
+        'UserToolStripMenuItem
+        '
+        Me.UserToolStripMenuItem.Image = Global.GestionContenidoEscritorio.My.Resources.Resources.user
+        Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.UserToolStripMenuItem.Text = "&User"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
+        '
+        'CerrarSesionToolStripMenuItem
+        '
+        Me.CerrarSesionToolStripMenuItem.Image = Global.GestionContenidoEscritorio.My.Resources.Resources.CLOSE
+        Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
+        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CerrarSesionToolStripMenuItem.Text = "&Cerrar sesion"
+        '
+        'InicioToolStripMenuItem
+        '
+        Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IdiomaToolStripMenuItem})
+        Me.InicioToolStripMenuItem.Image = Global.GestionContenidoEscritorio.My.Resources.Resources.TOOLS
+        Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
+        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(96, 20)
+        Me.InicioToolStripMenuItem.Text = "&Contenidos"
+        '
+        'IdiomaToolStripMenuItem
+        '
+        Me.IdiomaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CastellanoToolStripMenuItem, Me.EuskeraToolStripMenuItem})
+        Me.IdiomaToolStripMenuItem.Image = Global.GestionContenidoEscritorio.My.Resources.Resources.idiomas_icono_png_1
+        Me.IdiomaToolStripMenuItem.Name = "IdiomaToolStripMenuItem"
+        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.IdiomaToolStripMenuItem.Text = "&Idioma"
+        '
+        'CastellanoToolStripMenuItem
+        '
+        Me.CastellanoToolStripMenuItem.Name = "CastellanoToolStripMenuItem"
+        Me.CastellanoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CastellanoToolStripMenuItem.Text = "&Castellano"
+        '
+        'EuskeraToolStripMenuItem
+        '
+        Me.EuskeraToolStripMenuItem.Name = "EuskeraToolStripMenuItem"
+        Me.EuskeraToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EuskeraToolStripMenuItem.Text = "&Euskera"
         '
         'Nuevo_Content
         '

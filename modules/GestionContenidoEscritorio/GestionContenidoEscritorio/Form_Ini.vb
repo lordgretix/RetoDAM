@@ -5,7 +5,7 @@ Imports System.Security.Cryptography
 Imports System.Text
 
 Public Class Form_Ini
-
+    Dim verpassword As Boolean = False
     Public cnn1 As MySqlConnection
     Public iniciado As Boolean = False
     Private Function encriptarPassword() As String
@@ -38,6 +38,7 @@ Public Class Form_Ini
         Finally
             cnn1.Close()
         End Try
+        TextPassword.UseSystemPasswordChar = Not verpassword
     End Sub
 
     Private Sub validarUserPasswor()
@@ -136,5 +137,16 @@ Public Class Form_Ini
 
         frm.StartPosition = FormStartPosition.Manual
         frm.Location = New Point(x, y)
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        TextPassword.UseSystemPasswordChar = verpassword
+        If Not verpassword Then
+            PictureBox1.Image = Image.FromFile("ojo-abierto.png")
+        Else
+            PictureBox1.Image = Image.FromFile("ojo-cerrado.png")
+        End If
+        verpassword = Not verpassword
+
     End Sub
 End Class

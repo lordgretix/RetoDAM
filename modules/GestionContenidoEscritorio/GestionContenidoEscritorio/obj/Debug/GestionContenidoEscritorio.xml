@@ -15,11 +15,71 @@ GestionContenidoEscritorio
   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources._6">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.add_idioma">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.add_idioma1">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.CLOSE">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.DRAG3PG">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.EARTH2">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.enkasa">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.fondo2">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.home">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.idiomas_icono_png_1">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.load_imag">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.ojo_abierto">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.ojo_cerrado">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.plus_icon_icons_com_69476">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.refrescar">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.TOOLS">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:GestionContenidoEscritorio.My.Resources.Resources.user">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

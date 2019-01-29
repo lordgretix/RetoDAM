@@ -235,6 +235,48 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\home.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\TOOLS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\CLOSE.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\DRAG3PG.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\6.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\EARTH2.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ojo-abierto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ojo-cerrado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\idiomas-icono-png-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\refrescar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\plus_icon-icons.com_69476.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\add_idioma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\enkasa.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

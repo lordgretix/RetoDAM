@@ -29,20 +29,23 @@ Partial Class informe
         'CrystalReportViewer1
         '
         Me.CrystalReportViewer1.ActiveViewIndex = 0
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrystalReportViewer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CrystalReportViewer1.AutoValidate = System.Windows.Forms.AutoValidate.Disable
+        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(-1, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
         Me.CrystalReportViewer1.ReportSource = Me.CrystalReport21
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(810, 621)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1021, 675)
         Me.CrystalReportViewer1.TabIndex = 0
         '
         'informe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(810, 621)
+        Me.ClientSize = New System.Drawing.Size(1020, 676)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Name = "informe"
         Me.Text = "informe"

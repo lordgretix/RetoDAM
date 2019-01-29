@@ -26,10 +26,16 @@ Public Class Adm_Content
 
             Me.DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
             Me.DataGridView1.DataSource = das1.Tables("aaa")
+            Me.DataGridView1.Columns(1).HeaderText = "nombre"
+            Me.DataGridView1.Columns(2).HeaderText = "telefono"
+            Me.DataGridView1.Columns(3).HeaderText = "direccion"
+            Me.DataGridView1.Columns(6).HeaderText = "firma"
+            Me.DataGridView1.Columns(7).HeaderText = "tipo"
+
             Me.DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.StackTrace)
         End Try
 
     End Sub
